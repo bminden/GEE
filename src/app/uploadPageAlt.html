@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Upload Content</title>
+    <meta charset="utf-8" />
+    <!--<link rel="stylesheet" type="text/css" href="CSS PATH HERE" />-->
+</head>
+
+<body>
+    <div id=uploadHeader>
+        <h1>Upload Content</h1>
+    </div>
+    <!--End uploadHeader-->
+
+    <!--Never delt with input data in HTML yet so this may need some fixes-->
+    <form action="/PATH FOR HANDLING INPUT">
+
+        <div id="ro21">
+            <h2>Select Filters for Upload</h2>
+            <!--Combo box for grade-->
+            <label for="grade">Grade Level</label>
+            <select id="grade">
+                <option value="6th">6th</option>
+                <option value="7th">7th</option>
+                <option value="8th">8th</option>
+                <option value="9th">9th</option>
+                <option value="10th">10th</option>
+                <option value="11th">11th</option>
+                <option value="12th">12th</option>
+            </select>
+
+
+            <!--Combo box for subject-->
+            <label for="subject">Subject</label>
+            <select id="subject">
+                <option value="tempSubject1">TEMP SUBJECT 1</option>
+                <option value="tempSubject2">TEMP SUBJECT 2</option>
+                <option value="tempSubject3">TEMP SUBJECT 3</option>
+                <option value="tempSubject4">TEMP SUBJECT 4</option>
+                <option value="tempSubject5">TEMP SUBJECT 5</option>
+                <option value="tempSubject6">TEMP SUBJECT 6</option>
+                <option value="tempSubject7">TEMP SUBJECT 7</option>
+            </select>
+
+
+            <!--Combo box for content type-->
+            <label for="contentType">Content Type</label>
+            <select id="contentType">
+                <option value="tempContentType1">TEMP CONTENT TYPE 1</option>
+                <option value="tempContentType2">TEMP CONTENT TYPE 2</option>
+                <option value="na">None/Unknown</option>
+            </select>
+
+
+            <!--Addational combo box for use if needed, delete if ends up not used-->
+            <label for="temp">TEMP</label>
+            <select id="temp">
+                <option value="temp1">TEMP 1</option>
+                <option value="temp2">TEMP 2</option>
+                <option value="temp3">TEMP 3</option>
+                <option value="temp4">TEMP 4</option>
+                <option value="temp5">TEMP 5</option>
+                <option value="temp6">TEMP 6</option>
+                <option value="temp7">TEMP 7</option>
+            </select>
+
+
+            <!--Check boxs for includes-->
+            Includes:
+            <input type="checkbox" id="worksheet" name="worksheet" value="worksheet">
+            <label for="worksheet">Worksheets</label>
+            <input type="checkbox" id="lab" name="lab" value="lab">
+            <label for="lab">Labs</label>
+            <input type="checkbox" id="test" name="test" value="test">
+            <label for="test">Tests</label>
+        </div>
+        <!--End column 1 div-->
+
+        <br>
+
+        <div id="row2">
+            <!--May use external CSS to move to center-->
+            <h2>Content Description</h2>
+            <!--Textarea for description input-->
+            <label for="description">Enter description of content</label><br>
+            <textarea id="description" rows="30" cols="50">
+                Enter text here.
+            </textarea>
+
+        </div>
+        <!--End column 2 div-->
+
+
+        <div id="row3">
+            <h2>Submission</h2>
+
+            <!--Input box for preview image-->
+            Select preview image:
+            <input type="file" id="previewImage" accept=".png, .gif, .jpg, .jpeg">
+
+            <!--Input box for compressed folder upload-->
+            Select compressed folder for upload:
+            <input type="file" id="folderUpload" accept=".zip, .rar, .7z">
+
+            <!--Checkboxex for policy agreement if they are needed-->
+            <input type="checkbox" id="termsAndService" name="termsAndService" value="termsAndService">
+            <label for="termsAndService">Agree to terms and servce</label>
+            <input type="checkbox" id="privacyPolicy" name="privacyPolicy" value="privacyPolicy">
+            <label for="privacyPolicy">Agree to privacy policy</label>
+
+            <input type="submit" value="Submit Upload">
+            <!--button should be sicabled until fields are filled out-->
+        </div>
+        <!--End column 3 div-->
+    </form>
+</body>
+
+</html>
