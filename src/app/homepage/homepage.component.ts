@@ -13,10 +13,9 @@ export class HomepageComponent implements OnInit {
   constructor(private apiService: ApiService) { }
   users;
   ngOnInit() {
-    console.log("I WAS HERE!!");
-    this.apiService.getUsers().subscribe((data)=>{
-      console.log(data);
+   //this.apiService.getUsers().subscribe((data)=>{
+     // console.log(data);
       
-    });
+    //});
   }
 }

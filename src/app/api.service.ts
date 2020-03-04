@@ -8,7 +8,14 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getUsers (){
-    return this.httpClient.get('http://198.211.98.83:3002/users');
+  public getUsers (usr, pwd){
+    return this.httpClient.get('http://198.211.98.83:3002/users', {
+      params:{
+        username: usr,
+        password: pwd
+      }
+    });
   }
+
+  
 }

@@ -10,13 +10,13 @@
 
 <body>
     <div id="login"><!--May use external CSS to move to center-->
-        <form action="/home.html">
+        
             <label for="userName">Username</label>
-            <input type="text" id="userName" name="userName"><br><br>
+            <input type="text" id="userName" name="userName" #text><br><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br><br>
-            <input type="submit" value="Search">
-        </form>
+            <input type="text" id="password" name="password" #password><br><br>
+            <button (click)="showText(text.value, password.value)">Search!</button>
+        
     </div>
 
 </body>
