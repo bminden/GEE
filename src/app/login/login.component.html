@@ -5,19 +5,31 @@
 <head>
     <title>Login</title>
     <meta charset="utf-8" />
-    <!--<link rel="stylesheet" type="text/css" href="CSS PATH HERE" />-->
+    <style>      
+      div.size {
+        margin: auto;
+        width: 70%;
+      }
+      </style>
 </head>
 
 <body>
+  <br><br>
+  <div class=size>
+  <div class="container is-desktop" >
+    <div class="notification">
     <div id="login"><!--May use external CSS to move to center-->
-        
             <label for="userName">Username</label>
-            <input type="text" id="userName" name="userName" #text><br><br>
+
+            <input class="input" placeholder="Username" type="text" id="userName" name="userName" #text><br><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password" #password><br><br>
-            <button (click)="showText(text.value, password.value)">Search!</button>
+            <input class="input" placeholder="Username" type="text" id="password" name="password" #password><br><br>
+            <button class="button is-link" (click)="showText(text.value, password.value)">Login!</button>
         
     </div>
+    </div></div></div>
+
+    <br><br><br>
 
 </body>
 </html>
