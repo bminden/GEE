@@ -11,8 +11,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  @ViewChild('navBurger') navBurger: ElementRef;
-  @ViewChild('navMenu') navMenu: ElementRef;
+  @ViewChild('navBurger', {static: false}) navBurger: ElementRef;
+  @ViewChild('navMenu', {static: false}) navMenu: ElementRef;
 
   toggleNavbar() {
     this.navBurger.nativeElement.classList.toggle('is-active');
