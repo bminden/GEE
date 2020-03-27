@@ -10,12 +10,16 @@ import { HeaderComponent } from './header/header.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { UploadpageComponent } from './uploadpage/uploadpage.component';
+import { UserpageComponent } from './userpage/userpage.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomepageComponent},
   {path: 'home', component: HomepageComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'uploadpage', component: UploadpageComponent},
+  {path: 'userpage', component: UserpageComponent}
 ];
 
 @NgModule({
@@ -25,7 +29,9 @@ const appRoutes: Routes = [
     FooterComponent,
     HomepageComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    UploadpageComponent,
+    UserpageComponent
   ],
   imports: [
     BrowserModule,
