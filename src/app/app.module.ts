@@ -12,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { UploadpageComponent } from './uploadpage/uploadpage.component';
 import { UserpageComponent } from './userpage/userpage.component';
+import { ResultsComponent } from './results/results.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomepageComponent},
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
   {path: 'search', component: SearchComponent},
   {path: 'login', component: LoginComponent},
   {path: 'uploadpage', component: UploadpageComponent},
-  {path: 'userpage', component: UserpageComponent}
+  {path: 'userpage', component: UserpageComponent},
+  {path: 'results', component: ResultsComponent}
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     LoginComponent,
     UploadpageComponent,
-    UserpageComponent
+    UserpageComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
