@@ -17,3 +17,16 @@ Run the following command:
 >ng serve
 
 and then go to localhost:4200
+
+
+## Auto Documentation
+
+Run the following commands:
+
+>npm run generate-docs
+
+This will generate the document
+
+>compdoc -s
+
+This will host the document on localhost:8080 for viewing
