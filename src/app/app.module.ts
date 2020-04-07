@@ -14,6 +14,8 @@ import { UploadpageComponent } from './uploadpage/uploadpage.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { ResultsComponent } from './results/results.component';
 
+import { AngularWebStorageModule } from 'angular-web-storage';
+
 const appRoutes: Routes = [
   {path: '', component: HomepageComponent},
   {path: 'home', component: HomepageComponent},
@@ -34,10 +36,11 @@ const appRoutes: Routes = [
     LoginComponent,
     UploadpageComponent,
     UserpageComponent,
-    ResultsComponent
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,
+    AngularWebStorageModule,
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,

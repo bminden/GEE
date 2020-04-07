@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import {SessionStorageService, SessionStorage } from 'angular-web-storage';
 
 @Component({
   selector: 'app-homepage',
@@ -10,7 +11,7 @@ import { ApiService } from '../api.service';
 
 export class HomepageComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor(public session: SessionStorageService, private apiService: ApiService) { }
   users;
   ngOnInit() {
    //this.apiService.getUsers().subscribe((data)=>{
