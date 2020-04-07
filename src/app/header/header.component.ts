@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   constructor(public session: SessionStorageService) { }
 
   ngOnInit() {
+    alert("Hello " + this.session.get("username"));
     this.username = this.session.get("username");
   }
   @ViewChild('navBurger', {static: false}) navBurger: ElementRef;
