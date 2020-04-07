@@ -46,11 +46,15 @@
                             Upload
                             </a>
                             <a routerLink="/newUser" routerLinkActive="active" class="button has-background-link has-text-white">
+                           <div *ngIf="!username">
+                            <a class="button has-background-link has-text-white">
                             Sign up
                             </a>
                             <a routerLink="/login" routerLinkActive="active" class="button has-background-link has-text-white">
                             Log in
                             </a>
+                            </div>
+                            <div *ngIf="username">Welcome, {{username}}!</div>
                             
                         </div>
                     </div>  
