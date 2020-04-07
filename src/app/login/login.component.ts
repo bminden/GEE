@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import {SessionStorageService, SessionStorage } from 'angular-web-storage';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,7 @@ export class LoginComponent implements OnInit {
    * This opens up the apiService to this component
    * @param apiService The api service is what connects the components to the backend API
    */
-  constructor(private apiService: ApiService) { } 
+  constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService) { } 
   /**
    * This method calls the getUsers method in app.service to call the api.
    * It then updates the angular page with a yes or no value deciding if the user
@@ -35,7 +37,8 @@ export class LoginComponent implements OnInit {
       alert("Bad account information");
      } 
      else{
-      alert("Verified");
+      this.session.set("username",text);
+      this.router.navigateByUrl("home");
      }
     });
   }
@@ -44,6 +47,7 @@ export class LoginComponent implements OnInit {
    * Nothing to do on Init
    */
   ngOnInit() {
+    this.session.remove("username");
   }
 
 }

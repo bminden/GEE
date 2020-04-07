@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {SessionStorageService, SessionStorage } from 'angular-web-storage';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,11 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  username: String;
+  constructor(public session: SessionStorageService) { }
 
   ngOnInit() {
+    this.username = this.session.get("username");
   }
   @ViewChild('navBurger', {static: false}) navBurger: ElementRef;
   @ViewChild('navMenu', {static: false}) navMenu: ElementRef;
