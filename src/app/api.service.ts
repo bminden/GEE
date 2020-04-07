@@ -16,4 +16,17 @@ export class ApiService {
       }
     });
   }
+
+  public registerUser (usr, pwd, email){
+    return this.httpClient.get('http://198.211.98.83:3002/registerUser', {
+      params:{
+        username: usr,
+        password: pwd,
+        email: email
+      }
+    });
+  }
+
+
+
 }

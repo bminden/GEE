@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Sign Up</title>
+    <meta charset="utf-8" />
+    <style>
+    html { overflow-y: hidden; }      
+      div.size {
+        margin: auto;
+        width: 70%;
+        overflow-y: hidden;
+      }
+      div.center {
+        padding: 15px;
+        text-align: center;
+        font-size: 2.2em;
+        overflow-y: hidden;
+        }
+      </style>
+
+</head>
+
+<body>
+  <br><br>
+  <div class= center>
+    <h1 class="title">New User Sign up</h1>
+    </div>
+  <div class=size>
+  <div class="container is-desktop" >
+    <div class="notification has-background-white">
+    <div id="login"><!--May use external CSS to move to center-->
+        <form>
+            <label for="userName">Username</label>
+            <input class="input" placeholder="Username" type="text" id="userName" required="required" name="userName" #text><br><br>
+            <label for="password">Password</label>
+            <input class="input" placeholder="Username" type="password" id="password" required="required" name="password" #password><br><br>
+            <label for="userName">Email</label>
+            <input class="input" placeholder="User Email" type="text" id="emailName" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter valid Email format" name="emailName" #email ><br><br>
+            <button class="button is-link" (click)="showText(text.value, password.value, email.value)" >Sign up!</button>
+        </form>
+            <br><br><br>
+           <!---
+            <label for="userName">Email Test</label>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" class="input" placeholder="User Email" id="email" name="email" #poop pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <input class="button is-link" (click)="showText(text.value, password.value, email.value)" type="submit">
+              </form>
+              --->
+            
+
+        
+    </div>
+    </div></div></div>
+
+    <br><br><br>
+
+
+</body>
+</html>

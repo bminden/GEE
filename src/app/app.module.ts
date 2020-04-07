@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { UploadpageComponent } from './uploadpage/uploadpage.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { ResultsComponent } from './results/results.component';
+import { NewUserComponent } from './new-user/new-user.component';
 
 import { AngularWebStorageModule } from 'angular-web-storage';
 
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'uploadpage', component: UploadpageComponent},
   {path: 'userpage', component: UserpageComponent},
-  {path: 'results', component: ResultsComponent}
+  {path: 'results', component: ResultsComponent},
+  {path: 'newUser', component: NewUserComponent}
 ];
 
 @NgModule({
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
     UploadpageComponent,
     UserpageComponent,
     ResultsComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
