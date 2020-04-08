@@ -13,6 +13,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.username = this.session.get("username");
   }
+
+  ngDoCheck() {
+    this.username = this.session.get("username");
+  }
   @ViewChild('navBurger', {static: false}) navBurger: ElementRef;
   @ViewChild('navMenu', {static: false}) navMenu: ElementRef;
 
