@@ -24,4 +24,8 @@ export class HeaderComponent implements OnInit {
     this.navBurger.nativeElement.classList.toggle('is-active');
     this.navMenu.nativeElement.classList.toggle('is-active');
   }
+
+  handleClick(event: Event) {
+    this.session.remove("username");
+  }
 }

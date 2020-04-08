@@ -48,7 +48,6 @@ export class LoginComponent implements OnInit {
    * Nothing to do on Init
    */
   ngOnInit() {
-    this.session.remove("username");
   }
 
 }
