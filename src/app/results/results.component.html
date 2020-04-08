@@ -1,49 +1,133 @@
 <!DOCTYPE html>
 
+
+
 <html lang="en">
 
 <head>
     <title>Results</title>
     <meta charset="utf-8" />
-    <style>      
+    <style>
         div.size {
-          margin: auto;
-          width: 70%;
+            margin: auto;
+            width: 70%;
         }
+
         div.center {
-        padding: 15px;
-        text-align: center;
-        font-size: 2.2em;
+            padding: 15px;
+            text-align: center;
+            font-size: 2.2em;
         }
-        </style>
+
+        div.centerContent {
+            padding: 15px;
+            text-align: center;
+        }
+
+        html {
+            overflow: inherit
+        }
+    </style>
 
 
 </head>
 
 <body>
-    <div class= center id=ResultsHeader>
+    <div class=center id=ResultsHeader>
         <h1>Results</h1>
     </div>
     <!--End ResultsHeader-->
 
-    <!--Placeholder images here for proof of concept-->
-    <div class="container is-desktop" >
-        <div class="notification">
-                <img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg" alt="Resource image" style="width:300px;height:300px; float:left;">
-                <p>This unit on thermal energy transfer begins with students testing whether a new plastic cup sold by a store keeps a drink colder for longer compared to the regular plastic cup that comes free with the drink. Students find that the drink in the regular cup warms up more than the drink in the special cup. This prompts students to identify features of the cups that are different, such as the lid, walls, and hole for the straw, that might explain why one drink warms up more than the other.</p><br>
-                    <p>Students investigate the different cup features they conjecture are important to explaining the phenomenon, starting with the lid. They model how matter can enter or exit the cup via evaporation However, they find that in a completely closed system, the liquid inside the cup still changes temperature. This motivates the need to trace the transfer of energy into the drink as it warms up. Through a series of lab investigations and simulations, students find that there are two ways to transfer energy into the drink: (1) the absorption of light and (2) thermal energy from the warmer air around the drink. They are then challenged to design their own drink container that can perform as well as the store-bought container, following a set of design criteria and constraints.</p><br>
-                    <p>This unit builds toward the following NGSS Performance Expectations (PEs) as described in the OpenSciEd Scope & Sequence: MS-PS1-4*, MS-PS3-3, MS-PS3-4, MS-PS3-5, MS-PS4-2*, MS-ETS1-4. The OpenSciEd units are designed for hands-on learning and therefore materials are necessary to teach the unit. These materials can be purchased as science kits or assembled using the kit material list.</p><br>
-            <button class="button">Download Resource</button>
+    <div class="columns" id="columnContent">
+        <!--Used for making columns and holds all contnet in the columns-->
+        <div class="column is-one-fifth" id=leftColumn>
+            <div class=center>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAMFBMVEXMzMyZmZm+vr7ExMTHx8ehoaGdnZ26urqvr6/AwMC2trakpKSgoKCoqKiysrKrq6vSeg5QAAABtElEQVR4nO3Wy5aDIBBFUQGpKPj4/79tkIfS9iCYXhmdPTIxuRYUosMAAAAAAAAAAAAAAAAAAMA7JpUPZlXo47PzIt59MeRqlJL4ahPXdLx+LaQJDH/Mh5tadTIOcfzizOhETV8KucRNq6iauKvtcioPN4x+/EJIIy+E/Mmr13nKqSUdLKqujNCqdM1J2cch7zDG6Jooaj7PrGXeJ7XXL8NvTSrEPA95s7KSGGZ8Du2w+3FJW0b9us7MrvwQx759EtJXVr21JWZJvsHDDMn549BGF1a1/yikr6ywLq0eR22PFtU+1fMlX7ctfBDSVZaecmts3GbkTGwGuoeZuC/fzpCesqpjxpdz/pfrydDGWwu7Qx6VNcZdxp+r1f/6udz3oM6Q52XVbXFr722r5I9HSWdIT1l2yUM75t+VW9o2SynchUauO+aTkK6yVmVTd3zcBOMGFD/MzXPj2EjdvY1dIX1lhf/6eG/7dNXwlA3rVbdPWXt0xd9a0hXSV1Z9J5H0+PDxsH0nyc9CU16mHoX0ljWYyYrYrcz37Q1uzj2Jk9A2pSMEAAAAAAAAAAAAAAAAAAD8hx+EAgxoODBEjgAAAABJRU5ErkJggg=="
+                    alt="placeholder image">
+            </div>
+        </div>
+
+        <!--Placeholder images here for proof of concept-->
+        <div class="column is-half" id="centerColumn">
+            <div class=centerContent>
+                <div class="container is-desktop">
+                    <div class="notification">
+                        <img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
+                            alt="Resource image" style="width:225px;height:225px; float:left;">
+                        <p>This unit on thermal energy transfer begins with students testing whether a new plastic cup
+                            sold
+                            by a
+                            store
+                            keeps a drink colder for longer compared to the regular plastic cup that comes free with the
+                            drink.
+                            Students
+                            find that the drink in the regular cup warms up more than the drink in the special cup. This
+                            prompts
+                            students to identify features of the cups that are different, such as the lid, walls, and
+                            hole
+                            for the
+                            straw, that might explain why one drink warms up more than the other.</p><br>
+                        <div class=center>
+                            <button class="button">Download Resource</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column" id=rightColumn>
+            <p>Search matching text to be determined.</p>
         </div>
     </div>
+    <hr>
 
-   <!----- <div id="column3" style="float:right">
-        <img src="images/imageName.png" alt="Image" />
-    </div> -->
+    <!--This is just a temp block to show more then one resource REMOVE LATER-->
+    <div class="columns" id="columnContent">
+        <!--Used for making columns and holds all contnet in the columns-->
+        <div class="column is-one-fifth" id=leftColumn>
+            <div class=center>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAMFBMVEXMzMyZmZm+vr7ExMTHx8ehoaGdnZ26urqvr6/AwMC2trakpKSgoKCoqKiysrKrq6vSeg5QAAABtElEQVR4nO3Wy5aDIBBFUQGpKPj4/79tkIfS9iCYXhmdPTIxuRYUosMAAAAAAAAAAAAAAAAAAMA7JpUPZlXo47PzIt59MeRqlJL4ahPXdLx+LaQJDH/Mh5tadTIOcfzizOhETV8KucRNq6iauKvtcioPN4x+/EJIIy+E/Mmr13nKqSUdLKqujNCqdM1J2cch7zDG6Jooaj7PrGXeJ7XXL8NvTSrEPA95s7KSGGZ8Du2w+3FJW0b9us7MrvwQx759EtJXVr21JWZJvsHDDMn549BGF1a1/yikr6ywLq0eR22PFtU+1fMlX7ctfBDSVZaecmts3GbkTGwGuoeZuC/fzpCesqpjxpdz/pfrydDGWwu7Qx6VNcZdxp+r1f/6udz3oM6Q52XVbXFr722r5I9HSWdIT1l2yUM75t+VW9o2SynchUauO+aTkK6yVmVTd3zcBOMGFD/MzXPj2EjdvY1dIX1lhf/6eG/7dNXwlA3rVbdPWXt0xd9a0hXSV1Z9J5H0+PDxsH0nyc9CU16mHoX0ljWYyYrYrcz37Q1uzj2Jk9A2pSMEAAAAAAAAAAAAAAAAAAD8hx+EAgxoODBEjgAAAABJRU5ErkJggg=="
+                    alt="placeholder image">
+            </div>
+        </div>
+
+        <!--Placeholder images here for proof of concept-->
+        <div class="column is-half" id="centerColumn">
+            <div class=centerContent>
+                <div class="container is-desktop">
+                    <div class="notification">
+                        <img src="https://raw.githubusercontent.com/jgthms/bulma/master/docs/images/bulma-banner.png"
+                            alt="Resource image" style="width:225px;height:225px; float:left;">
+                        <p>This unit on thermal energy transfer begins with students testing whether a new plastic cup
+                            sold
+                            by a
+                            store
+                            keeps a drink colder for longer compared to the regular plastic cup that comes free with the
+                            drink.
+                            Students
+                            find that the drink in the regular cup warms up more than the drink in the special cup. This
+                            prompts
+                            students to identify features of the cups that are different, such as the lid, walls, and
+                            hole
+                            for the
+                            straw, that might explain why one drink warms up more than the other.</p><br>
+                        <div class=center>
+                            <button class="button">Download Resource</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column" id=rightColumn>
+            <p>Search matching text to be determined.</p>
+        </div>
+    </div>
+    <!--End of columns contnet div-->
+    <hr>
+    <!--End REMOVE LATER section-->
     <br><br>
-    <!--End column 3 div-->
 
-
-    
 </body>
+
 </html>
