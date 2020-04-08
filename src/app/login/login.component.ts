@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
      } 
      else{
       this.session.set("username",text);
-      this.router.navigateByUrl("home");
+      alert("You have been logged in, " + this.session.get("username") + "!");
+      //this.router.navigateByUrl("home");
      }
     });
   }
