@@ -34,7 +34,7 @@
                     <div class="field-body">
                     <div class="field">
                         <p class="control">
-                            <input class="input" type="text">
+                            <input class="input" type="text" #fileTitle>
                         </p>
                     </div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="field-body">
                         <div class="control">
                             <div class="select">
-                            <select>
+                            <select id="grade" #grade>
                                 <option>Select Grade</option>
                                 <option>6th</option>
                                 <option>7th</option>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="control">
                             <div class="select">
-                            <select>
+                            <select id="subject" #subject>
                                 <option>Select Subject</option>
                                 <option>Biology</option>
                                 <option>Earth Science</option>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="control">
                             <div class="select">
-                            <select>
+                            <select id="contentType" #contentType>
                                 <option>Content Type</option>
                                 <option>-</option>
                                 <option>-</option>
@@ -89,15 +89,15 @@
                     <div class="field is-narrow">
                         <div class="control">
                         <label class="checkbox">
-                            <input type="checkbox">
+                            <input type="checkbox" #workSheets>
                             Worksheets
                         </label>
                         <label class="checkbox">
-                            <input type="checkbox">
+                            <input type="checkbox" #labs>
                             Labs
                         </label>
                         <label class="checkbox">
-                            <input type="checkbox">
+                            <input type="checkbox" #exams>
                             Assessment
                         </label>
                         </div>
@@ -111,7 +111,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                        <textarea class="textarea" placeholder="Explain the content of this upload"></textarea>
+                        <textarea class="textarea" placeholder="Explain the content of this upload" #description></textarea>
                         </div>
                     </div>
                     </div>
@@ -174,7 +174,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                        <button class="button has-background-link has-text-white">
+                        <button class="button has-background-link has-text-white" (click)="uploader(fileTitle.value, contentType.value, gradeLevel.value, subject.value, exams.value, labs.value, worksheets.value, description.value)">
                             Submit
                         </button>
                         </div>

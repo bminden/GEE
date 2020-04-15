@@ -26,7 +26,31 @@ export class ApiService {
       }
     });
   }
+  //public search (keywords, subject, contentType, gradeLevel){
+  public search (keywords, subject, contentType, gradeLevel, includes){
+    return this.httpClient.get('http://198.211.98.83:3002/search', {
+      params:{
+        keywords: keywords,
+        subject: subject,
+        contentType: contentType,
+        gradeLevel: gradeLevel,
+        includes: includes
+      }
+    });
+  }
 
+  public upload (fileTitle, subject, contentType, gradeLevel, includes, description){
+    return this.httpClient.get('http://198.211.98.83:3002/upload', {
+      params:{
+        fileTitle: fileTitle,
+        subject: subject,
+        contentType: contentType,
+        gradeLevel: gradeLevel,
+        includes: includes,
+        description: description
+      }
+    });
+  }
 
 
 }
