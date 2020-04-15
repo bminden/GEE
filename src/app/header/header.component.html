@@ -41,13 +41,13 @@
 
                 </div>
                 <div class="navbar-item">
-                    <div *ngIf="!username">
+                    
                     <div class="buttons">
                         <a routerLink="/uploadpage" routerLinkActive="active"
                             class="button has-background-link has-text-white">
                             Upload
                         </a>
-                            
+                            <div *ngIf="!username">
                                 <a class="button has-background-link has-text-white" routerLink="/newUser" routerLinkActive="active">
                                     Sign up
                                 </a>
