@@ -15,6 +15,11 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { ResultsComponent } from './results/results.component';
 import { NewUserComponent } from './new-user/new-user.component';
 
+import { ContactComponent } from './contact/contact.component';
+import { CopyrightComponent } from './copyright/copyright.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { SupportComponent } from './support/support.component';
+
 import { AngularWebStorageModule } from 'angular-web-storage';
 
 const appRoutes: Routes = [
@@ -25,7 +30,11 @@ const appRoutes: Routes = [
   {path: 'uploadpage', component: UploadpageComponent},
   {path: 'userpage', component: UserpageComponent},
   {path: 'results', component: ResultsComponent},
-  {path: 'newUser', component: NewUserComponent}
+  {path: 'newUser', component: NewUserComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'copyright', component: CopyrightComponent},
+  {path: 'privacy', component: PrivacyComponent},
+  {path: 'support', component: SupportComponent}
 ];
 
 @NgModule({
@@ -39,7 +48,11 @@ const appRoutes: Routes = [
     UploadpageComponent,
     UserpageComponent,
     ResultsComponent,
-    NewUserComponent
+    NewUserComponent,
+    ContactComponent,
+    CopyrightComponent,
+    PrivacyComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
