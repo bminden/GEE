@@ -17,6 +17,12 @@ export class ApiService {
     });
   }
 
+  public download (){
+    return this.httpClient.get('http://198.211.98.83:3002/download', {
+      
+    });
+  }
+
   public registerUser (usr, pwd, email){
     return this.httpClient.get('http://198.211.98.83:3002/registerUser', {
       params:{
@@ -27,7 +33,7 @@ export class ApiService {
     });
   }
   //public search (keywords, subject, contentType, gradeLevel){
-  public search (keywords, subject, contentType, gradeLevel, includes){
+  public search (keywords?, subject?, contentType?, gradeLevel?, includes?){
     return this.httpClient.get('http://198.211.98.83:3002/search', {
       params:{
         keywords: keywords,
