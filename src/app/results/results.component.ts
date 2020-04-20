@@ -19,7 +19,7 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
   }
-  search()
+  download()
   {
     this.apiService.download().subscribe((data)=>{
       console.log(data);
