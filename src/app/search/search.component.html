@@ -29,7 +29,7 @@
     <!--Never delt with input data in HTML yet so this may need some fixes-->
     <div class="container is-desktop" >
         <div class="notification">
-    <form action="/PATH FOR HANDLING INPUT">
+    <form >
         <div class=size>
         <div class="columns">
             <div class="column is-half">
@@ -38,7 +38,7 @@
                 <label for="grade">Grade Level</label>
                 <div class="control">
                     <div class="select">
-                        <select id="grade">
+                        <select id="grade" #gradeLevel>
                             <option value="Any">Any</option>
                             <option value="6th">6th</option>
                             <option value="7th">7th</option>
@@ -58,7 +58,7 @@
                     <label for="subject">Subject</label>
                     <div class="control">
                         <div class="select">
-                    <select id="subject">
+                    <select id="subject" #subject>
                         <option value="Any">Any</option>
                         <option value="tempSubject1">TEMP SUBJECT 1</option>
                         <option value="tempSubject2">TEMP SUBJECT 2</option>
@@ -79,7 +79,7 @@
             <label for="contentType">Content Type</label>
             <div class="control">
                 <div class="select">
-            <select id="contentType">
+            <select id="contentType" #contentType>
 				<option value="Any">Any</option>
                 <option value="tempContentType1">TEMP CONTENT TYPE 1</option>
                 <option value="tempContentType2">TEMP CONTENT TYPE 2</option>
@@ -97,27 +97,28 @@
             <!--Check boxs for includes-->
             <div class="field">
                 <div class="control">
-                    <input type="checkbox" id="worksheet" name="worksheet" value="worksheet">
+                    <input type="checkbox" id="worksheet" name="worksheet" value="worksheet" #worksheets>
                     <label class="checkbox" for="worksheet">Worksheets</label><br><br>
-                    <input type="checkbox" id="lab" name="lab" value="lab">
+                    <input type="checkbox" id="lab" name="lab" value="lab" #labs>
                     <label class="checkbox" for="lab">Labs</label><br><br>
-                    <input type="checkbox" id="test" name="test" value="test">
-                    <label class="checkbox" for="test">Tests</label><br><br>
+                    <input type="checkbox" id="exam" name="exam" value="exam" #exams>
+                    <label class="checkbox" for="exam">Exams</label><br><br>
                 </div>
             </div>
 
             <!--Test box for keyword input-->
             <label for="keyword">Keyword(s)</label>
             <div class="control">
-            <input type="text" id="keyword" name="keyword" class="input"><br><br>
-            <input type="submit" value="Search" class="button is-primary">
+            <input type="text" id="keyword" name="keyword" class="input" #keyword><br><br>
+            <button class="button is-link" (click)="searcher(keyword.value, contentType.value, gradeLevel.value, subject.value, exams.value, labs.value, worksheets.value)"  required="required" >Search</button>
             </div>
+            <div></div>
 
         </div></div>
         <!--End column 2 div--></div>
     </form>
         </div></div>
-
+        <!--test -->
    <!----- <div id="column3" style="float:right">
         <img src="images/imageName.png" alt="Image" />
     </div> -->
