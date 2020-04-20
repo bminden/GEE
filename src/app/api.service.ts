@@ -21,7 +21,7 @@ export class ApiService {
 
   public download (){
     let headers = new HttpHeaders({
-      "No header" :"No header" // Auth header
+       // Auth header
       //No other headers needed
   });
     this.httpClient
