@@ -28,7 +28,7 @@ export class ApiService {
     .get("http://198.211.98.83:3002/download", { headers, responseType: "blob" }) //set response Type properly (it is not part of headers)
     .toPromise()
     .then(blob => {
-        saveAs(blob, "fdafa.txt"); 
+        saveAs(blob); 
     })
     .catch(err => console.error("download error = ", err))
     return this.httpClient.get('http://198.211.98.83:3002/download', {
