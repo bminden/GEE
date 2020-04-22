@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { saveAs } from 'file-saver';
+import {HttpHeaders} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +19,23 @@ export class ApiService {
     });
   }
 
+  public download (filename:string){
+    let headers = new HttpHeaders({
+       // Auth header
+      //No other headers needed
+  });
+    this.httpClient
+    .get("http://198.211.98.83:3002/download", { headers, responseType: "blob" }) //set response Type properly (it is not part of headers)
+    .toPromise()
+    .then(blob => {
+        saveAs(blob, filename); 
+    })
+    .catch(err => console.error("download error = ", err))
+    return this.httpClient.get('http://198.211.98.83:3002/download', {
+      
+    });
+  }
+
   public registerUser (usr, pwd, email){
     return this.httpClient.get('http://198.211.98.83:3002/registerUser', {
       params:{
@@ -27,7 +46,7 @@ export class ApiService {
     });
   }
   //public search (keywords, subject, contentType, gradeLevel){
-  public search (keywords, subject, contentType, gradeLevel, includes){
+  public search (keywords?, subject?, contentType?, gradeLevel?, includes?){
     return this.httpClient.get('http://198.211.98.83:3002/search', {
       params:{
         keywords: keywords,

@@ -55,13 +55,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-3cafdc4c53e9641094b60d182b957c8c"' : 'data-target="#xs-components-links-module-AppModule-3cafdc4c53e9641094b60d182b957c8c"' }>
+                                            'data-target="#components-links-module-AppModule-271d114b1dedd0aaff7bd57aa37b5a1a"' : 'data-target="#xs-components-links-module-AppModule-271d114b1dedd0aaff7bd57aa37b5a1a"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-3cafdc4c53e9641094b60d182b957c8c"' :
-                                            'id="xs-components-links-module-AppModule-3cafdc4c53e9641094b60d182b957c8c"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-271d114b1dedd0aaff7bd57aa37b5a1a"' :
+                                            'id="xs-components-links-module-AppModule-271d114b1dedd0aaff7bd57aa37b5a1a"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -81,6 +81,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/LoginComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">LoginComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/NewUserComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">NewUserComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/ResultsComponent.html"
