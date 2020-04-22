@@ -27,6 +27,7 @@
         html {
             overflow: inherit
         }
+ 
     </style>
 
 
@@ -47,13 +48,21 @@
             </div>
         </div>
 
+        <!---pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" [zoom]="0.25" [show-all]="false" [page]="1"></pdf-viewer--->
+        
+
+        <!--iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#toolbar=0"  scrolling="no" style=" width: 550px; height: 500px;  overflow: hidden;" ></iframe--->
+        
+        
         <!--Placeholder images here for proof of concept-->
         <div class="column is-half" id="centerColumn">
             <div class=centerContent>
                 <div class="container is-desktop">
                     <div class="notification">
-                        <img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
-                            alt="Resource image" style="width:225px;height:225px; float:left;">
+                        
+                        <!--img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
+                            alt="Resource image" style="width:225px;height:225px; float:left;"-->
+                            <pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" [zoom]="0.2" [show-all]="false" [page]="1"></pdf-viewer>
                         <p>This unit on thermal energy transfer begins with students testing whether a new plastic cup
                             sold
                             by a
