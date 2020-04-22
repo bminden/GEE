@@ -24,6 +24,30 @@
             text-align: center;
         }
 
+        .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: #ccc;
+        }
+
+        .feedback {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
         html {
             overflow: inherit
         }
@@ -42,6 +66,7 @@
     <div class="columns" id="columnContent">
         <!--Used for making columns and holds all contnet in the columns-->
         <div class="column is-one-fifth" id=leftColumn>
+            <!--Left Column for image of content type-->
             <div class=center>
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAMFBMVEXMzMyZmZm+vr7ExMTHx8ehoaGdnZ26urqvr6/AwMC2trakpKSgoKCoqKiysrKrq6vSeg5QAAABtElEQVR4nO3Wy5aDIBBFUQGpKPj4/79tkIfS9iCYXhmdPTIxuRYUosMAAAAAAAAAAAAAAAAAAMA7JpUPZlXo47PzIt59MeRqlJL4ahPXdLx+LaQJDH/Mh5tadTIOcfzizOhETV8KucRNq6iauKvtcioPN4x+/EJIIy+E/Mmr13nKqSUdLKqujNCqdM1J2cch7zDG6Jooaj7PrGXeJ7XXL8NvTSrEPA95s7KSGGZ8Du2w+3FJW0b9us7MrvwQx759EtJXVr21JWZJvsHDDMn549BGF1a1/yikr6ywLq0eR22PFtU+1fMlX7ctfBDSVZaecmts3GbkTGwGuoeZuC/fzpCesqpjxpdz/pfrydDGWwu7Qx6VNcZdxp+r1f/6udz3oM6Q52XVbXFr722r5I9HSWdIT1l2yUM75t+VW9o2SynchUauO+aTkK6yVmVTd3zcBOMGFD/MzXPj2EjdvY1dIX1lhf/6eG/7dNXwlA3rVbdPWXt0xd9a0hXSV1Z9J5H0+PDxsH0nyc9CU16mHoX0ljWYyYrYrcz37Q1uzj2Jk9A2pSMEAAAAAAAAAAAAAAAAAAD8hx+EAgxoODBEjgAAAABJRU5ErkJggg=="
                     alt="placeholder image">
@@ -56,6 +81,7 @@
         
         <!--Placeholder images here for proof of concept-->
         <div class="column is-half" id="centerColumn">
+            <!--Center is the resource with preview image short discription, feedback and download button-->
             <div class=centerContent>
                 <div class="container is-desktop">
                     <div class="notification">
@@ -80,7 +106,14 @@
                             straw, that might explain why one drink warms up more than the other.</p><br>
                         </div>
                         <div class=center>
-                            <button class="button">Download Resource</button>
+                            <button class="button" (click) = "download()">Download Resource</button>
+                        </div>
+                        <div id="feedbackButton">
+                            <button type="button" (click) = "collapse()"class="collapsible">Click for Feedback</button>
+                            <div class="feedback">
+                                <p>feedback placeholder text
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,6 +121,7 @@
         </div>
 
         <div class="column" id=rightColumn>
+            <!--Right column for infromation an search result-->
             <p>Search matching text to be determined.</p>
         </div>
     </div>
@@ -126,6 +160,13 @@
                         <div class=center>
                             <button class="button">Download Resource</button>
                         </div>
+                        <div id="feedbackButton">
+                            <button type="button" (click) = "collapse()"class="collapsible">Click for Feedback</button>
+                            <div class="feedback">
+                                <p>feedback placeholder text
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -140,6 +181,8 @@
     <!--End REMOVE LATER section-->
     <br><br>
 
+    <!--User for collapsible section-->
+   
 </body>
 
 </html>
