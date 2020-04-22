@@ -16,6 +16,8 @@ import { ResultsComponent } from './results/results.component';
 import { NewUserComponent } from './new-user/new-user.component';
 
 import { AngularWebStorageModule } from 'angular-web-storage';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 
 const appRoutes: Routes = [
   {path: '', component: HomepageComponent},
@@ -45,6 +47,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AngularWebStorageModule,
     HttpClientModule,
+    PdfViewerModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }),

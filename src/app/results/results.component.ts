@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
   selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css']
+  
 })
 export class ResultsComponent implements OnInit {
 
@@ -16,6 +17,7 @@ export class ResultsComponent implements OnInit {
    * @param apiService The api service is what connects the components to the backend API
    */
   constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService) { } 
+
 
   ngOnInit() {
   }
