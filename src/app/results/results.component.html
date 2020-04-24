@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 
-
-
 <html lang="en">
 
 <head>
@@ -46,6 +44,10 @@
             display: none;
             overflow: hidden;
             background-color: #f1f1f1;
+        }
+
+        .commentText {
+            margin: 10px;
         }
 
         html {
@@ -115,6 +117,51 @@
                                 </p>
                             </div>
                         </div>
+                        <div id="feedbackButton">
+                            <button type="button" class="collapsible">Click for Feedback</button>
+                            <div class="feedback">
+                                <!--Start of collapsable section-->
+                                <div id="comments">
+                                    <div id="userComment" style="padding:10px;">
+                                        <!--Section for user comment-->
+                                        <img src="https://www.bh-bims.org/wp-content/uploads/2017/02/profile-placeholder.gif"
+                                            alt="User image" style="width:45px; height:45px; float:left;">
+                                        <div class="commentText">
+                                            <p>7.8/10 too much water.
+                                            </p>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <!--End user comment-->
+                                    <div id="userComment" style="padding:10px;">
+                                        <!--Section for user comment-->
+                                        <img src="https://www.bh-bims.org/wp-content/uploads/2017/02/profile-placeholder.gif"
+                                            alt="User image" style="width:45px; height:45px; float:left;">
+                                        <!--User profile image if used-->
+                                        <div class="commentText">
+                                            <p>Example text ment to repesent a user comment because i can't think of
+                                                another
+                                                good example of a good comment.
+                                            </p>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <!--End user comment-->
+                                </div>
+                                <!--End comments-->
+                                <div id="enterComment" style="margin-top: 5px;">
+                                    You can submit a comment about this resource here:
+                                    <form action="/comment.php">
+                                        <textarea name="comment" rows="10"
+                                            cols="30">Enter comment feedback here</textarea>
+                                        <br>
+                                        <input type="submit" value="Submit Comment">
+                                    </form>
+                                </div>
+                                <!--End enter comment-->
+                            </div>
+                            <!--End feedback collapsable section-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,7 +174,15 @@
     </div>
     <hr>
 
-    <!--This is just a temp block to show more then one resource REMOVE LATER-->
+
+
+
+
+
+
+
+
+    <!--This is just a temp block to show more then one resource REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER-->
     <div class="columns" id="columnContent">
         <!--Used for making columns and holds all contnet in the columns-->
         <div class="column is-one-fifth" id=leftColumn>
@@ -161,11 +216,46 @@
                             <button class="button">Download Resource</button>
                         </div>
                         <div id="feedbackButton">
-                            <button type="button" (click) = "collapse()"class="collapsible">Click for Feedback</button>
+
+                            <button type="button" class="collapsible">Click for Feedback</button>
                             <div class="feedback">
-                                <p>feedback placeholder text
-                                </p>
+                                <!--Start of collapsable section-->
+                                <div id="comments">
+                                    <div id="userComment" style="padding:10px;">
+                                        <!--Section for user comment-->
+                                        <img src="https://www.bh-bims.org/wp-content/uploads/2017/02/profile-placeholder.gif"
+                                            alt="User image" style="width:45px; height:45px; float:left;">
+                                        <p>3.2/10 Not enough water.
+                                        </p>
+                                        <hr>
+                                    </div>
+                                    <!--End user comment-->
+                                    <div id="userComment" style="padding:10px;">
+                                        <!--Section for user comment-->
+                                        <img src="https://www.bh-bims.org/wp-content/uploads/2017/02/profile-placeholder.gif"
+                                            alt="User image" style="width:45px; height:45px; float:left;">
+                                        <!--User profile image if used-->
+                                        <p>Another example comment ment to show this section's design just with
+                                            different text
+                                            to confirm it is indeeded, a different comment.
+                                        </p>
+                                        <hr>
+                                    </div>
+                                    <!--End user comment-->
+                                </div>
+                                <!--End comments-->
+                                <div id="enterComment" style="margin-top: 5px;">
+                                    You can submit additional feedback to be displayed here
+                                    <form action="/comment.php">
+                                        <textarea name="comment" rows="10"
+                                            cols="30">Enter comment feedback here</textarea>
+                                        <br>
+                                        <input type="submit" value="Submit Comment">
+                                    </form>
+                                </div>
+                                <!--End enter comment-->
                             </div>
+                            <!--End feedback collapsable section-->
                         </div>
                     </div>
                 </div>
@@ -178,11 +268,24 @@
     </div>
     <!--End of columns contnet div-->
     <hr>
-    <!--End REMOVE LATER section-->
+    <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
     <br><br>
-
-    <!--User for collapsible section-->
-   
+    <!--Used for collapsible section-->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        } 
+    </script>
 </body>
 
 </html>
