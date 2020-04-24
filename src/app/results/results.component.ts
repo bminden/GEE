@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
 export class ResultsComponent implements OnInit {
 
   public isCollapsed = false;
-  constructor() { }
+  //constructor() { }
 
    /**
    * This opens up the apiService to this component
@@ -50,7 +50,7 @@ export class ResultsComponent implements OnInit {
     }
   }
 
-  collapse() {
+  /*collapse() {
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
@@ -66,5 +66,5 @@ export class ResultsComponent implements OnInit {
       }
       );
     }
-  }
+  }*/
 }
