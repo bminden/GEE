@@ -21,6 +21,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { SupportComponent } from './support/support.component';
 
 import { AngularWebStorageModule } from 'angular-web-storage';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 
 const appRoutes: Routes = [
   {path: '', component: HomepageComponent},
@@ -58,6 +60,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AngularWebStorageModule,
     HttpClientModule,
+    PdfViewerModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }),

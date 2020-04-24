@@ -130,6 +130,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#session">session</a>
+                            </li>
+                            <li>
                                 <a href="#users">users</a>
                             </li>
                         </ul>
@@ -165,12 +169,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(apiService: <a href="../injectables/ApiService.html">ApiService</a>)</code>
+<code>constructor(session: SessionStorageService, apiService: <a href="../injectables/ApiService.html">ApiService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/homepage/homepage.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/homepage/homepage.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -187,6 +191,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                                <tr>
+                                                        <td>session</td>
+                                                  
+                                                        <td>
+                                                                    <code>SessionStorageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                                 <tr>
                                                         <td>apiService</td>
                                                   
@@ -239,8 +255,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/homepage/homepage.component.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/homepage/homepage.component.ts:16</a></div>
                 </td>
             </tr>
 
@@ -266,6 +282,34 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="session"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            session</b>
+                            <a href="#session"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SessionStorageService</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/homepage/homepage.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="users"></a>
                         <span class="name">
                             <b>
@@ -276,7 +320,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/homepage/homepage.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/homepage/homepage.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -291,6 +335,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ApiService } from &#x27;../api.service&#x27;;
+import {SessionStorageService, SessionStorage } from &#x27;angular-web-storage&#x27;;
 
 @Component({
   selector: &#x27;app-homepage&#x27;,
@@ -301,7 +346,7 @@ import { ApiService } from &#x27;../api.service&#x27;;
 
 export class HomepageComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor(public session: SessionStorageService, private apiService: ApiService) { }
   users;
   ngOnInit() {
    //this.apiService.getUsers().subscribe((data)&#x3D;&gt;{
@@ -370,7 +415,7 @@ export class HomepageComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="columns is-mobile is-centered">    <div class="column is-half">        <div id="welcomeImageScrolling" class="imgcenter">            <img src="https://media.graytvinc.com/images/690*388/ops+logo+new+1280.jpg">        </div>                <div class="field has-addons">            <div class="control is-expanded">                <input class="input" type="text" placeholder="Search lesson plans">            </div>            <div class="control">                <a routerLink="/search" routerLinkActive="active" class="button has-background-link has-text-white">                Search                </a>            </div>        </div>        <div id="frontText" class="center1">            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomepageComponent'};
 </script>

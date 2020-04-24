@@ -53,6 +53,7 @@
         html {
             overflow: inherit
         }
+ 
     </style>
 
 
@@ -74,15 +75,25 @@
             </div>
         </div>
 
+        <!---pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" [zoom]="0.25" [show-all]="false" [page]="1"></pdf-viewer--->
+        
+
+        <!--iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#toolbar=0"  scrolling="no" style=" width: 550px; height: 500px;  overflow: hidden;" ></iframe--->
+        
+        
         <!--Placeholder images here for proof of concept-->
         <div class="column is-half" id="centerColumn">
             <!--Center is the resource with preview image short discription, feedback and download button-->
             <div class=centerContent>
                 <div class="container is-desktop">
                     <div class="notification">
-                        <img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
-                            alt="Resource image" style="width:225px;height:225px; float:left;">
-                        <p>This unit on thermal energy transfer begins with students testing whether a new plastic cup
+                        <div class="column" >
+                        <!--img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
+                            alt="Resource image" style="width:225px;height:225px; float:left;"-->
+                            <pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" [zoom]="0.3" [show-all]="false" [page]="1" style="float:left;"></pdf-viewer>
+                        </div>
+                        <div class="column" >
+                            <p>This unit on thermal energy transfer begins with students testing whether a new plastic cup
                             sold
                             by a
                             store
@@ -95,8 +106,16 @@
                             hole
                             for the
                             straw, that might explain why one drink warms up more than the other.</p><br>
+                        </div>
                         <div class=center>
-                            <button class="button">Download Resource</button>
+                            <button class="button" (click) = "download()">Download Resource</button>
+                        </div>
+                        <div id="feedbackButton">
+                            <button type="button" (click) = "collapse()"class="collapsible">Click for Feedback</button>
+                            <div class="feedback">
+                                <p>feedback placeholder text
+                                </p>
+                            </div>
                         </div>
                         <div id="feedbackButton">
                             <button type="button" class="collapsible">Click for Feedback</button>
@@ -197,6 +216,7 @@
                             <button class="button">Download Resource</button>
                         </div>
                         <div id="feedbackButton">
+
                             <button type="button" class="collapsible">Click for Feedback</button>
                             <div class="feedback">
                                 <!--Start of collapsable section-->
@@ -249,22 +269,11 @@
     <!--End of columns contnet div-->
     <hr>
     <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
-
-
-
-
-
-
-
-
-
-
     <br><br>
     <!--Used for collapsible section-->
     <script>
         var coll = document.getElementsByClassName("collapsible");
         var i;
-
         for (i = 0; i < coll.length; i++) {
             coll[i].addEventListener("click", function () {
                 this.classList.toggle("active");

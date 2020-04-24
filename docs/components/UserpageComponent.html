@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>ResultsComponent</li>
+  <li>UserpageComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/results/results.component.ts</code>
+    <code>src/app/userpage/userpage.component.ts</code>
 </p>
 
 
@@ -91,19 +91,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-results</code></td>
+                <td class="col-md-9"><code>app-userpage</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./results.component.css</code></td>
+                <td class="col-md-9"><code>./userpage.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./results.component.html</code></td>
+                <td class="col-md-9"><code>./userpage.component.html</code></td>
             </tr>
 
 
@@ -156,7 +156,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/results/results.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/userpage/userpage.component.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -196,7 +196,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/results/results.component.ts:12</a></div>
+                            class="link-to-prism">src/app/userpage/userpage.component.ts:12</a></div>
                 </td>
             </tr>
 
@@ -221,11 +221,11 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-results&#x27;,
-  templateUrl: &#x27;./results.component.html&#x27;,
-  styleUrls: [&#x27;./results.component.css&#x27;]
+  selector: &#x27;app-userpage&#x27;,
+  templateUrl: &#x27;./userpage.component.html&#x27;,
+  styleUrls: [&#x27;./userpage.component.css&#x27;]
 })
-export class ResultsComponent implements OnInit {
+export class UserpageComponent implements OnInit {
 
   constructor() { }
 
@@ -237,60 +237,13 @@ export class ResultsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-
-&lt;html lang&#x3D;&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;title&gt;Results&lt;/title&gt;
-    &lt;meta charset&#x3D;&quot;utf-8&quot; /&gt;
-    &lt;style&gt;      
-        div.size {
-          margin: auto;
-          width: 70%;
-        }
-        div.center {
-        padding: 15px;
-        text-align: center;
-        font-size: 2.2em;
-        }
-        &lt;/style&gt;
-
-
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;div class&#x3D; center id&#x3D;ResultsHeader&gt;
-        &lt;h1&gt;Results&lt;/h1&gt;
-    &lt;/div&gt;
-    &lt;!--End ResultsHeader--&gt;
-
-    &lt;!--Placeholder images here for proof of concept--&gt;
-    &lt;div class&#x3D;&quot;container is-desktop&quot; &gt;
-        &lt;div class&#x3D;&quot;notification&quot;&gt;
-                &lt;img src&#x3D;&quot;https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg&quot; alt&#x3D;&quot;Resource image&quot; style&#x3D;&quot;width:300px;height:300px; float:left;&quot;&gt;
-                &lt;p&gt;This unit on thermal energy transfer begins with students testing whether a new plastic cup sold by a store keeps a drink colder for longer compared to the regular plastic cup that comes free with the drink. Students find that the drink in the regular cup warms up more than the drink in the special cup. This prompts students to identify features of the cups that are different, such as the lid, walls, and hole for the straw, that might explain why one drink warms up more than the other.&lt;/p&gt;&lt;br&gt;
-                    &lt;p&gt;Students investigate the different cup features they conjecture are important to explaining the phenomenon, starting with the lid. They model how matter can enter or exit the cup via evaporation However, they find that in a completely closed system, the liquid inside the cup still changes temperature. This motivates the need to trace the transfer of energy into the drink as it warms up. Through a series of lab investigations and simulations, students find that there are two ways to transfer energy into the drink: (1) the absorption of light and (2) thermal energy from the warmer air around the drink. They are then challenged to design their own drink container that can perform as well as the store-bought container, following a set of design criteria and constraints.&lt;/p&gt;&lt;br&gt;
-                    &lt;p&gt;This unit builds toward the following NGSS Performance Expectations (PEs) as described in the OpenSciEd Scope &amp; Sequence: MS-PS1-4*, MS-PS3-3, MS-PS3-4, MS-PS3-5, MS-PS4-2*, MS-ETS1-4. The OpenSciEd units are designed for hands-on learning and therefore materials are necessary to teach the unit. These materials can be purchased as science kits or assembled using the kit material list.&lt;/p&gt;&lt;br&gt;
-            &lt;button class&#x3D;&quot;button&quot;&gt;Download Resource&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-   &lt;!----- &lt;div id&#x3D;&quot;column3&quot; style&#x3D;&quot;float:right&quot;&gt;
-        &lt;img src&#x3D;&quot;images/imageName.png&quot; alt&#x3D;&quot;Image&quot; /&gt;
-    &lt;/div&gt; --&gt;
-    &lt;br&gt;&lt;br&gt;
-    &lt;!--End column 3 div--&gt;
-
-
-    
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;p&gt;userpage works!&lt;/p&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./results.component.css</code>
+                    <code>./userpage.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
@@ -320,10 +273,10 @@ export class ResultsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html lang="en"><head>    <title>Results</title>    <meta charset="utf-8" />    <style>              div.size {          margin: auto;          width: 70%;        }        div.center {        padding: 15px;        text-align: center;        font-size: 2.2em;        }        </style></head><body>    <div class= center id=ResultsHeader>        <h1>Results</h1>    </div>    <!--End ResultsHeader-->    <!--Placeholder images here for proof of concept-->    <div class="container is-desktop" >        <div class="notification">                <img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg" alt="Resource image" style="width:300px;height:300px; float:left;">                <p>This unit on thermal energy transfer begins with students testing whether a new plastic cup sold by a store keeps a drink colder for longer compared to the regular plastic cup that comes free with the drink. Students find that the drink in the regular cup warms up more than the drink in the special cup. This prompts students to identify features of the cups that are different, such as the lid, walls, and hole for the straw, that might explain why one drink warms up more than the other.</p><br>                    <p>Students investigate the different cup features they conjecture are important to explaining the phenomenon, starting with the lid. They model how matter can enter or exit the cup via evaporation However, they find that in a completely closed system, the liquid inside the cup still changes temperature. This motivates the need to trace the transfer of energy into the drink as it warms up. Through a series of lab investigations and simulations, students find that there are two ways to transfer energy into the drink: (1) the absorption of light and (2) thermal energy from the warmer air around the drink. They are then challenged to design their own drink container that can perform as well as the store-bought container, following a set of design criteria and constraints.</p><br>                    <p>This unit builds toward the following NGSS Performance Expectations (PEs) as described in the OpenSciEd Scope & Sequence: MS-PS1-4*, MS-PS3-3, MS-PS3-4, MS-PS3-5, MS-PS4-2*, MS-ETS1-4. The OpenSciEd units are designed for hands-on learning and therefore materials are necessary to teach the unit. These materials can be purchased as science kits or assembled using the kit material list.</p><br>            <button class="button">Download Resource</button>        </div>    </div>   <!----- <div id="column3" style="float:right">        <img src="images/imageName.png" alt="Image" />    </div> -->    <br><br>    <!--End column 3 div-->    </body></html></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
+        var COMPONENT_TEMPLATE = '<div><p>userpage works!</p></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'ResultsComponent'};
+    var ACTUAL_COMPONENT = {'name': 'UserpageComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -358,7 +311,7 @@ export class ResultsComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'ResultsComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserpageComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
