@@ -50,12 +50,15 @@ export class LoginComponent implements OnInit {
      {
       this.displayNotification = true;
      } 
+
      else
      {
       this.displayNotification = false;
       this.session.set("username", text);
-      
+      this.router.navigateByUrl("home");
       //this.router.navigateByUrl("home");
+
+
      }
     });
   }
@@ -71,6 +74,7 @@ export class LoginComponent implements OnInit {
    * Nothing to do on Init
    */
   ngOnInit() {
+
     this.LoginForm = new FormGroup({
       username: new FormControl(''),
       password: new FormControl(''),
