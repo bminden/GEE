@@ -144,7 +144,7 @@
                                 <!--End comments-->
                                 <div id="enterComment" style="margin-top: 5px;">
                                     You can submit a comment about this resource here:
-                                    <form action="/comment.php">
+                                    <form [formGroup] = "ResultForm"> [FormG] action="/comment.php">
                                         <textarea name="comment" rows="10"
                                             cols="30">Enter comment feedback here</textarea>
                                         <br>
@@ -239,7 +239,7 @@
                                 <!--End comments-->
                                 <div id="enterComment" style="margin-top: 5px;">
                                     You can submit additional feedback to be displayed here
-                                    <form action="/comment.php">
+                                    <form [formGroup] = "ResultForm"> action="/comment.php">
                                         <textarea name="comment" rows="10"
                                             cols="30">Enter comment feedback here</textarea>
                                         <br>

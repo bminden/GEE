@@ -2,7 +2,7 @@ import { Component, OnInit, ɵCompiler_compileModuleAndAllComponentsSync__POST_R
 import { ApiService } from '../api.service';
 import {SessionStorageService, SessionStorage } from 'angular-web-storage';
 import { Router } from "@angular/router";
-
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
   
 })
 export class ResultsComponent implements OnInit {
-
+  SearchForm: FormGroup;
   public isCollapsed = false;
   //constructor() { }
 
