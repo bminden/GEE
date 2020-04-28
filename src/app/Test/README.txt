@@ -3,3 +3,5 @@ Test cases as of right now are made in java though it we want to implement them 
 
 To use recorder just open the extension on the site out with to use it on and hit record, the recorder will take all input and then hit stop to make test case.
 If something takes longer to load then the test case tries to use an input the extension allows you to slow down the execuation of the commands to give pages time to load.
+
+To Run an Upoaded test case just open the HTML file in the Katalon Reader extension.

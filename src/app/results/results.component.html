@@ -50,10 +50,14 @@
             margin: 10px;
         }
 
+        .vote{
+            float:right;
+            padding:10px;
+        }
+
         html {
             overflow: inherit
         }
- 
     </style>
 
 
@@ -76,42 +80,54 @@
         </div>
 
         <!---pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" [zoom]="0.25" [show-all]="false" [page]="1"></pdf-viewer--->
-        
+
 
         <!--iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#toolbar=0"  scrolling="no" style=" width: 550px; height: 500px;  overflow: hidden;" ></iframe--->
-        
-        
+
+
         <!--Placeholder images here for proof of concept-->
         <div class="column is-half" id="centerColumn">
             <!--Center is the resource with preview image short discription, feedback and download button-->
             <div class=centerContent>
                 <div class="container is-desktop">
                     <div class="notification">
-                        <div class="column" >
-                        <!--img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
+                        <div class="column">
+                            <!--img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
                             alt="Resource image" style="width:225px;height:225px; float:left;"-->
-                            <pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" [zoom]="0.3" [show-all]="false" [page]="1" style="float:left;"></pdf-viewer>
+                            <pdf-viewer
+                                src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf"
+                                [zoom]="0.3" [show-all]="false" [page]="1" style="float:left;"></pdf-viewer>
                         </div>
-                        <div class="column" >
-                            <p>This unit on thermal energy transfer begins with students testing whether a new plastic cup
-                            sold
-                            by a
-                            store
-                            keeps a drink colder for longer compared to the regular plastic cup that comes free with the
-                            drink.
-                            Students
-                            find that the drink in the regular cup warms up more than the drink in the special cup. This
-                            prompts
-                            students to identify features of the cups that are different, such as the lid, walls, and
-                            hole
-                            for the
-                            straw, that might explain why one drink warms up more than the other.</p><br>
+                        <div class="column">
+                            <p>This unit on thermal energy transfer begins with students testing whether a new plastic
+                                cup
+                                sold
+                                by a
+                                store
+                                keeps a drink colder for longer compared to the regular plastic cup that comes free with
+                                the
+                                drink.
+                                Students
+                                find that the drink in the regular cup warms up more than the drink in the special cup.
+                                This
+                                prompts
+                                students to identify features of the cups that are different, such as the lid, walls,
+                                and
+                                hole
+                                for the
+                                straw, that might explain why one drink warms up more than the other.</p><br>
                         </div>
                         <div class=center>
-                            <button class="button" (click) = "download()">Download Resource</button>
+                            <button class="button" (click)="download()">Download Resource</button>
+
+                            <div id="vote" class="vote"><!--Upvote/Downvote buttons Number is meant to be number of upvotes and downvotes-->
+                                76<button class="button" (click)="upvote()">+</button>
+                                <button class="button" (click)="downvote()">-</button>15
+                            </div>
+
                         </div>
-                        <div id="feedbackButton">
-                            <button type="button" class="collapsible">Click for Feedback</button>
+                        <div id="feedbackButton"><!--Section for containing feedback, including the collapsible button and its content.-->
+                            <button type="button" class="collapsible">Click for Feedback</button><!--Opens/closed collapsable feedback-->
                             <div class="feedback">
                                 <!--Start of collapsable section-->
                                 <div id="comments">
@@ -142,7 +158,7 @@
                                     <!--End user comment-->
                                 </div>
                                 <!--End comments-->
-                                <div id="enterComment" style="margin-top: 5px;">
+                                <div id="enterComment" style="margin-top: 5px;"><!--Section for user entering a comment-->
                                     You can submit a comment about this resource here:
                                     <form [formGroup] = "ResultForm"> [FormG] action="/comment.php">
                                         <textarea name="comment" rows="10"
@@ -173,8 +189,9 @@
 
 
 
-
-
+    <!--REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER-->
+    <!--REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER-->
+    <!--REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER-->
     <!--This is just a temp block to show more then one resource REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER-->
     <div class="columns" id="columnContent">
         <!--Used for making columns and holds all contnet in the columns-->
@@ -192,21 +209,30 @@
                     <div class="notification">
                         <img src="https://raw.githubusercontent.com/jgthms/bulma/master/docs/images/bulma-banner.png"
                             alt="Resource image" style="width:225px;height:225px; float:left;">
-                        <p>This unit on thermal energy transfer begins with students testing whether a new plastic cup
+                        <p>This unit on thermal energy transfer begins with students testing whether a new plastic
+                            cup
                             sold
                             by a
                             store
-                            keeps a drink colder for longer compared to the regular plastic cup that comes free with the
+                            keeps a drink colder for longer compared to the regular plastic cup that comes free with
+                            the
                             drink.
                             Students
-                            find that the drink in the regular cup warms up more than the drink in the special cup. This
+                            find that the drink in the regular cup warms up more than the drink in the special cup.
+                            This
                             prompts
-                            students to identify features of the cups that are different, such as the lid, walls, and
+                            students to identify features of the cups that are different, such as the lid, walls,
+                            and
                             hole
                             for the
                             straw, that might explain why one drink warms up more than the other.</p><br>
                         <div class=center>
                             <button class="button">Download Resource</button>
+
+                            <div id="vote" class="vote">
+                                52<button class="button" (click)="upvote()">+</button>
+                                <button class="button" (click)="downvote()">-</button>27
+                            </div>
                         </div>
                         <div id="feedbackButton">
 
@@ -262,6 +288,17 @@
     <!--End of columns contnet div-->
     <hr>
     <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
+    <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
+    <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
+    <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
+
+
+
+
+
+
+
+    
     <br><br>
     <!--Used for collapsible section-->
     <script>
