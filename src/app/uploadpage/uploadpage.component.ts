@@ -12,9 +12,9 @@ export class UploadpageComponent implements OnInit {
 
 
   constructor(private apiService: ApiService) { }
-  uploader(fileTitle:string, subject:string, gradeLevel:string, contentType:string, worksheets:string, labs:string, exams:string, description:string){
-    var includes = worksheets.concat(", ", labs, ", ", exams);
-    this.apiService.upload(fileTitle, subject, gradeLevel, contentType, includes, description).subscribe((data)=>{
+  uploader(fileTitle:string, subject:string, gradeLevel:string, worksheets:string, labs:string, exams:string, video:string, description:string, license:string){
+    var includes = worksheets.concat(", ", labs, ", ", exams, ", ", video);
+    this.apiService.upload(fileTitle, subject, gradeLevel, license, includes, description).subscribe((data)=>{
      console.log(data);
      if (data["data"] === 0)
      {
