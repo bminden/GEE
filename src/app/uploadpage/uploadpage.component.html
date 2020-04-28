@@ -16,6 +16,9 @@
         text-align: center;
         font-size: 2.2em;
         }
+        label.spacing{
+            margin-left:10px;
+        }
         </style>
 </head>
 
@@ -32,22 +35,36 @@
                     <label class="label">File Title</label>
                     </div>
                     <div class="field-body">
-                    <div class="field">
-                        <p class="control">
-                            <input class="input" type="text" #fileTitle>
-                        </p>
-                    </div>
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" required #fileTitle >
+                            </p>
+                        </div>
                     </div>
                 </div>
+
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                        <label class="label">Tags</label>
+                    <label class="label">Subject</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" required #subject>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Grade</label>
                     </div>
                     <div class="field-body">
                         <div class="control">
                             <div class="select">
-                            <select id="grade" #grade>
-                                <option>Select Grade</option>
+                            <select id="grade" #gradeLevel>
+                                <option>Any</option>
                                 <option>6th</option>
                                 <option>7th</option>
                                 <option>8th</option>
@@ -55,30 +72,8 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="control">
-                            <div class="select">
-                            <select id="subject" #subject>
-                                <option>Select Subject</option>
-                                <option>Biology</option>
-                                <option>Earth Science</option>
-                                <option>Chemestry</option>
-                                <option>Physics</option>
-                                <option>Anatomy</option>
-                                <option>Other</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="control">
-                            <div class="select">
-                            <select id="contentType" #contentType>
-                                <option>Content Type</option>
-                                <option>-</option>
-                                <option>-</option>
-                                <option>-</option>
-                                <option>High school</option>
-                                </select>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
                 <div class="field is-horizontal">
@@ -90,15 +85,19 @@
                         <div class="control">
                         <label class="checkbox">
                             <input type="checkbox" #workSheets>
-                            Worksheets
+                            Worksheets 
                         </label>
-                        <label class="checkbox">
+                        <label class="checkbox" class= spacing>
                             <input type="checkbox" #labs>
-                            Labs
+                            Labs 
                         </label>
-                        <label class="checkbox">
+                        <label class="checkbox" class= spacing>
                             <input type="checkbox" #exams>
-                            Assessment
+                            Assessment 
+                        </label>
+                        <label class="checkbox" class= spacing>
+                            <input type="checkbox" #video>
+                            Video
                         </label>
                         </div>
                     </div>
@@ -111,20 +110,34 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                        <textarea class="textarea" placeholder="Explain the content of this upload" #description></textarea>
+                        <textarea class="textarea" placeholder="Explain the content of this upload" required #description></textarea>
                         </div>
                     </div>
                     </div>
                 </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Content Licensing</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                        <textarea class="textarea" placeholder="Content license information" required #lincense></textarea>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
                 
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                        <label class="label">Compressed Folder Upload</label>
+                        <label class="label">File Upload</label>
                     </div>
                     <div class="field-body">
                         <div class="file">
                             <label class="file-label">
-                            <input class="file-input" type="file" name="resume" id="previewImage" accept=".zip, .rar, .7z">
+                            <input class="file-input" type="file" name="resume" id="previewImage" accept=".zip, .rar, .7z, .pdf, .doc, .docx">
                             <span class="file-cta">
                                 <span class="file-label">
                                 Choose a file…
@@ -134,23 +147,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">File Preview Image</label>
-                    </div>
-                    <div class="field-body">
-                        <div class="file">
-                            <label class="file-label">
-                            <input class="file-input" type="file" name="resume" id="previewImage" accept=".png, .jpg, .jpeg">
-                            <span class="file-cta">
-                                <span class="file-label">
-                                Choose a picture…
-                                </span>
-                            </span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+        
                 <div class="field is-horizontal">
                     <div class="field-label">
                     <label class="label"></label>
@@ -174,7 +171,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                        <button class="button has-background-link has-text-white" (click)="uploader(fileTitle.value, contentType.value, gradeLevel.value, subject.value, exams.value, labs.value, worksheets.value, description.value)">
+                        <button class="button has-background-link has-text-white" (click)="uploader(fileTitle.value, subject.value, gradeLevel.value, worksheets.value, labs.value, exams.value, video.value, description.value, license.value)">
                             Submit
                         </button>
                         </div>
