@@ -31,14 +31,23 @@
   <div class="container is-desktop" >
     <div class="notification has-background-white">
     <div id="login"><!--May use external CSS to move to center-->
-        <form>
+        <form [formGroup] = "NewUserForm">
             <label for="userName">Username</label>
-            <input class="input" placeholder="Username" type="text" id="userName" required="required" name="userName" #text><br><br>
-            <label for="password">Password</label>
-            <input class="input" placeholder="Username" type="password" id="password" required="required" name="password" #password><br><br>
+            <input formControlName="username" class="input" placeholder="Username" type="text" id="userName"  name="userName" #text><br><br>
+            <div class="notification is-danger" *ngIf="!NewUserForm.controls.password.valid && displayUserNotification"> Username is not valid or it is already taken. Please enter in a valid username.
+              <button class="delete" (click) = "toggleUserDisplayNotification()"></button>
+            </div>
             <label for="userName">Email</label>
-            <input class="input" placeholder="User Email" type="text" id="emailName" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter valid Email format" name="emailName" #email ><br><br>
-            <button class="button is-link" (click)="showText(text.value, password.value, email.value)" >Sign up!</button>
+            <input formControlName="email" class="input" placeholder="Email" type="text" id="emailName"  title="Enter valid Email format" name="emailName" #email ><br><br>
+            <div class="notification is-danger" *ngIf="!NewUserForm.controls.email.valid && displayEmailNotification"> Email address is not valid. Please enter in a valid email address.
+              <button class="delete" (click) = "toggleEmailDisplayNotification()"></button>
+            </div>
+            <label for="password">Password</label>
+            <input formControlName="password" class="input" placeholder="********" type="password" id="password" name="password" #password><br><br>
+            <div class="notification is-danger" *ngIf="!NewUserForm.controls.password.valid && displayPasswordNotification"> Password is not valid. Please enter in a valid password.
+              <button class="delete" (click) = "togglePasswordDisplayNotification()"></button>
+            </div>
+            <button type="submit" class="button is-link" (click)="registerUser()">Sign up!</button>
         </form>
             <br><br><br>
            <!---

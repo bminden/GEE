@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
+UploadForm: FormGroup
 @Component({
   selector: 'app-uploadpage',
   templateUrl: './uploadpage.component.html',

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
     SupportComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AngularWebStorageModule,
     HttpClientModule,
@@ -64,6 +66,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }),
+      
   ],
   providers: [],
   bootstrap: [AppComponent]
