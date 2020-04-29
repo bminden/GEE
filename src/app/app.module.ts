@@ -23,6 +23,7 @@ import { SupportComponent } from './support/support.component';
 
 import { AngularWebStorageModule } from 'angular-web-storage';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 const appRoutes: Routes = [
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     AngularWebStorageModule,
     HttpClientModule,
     PdfViewerModule,
+    FileUploadModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }),
