@@ -57,8 +57,6 @@ export class LoginComponent implements OnInit {
       this.session.set("username", text);
       this.router.navigateByUrl("home");
       //this.router.navigateByUrl("home");
-
-
      }
     });
   }
