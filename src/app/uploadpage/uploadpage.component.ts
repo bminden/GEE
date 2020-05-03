@@ -3,9 +3,9 @@ import { ApiService } from '../api.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FileUploader } from 'ng2-file-upload';
 
-UploadForm: FormGroup
 
-const URL = '198.211.198.53';
+
+const URL = '198.211.98.83:3002/api/upload';
 
 
 @Component({
@@ -14,7 +14,7 @@ const URL = '198.211.198.53';
   styleUrls: ['./uploadpage.component.css']
 })
 export class UploadpageComponent implements OnInit {
-
+  UploadForm: FormGroup;
 
 
   constructor(private apiService: ApiService) { 
@@ -22,10 +22,7 @@ export class UploadpageComponent implements OnInit {
   }
 
   
-  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
-
-  
-
+  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'file'});
 
   uploaderData(fileTitle:string, subject:string, gradeLevel:string, worksheets:string, labs:string, exams:string, video:string, description:string, license:string){
     var includes = worksheets.concat(", ", labs, ", ", exams, ", ", video);
@@ -47,6 +44,8 @@ export class UploadpageComponent implements OnInit {
          console.log('FileUpload:uploaded:', item, status, response);
          alert('File uploaded successfully');
      };
+     this.UploadForm = new FormGroup({
+    });
   }
 
 }

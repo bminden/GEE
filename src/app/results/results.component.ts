@@ -10,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   
 })
 export class ResultsComponent implements OnInit {
-  SearchForm: FormGroup;
+  ResultForm: FormGroup;
   public isCollapsed = false;
   //constructor() { }
 
@@ -23,6 +23,8 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this.collapse()
+    this.ResultForm= new FormGroup({
+    });
   }
   download()
   {

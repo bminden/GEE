@@ -27,6 +27,9 @@ export class SearchComponent implements OnInit {
   });}
 
   ngOnInit() {
+    
+    this.SearchForm = new FormGroup({
+    });
   }
 
 }

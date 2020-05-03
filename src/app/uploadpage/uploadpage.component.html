@@ -34,7 +34,7 @@
 
     <div class="container is-desktop " >
         <div class="notification has-background-white">
-            <form [formGroup] = "UploadForm" action="/PATH FOR HANDLING INPUT">
+            
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
                     <label class="label">File Title</label>
@@ -231,12 +231,12 @@
          
                 </div--->
 
-                <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+                <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
 
                 <button type="button" class="btn btn-success btn-s" 
                 (click)="uploader.uploadAll()" 
                 [disabled]="!uploader.getNotUploadedItems().length" >
-                    Upload an Image
+                    Upload an File
                 </button>
 
 
@@ -272,7 +272,7 @@
                     </div>
                     </div>
                 </div>
-            </form>
+            
         </div>
     </div>
 
