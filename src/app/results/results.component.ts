@@ -11,6 +11,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ResultsComponent implements OnInit {
   ResultForm: FormGroup;
+  data: any;
   public isCollapsed = false;
   //constructor() { }
 
@@ -20,17 +21,24 @@ export class ResultsComponent implements OnInit {
    */
   constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService) { } 
 
+  parseData(){
+    for(var x = 0; x < Object.keys(this.data).length; x++){
+      console.log(this.data[x].author);
+    }
+  }
 
   ngOnInit() {
+    this.data = this.session.get("data");
     this.collapse()
     this.ResultForm= new FormGroup({
     });
+    this.parseData();
   }
-  download()
+  download(resource)
   {
-    this.apiService.download().subscribe((data)=>{
-      console.log(data);
-     
+    console.log(resource);
+    this.apiService.download().subscribe((resource)=>{
+      console.log(resource);
      });
   }
   collapse()
