@@ -68,6 +68,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }),
+      RouterModule,
       
   ],
   providers: [],

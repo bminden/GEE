@@ -5,7 +5,7 @@ import { FileUploader } from 'ng2-file-upload';
 
 UploadForm: FormGroup
 
-const URL = '198.211.198.53';
+const URL = '198.211.98.83:3002/api/upload?file';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class UploadpageComponent implements OnInit {
   }
 
   
-  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
+  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'file'});
 
   
 
