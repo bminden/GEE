@@ -68,6 +68,9 @@
         <h1>Results</h1>
     </div>
     <!--End ResultsHeader-->
+    <div *ngIf="data.length == 0">
+        <p>Sorry, we have no results!</p>
+    </div>
 
     <div *ngFor="let result of data">
         <div class="columns" id="columnContent">

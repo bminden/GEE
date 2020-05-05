@@ -21,18 +21,11 @@ export class ResultsComponent implements OnInit {
    */
   constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService) { } 
 
-  parseData(){
-    for(var x = 0; x < Object.keys(this.data).length; x++){
-      console.log(this.data[x].author);
-    }
-  }
-
   ngOnInit() {
     this.data = this.session.get("data");
     this.collapse()
     this.ResultForm= new FormGroup({
     });
-    this.parseData();
   }
   download(resource)
   {
