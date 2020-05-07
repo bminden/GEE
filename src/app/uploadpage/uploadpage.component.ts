@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+UploadForm: FormGroup
+//const URL = '198.211.98.83:3002/api/upload?file';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { unwrapResolvedMetadata } from '@angular/compiler';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +15,15 @@ const URL = '198.211.98.83:3002/api/upload';
   styleUrls: ['./uploadpage.component.css']
 })
 export class UploadpageComponent implements OnInit {
+
+
+
+  constructor(private apiService: ApiService) { 
+
+  }
+
+  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'file'});
+
   UploadForm: FormGroup;
   fileToUpload: File = null;
   fileSuccessfulFlag: boolean = false;
