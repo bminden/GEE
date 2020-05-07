@@ -68,6 +68,46 @@
         <h1>Results</h1>
     </div>
     <!--End ResultsHeader-->
+    <div *ngIf="data.length == 0">
+        <p>Sorry, we have no results!</p>
+    </div>
+
+    <div *ngFor="let result of data">
+        <div class="columns" id="columnContent">
+            <!--Used for making columns and holds all contnet in the columns-->
+            <div class="column is-one-fifth" id=leftColumn>
+                <!--Left Column for image of content type-->
+                <div class=center>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAMFBMVEXMzMyZmZm+vr7ExMTHx8ehoaGdnZ26urqvr6/AwMC2trakpKSgoKCoqKiysrKrq6vSeg5QAAABtElEQVR4nO3Wy5aDIBBFUQGpKPj4/79tkIfS9iCYXhmdPTIxuRYUosMAAAAAAAAAAAAAAAAAAMA7JpUPZlXo47PzIt59MeRqlJL4ahPXdLx+LaQJDH/Mh5tadTIOcfzizOhETV8KucRNq6iauKvtcioPN4x+/EJIIy+E/Mmr13nKqSUdLKqujNCqdM1J2cch7zDG6Jooaj7PrGXeJ7XXL8NvTSrEPA95s7KSGGZ8Du2w+3FJW0b9us7MrvwQx759EtJXVr21JWZJvsHDDMn549BGF1a1/yikr6ywLq0eR22PFtU+1fMlX7ctfBDSVZaecmts3GbkTGwGuoeZuC/fzpCesqpjxpdz/pfrydDGWwu7Qx6VNcZdxp+r1f/6udz3oM6Q52XVbXFr722r5I9HSWdIT1l2yUM75t+VW9o2SynchUauO+aTkK6yVmVTd3zcBOMGFD/MzXPj2EjdvY1dIX1lhf/6eG/7dNXwlA3rVbdPWXt0xd9a0hXSV1Z9J5H0+PDxsH0nyc9CU16mHoX0ljWYyYrYrcz37Q1uzj2Jk9A2pSMEAAAAAAAAAAAAAAAAAAD8hx+EAgxoODBEjgAAAABJRU5ErkJggg=="
+                        alt="placeholder image">
+                </div>
+            </div>
+            <div class="column is-half" id="centerColumn">
+                <div class=centerContent>
+                    <div class="container is-desktop">
+                        <div class="notification">
+                            <p>Author: {{result.author}}</p>
+                            <p>{{result.description}}</p>
+                            <div class=center>
+                                <button class="button" (click)="download(result.filelocation)">Download Resource</button>
+    
+                                <div id="vote" class="vote"><!--Upvote/Downvote buttons Number is meant to be number of upvotes and downvotes-->
+                                    76<button class="button" (click)="upvote()">+</button>
+                                    <button class="button" (click)="downvote()">-</button>15
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column" id=rightColumn>
+                <!--Right column for infromation an search result-->
+                <p>Search matching text to be determined.</p>
+            </div>
+        </div>
+        <hr _ngcontent-jme-c3="">
+    </div>
 
     <div class="columns" id="columnContent">
         <!--Used for making columns and holds all contnet in the columns-->
@@ -91,6 +131,7 @@
             <div class=centerContent>
                 <div class="container is-desktop">
                     <div class="notification">
+                        
                         <div class="column">
                             <!--img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
                             alt="Resource image" style="width:225px;height:225px; float:left;"-->
@@ -160,7 +201,7 @@
                                 <!--End comments-->
                                 <div id="enterComment" style="margin-top: 5px;"><!--Section for user entering a comment-->
                                     You can submit a comment about this resource here:
-                                    <form [formGroup] = "ResultForm"> [FormG] action="/comment.php">
+                                    <form [formGroup] = "ResultForm"  action="/comment.php">
                                         <textarea name="comment" rows="10"
                                             cols="30">Enter comment feedback here</textarea>
                                         <br>

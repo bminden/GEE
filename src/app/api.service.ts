@@ -45,6 +45,15 @@ export class ApiService {
       }
     });
   }
+
+  public postFile(fileToUpload: File) {
+    const endpoint = 'http://198.211.98.83:3002/api/upload';
+    const formData: FormData = new FormData();
+    formData.append('file', fileToUpload, fileToUpload.name);
+    return this.httpClient
+      .post(endpoint, formData, { })
+}
+  
   //public search (keywords, subject, contentType, gradeLevel){
   public search (keywords?, subject?, contentType?, gradeLevel?, includes?){
     return this.httpClient.get('http://198.211.98.83:3002/search', {
@@ -58,15 +67,20 @@ export class ApiService {
     });
   }
 
-  public upload (fileTitle, subject, contentType, gradeLevel, includes, description){
+  public upload (username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags){
     return this.httpClient.get('http://198.211.98.83:3002/upload', {
       params:{
         fileTitle: fileTitle,
         subject: subject,
-        contentType: contentType,
         gradeLevel: gradeLevel,
-        includes: includes,
-        description: description
+        labs: labs,
+        video: video,
+        exams: exams,
+        worksheets: worksheets,
+        description: description,
+        license: license,
+        tags: tags,
+        username: username
       }
     });
   }

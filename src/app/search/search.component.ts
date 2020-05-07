@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { stringify } from 'querystring';
+import { Router, ActivatedRoute } from "@angular/router";
+import {SessionStorageService, SessionStorage } from 'angular-web-storage';
 import { FormGroup, FormControl } from '@angular/forms';
 
 
@@ -12,7 +14,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
   SearchForm: FormGroup
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, public session: SessionStorageService, private router: Router) { }
   searcher(keywords:string, subject:string, gradeLevel:string, contentType:string, worksheets:string, labs:string, exams:string){
     var includes = worksheets.concat(", ", labs, ", ", exams);
     this.apiService.search(keywords, subject, gradeLevel, contentType, includes).subscribe((data)=>{
@@ -22,11 +24,15 @@ export class SearchComponent implements OnInit {
       alert("Bad News");
      } 
      else{
-      alert("Verified");
-     }
+      this.session.set("data", data);
+      this.router.navigateByUrl("results");
+    }
   });}
 
   ngOnInit() {
+    
+    this.SearchForm = new FormGroup({
+    });
   }
 
 }
