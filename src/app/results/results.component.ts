@@ -28,9 +28,9 @@ export class ResultsComponent implements OnInit {
     this.ResultForm= new FormGroup({
     });
   }
-  download(resource)
+  download()
   {
-    console.log(resource);
+   let resource:string = "/root/Resources/testfile.zip"
     this.apiService.download().subscribe((resource)=>{
       console.log(resource);
      });
