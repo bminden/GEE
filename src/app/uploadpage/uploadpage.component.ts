@@ -18,11 +18,6 @@ export class UploadpageComponent implements OnInit {
 
 
 
-  constructor(private apiService: ApiService) { 
-
-  }
-
-  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'file'});
   /**
    * This sends metadata about the file being uplaoded to the backend so that it can be processed
    * @param fileTitle title of the file
