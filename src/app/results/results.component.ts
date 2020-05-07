@@ -10,7 +10,8 @@ import { FormGroup, FormControl } from '@angular/forms';
   
 })
 export class ResultsComponent implements OnInit {
-  ResultForm: FormGroup;
+  ResultForm: FormGroup;k
+
   data: any;
   public isCollapsed = false;
   //constructor() { }
@@ -34,6 +35,8 @@ export class ResultsComponent implements OnInit {
       console.log(resource);
      });
   }
+
+  
   collapse()
   {
 
