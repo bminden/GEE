@@ -47,9 +47,12 @@
                     
                     <div class="buttons">
                         <a *ngIf ="username" routerLink="/uploadpage" routerLinkActive="active"
+                        <div *ngIf="username">
+                        <a routerLink="/uploadpage" routerLinkActive="active"
                             class="button has-background-link has-text-white">
                             Upload
                         </a>
+                        </div>
                             <div *ngIf="!username">
                                 <a class="button has-background-link has-text-white" routerLink="/newUser" routerLinkActive="active">
                                     Sign up
