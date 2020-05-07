@@ -23,6 +23,7 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this.collapse()
+    this.hideFull()
   }
   download()
   {
@@ -67,4 +68,27 @@ export class ResultsComponent implements OnInit {
       );
     }
   }*/
+
+  /**
+   * This toggles pdf fullsize on and off
+   */
+  togglePRF(){
+    var full = document.getElementById("fullSize");
+    if (full.style.display === "none") {
+      full.style.display = "block";
+    } else {
+      full.style.display = "none";
+    }
+  }
+  /**
+   * This hides the full sized pdf when the page is made
+   */
+  hideFull(){
+    var full = document.getElementById("fullSize");
+    full.style.display = "none";
+  }
+
+
+
+
 }

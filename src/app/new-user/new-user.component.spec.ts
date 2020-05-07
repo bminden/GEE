@@ -26,7 +26,9 @@ describe('NewUserComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
+/**
+ * the component should have been made
+ */
   it('should create', () => {
     expect(component).toBeTruthy();
   });
@@ -55,7 +57,9 @@ describe('NewUserComponent', () => {
     const btn = fixture.debugElement.nativeElement.querySelector("button.button.is-link");
     expect(btn).toBeTruthy();
   });
-
+/**
+ * test if when user clicks on submit if it calls registerUser
+ */
   it('call func when submited', () => {
     spyOn(component, 'registerUser');
     fixture.detectChanges();

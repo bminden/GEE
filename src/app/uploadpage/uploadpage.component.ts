@@ -24,7 +24,19 @@ export class UploadpageComponent implements OnInit {
   
   public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'file'});
 
-  
+  /**
+   * This sends metadata about the file being uplaoded to the backend so that it can be processed
+   * @param fileTitle title of the file
+   * @param subject the subject of the file
+   * @param gradeLevel the grade level
+   * @param worksheets if the document has worksheets
+   * @param labs if the document has labs
+   * @param exams if the document has exams 
+   * @param video if the document has videos
+   * @param description a discription of the file
+   * @param license file uplaoder's license for the file
+   * backend returns 0 if something went wrong
+   */
 
 
   uploaderData(fileTitle:string, subject:string, gradeLevel:string, worksheets:string, labs:string, exams:string, video:string, description:string, license:string){
