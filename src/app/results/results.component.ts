@@ -24,7 +24,8 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.session.get("data");
-    this.collapse()
+    this.collapse();
+    this.hideFull();
     this.ResultForm= new FormGroup({
     });
   }
@@ -73,4 +74,27 @@ export class ResultsComponent implements OnInit {
       );
     }
   }*/
+
+  /**
+   * This toggles pdf fullsize on and off
+   */
+  togglePRF(){
+    var full = document.getElementById("fullSize");
+    if (full.style.display === "none") {
+      full.style.display = "block";
+    } else {
+      full.style.display = "none";
+    }
+  }
+  /**
+   * This hides the full sized pdf when the page is made
+   */
+  hideFull(){
+    var full = document.getElementById("fullSize");
+    full.style.display = "none";
+  }
+
+
+
+
 }

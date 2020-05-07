@@ -16,13 +16,17 @@ describe('HomepageComponent', () => {
     })
     .compileComponents();
   }));
-
+  /**
+   * before each test the component should try to be generated so it can be tested
+   */
   beforeEach(() => {
     fixture = TestBed.createComponent(HomepageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
+/**
+ * the component should have been made
+ */
   it('should create', () => {
     expect(component).toBeTruthy();
   });
