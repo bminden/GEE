@@ -19,13 +19,13 @@ export class ApiService {
     });
   }
 
-  public download (){
+  public download (file_location:string){
     let headers = new HttpHeaders({
        // Auth header
       //No other headers needed
   });
     this.httpClient
-    .get("http://198.211.98.83:3002/download", { headers, responseType: "blob" }) //set response Type properly (it is not part of headers)
+    .get("http://198.211.98.83:3002/download", { headers, params:{file_location:file_location}, responseType: "blob" }) //set response Type properly (it is not part of headers)
     .toPromise()
     .then(blob => {
         saveAs(blob); 

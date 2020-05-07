@@ -31,7 +31,7 @@ export class ResultsComponent implements OnInit {
   download()
   {
    let resource:string = "/root/Resources/testfile.zip"
-    this.apiService.download().subscribe((resource)=>{
+    this.apiService.download(resource).subscribe((resource)=>{
       console.log(resource);
      });
   }
