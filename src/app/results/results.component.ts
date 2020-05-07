@@ -11,6 +11,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ResultsComponent implements OnInit {
   ResultForm: FormGroup;
+ 
   public isCollapsed = false;
   //constructor() { }
 
@@ -33,6 +34,8 @@ export class ResultsComponent implements OnInit {
      
      });
   }
+
+  
   collapse()
   {
 

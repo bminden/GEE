@@ -1,48 +1,31 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" style = "overflow-y: hidden;">
 
 <head>
     <title>Upload Content</title>
     <meta charset="utf-8" />
     <!--<link rel="stylesheet" type="text/css" href="CSS PATH HERE" />-->
-    <style>      
-        div.size {
-          margin: auto;
-          width: 70%;
-        }
-        div.center {
-        padding: 15px;
-        text-align: center;
-        font-size: 2.2em;
-        }
-        label.spacing{
-            margin-left:10px;
-        }
-        .my-drop-zone { border: dotted 3px lightgray; }
-         .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
-         .another-file-over-class { border: dotted 3px green; }
- 
-         html, body { height: 100%; }
-        </style>
 </head>
 
 <body>
-    <div class= center>
+    <div class=c enter>
         <h1 class="title">Upload Content</h1>
     </div>
-
-    <div class="container is-desktop " >
+    <div class="notification is-danger has-text-centered" *ngIf="toggleErrorNotification && !UploadForm.valid"> {{errorString}}
+        <button class="delete" (click)="toggleErrorMessageNotification()"></button>
+    </div>
+    <div class="container is-desktop ">
         <div class="notification has-background-white">
-            
+            <form [formGroup]="UploadForm">
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                    <label class="label">File Title</label>
+                        <label class="label">Title</label>
                     </div>
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
-                                <input class="input" type="text" required #fileTitle >
+                                <input class="input" type="text" formControlName="filename">
                             </p>
                         </div>
                     </div>
@@ -50,12 +33,12 @@
 
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                    <label class="label">Subject</label>
+                        <label class="label">Subject</label>
                     </div>
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
-                                <input class="input" type="text" required #subject>
+                                <input class="input" type="text" formControlName="subject">
                             </p>
                         </div>
                     </div>
@@ -68,216 +51,136 @@
                     <div class="field-body">
                         <div class="control">
                             <div class="select">
-                            <select id="grade" #gradeLevel>
-                                <option>Any</option>
-                                <option>6th</option>
-                                <option>7th</option>
-                                <option>8th</option>
-                                <option>High school</option>
+                                <select id="grade" formControlName="grade">
+                                    <option>Any</option>
+                                    <option>6th</option>
+                                    <option>7th</option>
+                                    <option>8th</option>
+                                    <option>High school</option>
                                 </select>
                             </div>
                         </div>
-
 
                     </div>
                 </div>
                 <div class="field is-horizontal">
                     <div class="field-label">
-                    <label class="label">Includes:</label>
+                        <label class="label">Includes:</label>
                     </div>
                     <div class="field-body">
-                    <div class="field is-narrow">
-                        <div class="control">
-                        <label class="checkbox">
-                            <input type="checkbox" #workSheets>
-                            Worksheets 
-                        </label>
-                        <label class="checkbox" class= spacing>
-                            <input type="checkbox" #labs>
-                            Labs 
-                        </label>
-                        <label class="checkbox" class= spacing>
-                            <input type="checkbox" #exams>
-                            Assessment 
-                        </label>
-                        <label class="checkbox" class= spacing>
-                            <input type="checkbox" #video>
-                            Video
-                        </label>
+                        <div class="field is-narrow">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" formControlName="includes_worksheets"> Worksheets
+                                </label>
+                                <label class="checkbox" class=s pacing>
+                                    <input type="checkbox" formControlName="includes_labs"> Labs
+                                </label>
+                                <label class="checkbox" class=s pacing>
+                                    <input type="checkbox" formControlName="includes_assesment"> Assessment
+                                </label>
+                                <label class="checkbox" class=s pacing>
+                                    <input type="checkbox" formControlName="includes_video"> Video
+                                </label>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                    <label class="label">Content Description</label>
+                        <label class="label">Content Description</label>
                     </div>
                     <div class="field-body">
-                    <div class="field">
-                        <div class="control">
-                        <textarea class="textarea" placeholder="Explain the content of this upload" required #description></textarea>
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Explain the content of this upload" formControlName="description"></textarea>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Tags</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Please add tags that help describe what is in the upload, seperated by commas. E.G. Cellular Energy, Science, Gravity, Neuton " formControlName="tags"></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                    <label class="label">Content Licensing</label>
+                        <label class="label">Content Licensing</label>
                     </div>
                     <div class="field-body">
-                    <div class="field">
-                        <div class="control">
-                        <textarea class="textarea" placeholder="Content license information" required #lincense></textarea>
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Content license information, enter none for no license." formControlName="license"></textarea>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
 
-                
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
                         <label class="label">File Upload</label>
                     </div>
                     <div class="field-body">
-                        <div class="file">
+                        <div class="file has-name">
                             <label class="file-label">
-                            <!--input class="file-input" type="file" name="resume" id="previewImage" ng2FileSelect [uploader]="uploader" accept=".zip, .rar, .7z, .pdf, .doc, .docx"--->
-                            
-                            <span class="file-cta">
-                                <span class="file-label">
-                                Choose a file…
+                                <input (change)="handleFileInput($event.target.files)" class="file-input" type="file" name="resume">
+                                <span class="file-cta">
+                                <span class="file-icon">
+                                  <fa-icon [icon] = "faUpload"></fa-icon>
                                 </span>
-                            </span>
+                                <span class="file-label">
+                                    Choose a file or a compressed folder (.zip or .rar)
+                                </span>
+
+                                </span>
+                                <span class="file-name">
+                                {{fileToUpload != null ? fileToUpload.name : 'No File Chosen'}}
+                              </span>
                             </label>
                         </div>
                     </div>
                 </div>
 
-
-
-                <!--input type="file" ng2FileSelect [uploader]="uploader" />
-
-                
-
-
-                <div class="col-md-9" style="margin-bottom: 40px">
- 
-                    <h3>Upload queue</h3>
-                    <p>Queue length: {{ uploader?.queue?.length }}</p>
-         
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th width="50%">Name</th>
-                            <th>Size</th>
-                            <th>Progress</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr *ngFor="let item of uploader.queue">
-                            <td><strong>{{ item?.file?.name }}</strong></td>
-                            <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
-                            <td *ngIf="uploader.options.isHTML5">
-                                <div class="progress" style="margin-bottom: 0;">
-                                    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
-                                <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
-                                <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
-                            </td>
-                            <td nowrap>
-                                <button type="button" class="btn btn-success btn-xs"
-                                        (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
-                                    <span class="glyphicon glyphicon-upload"></span> Upload
-                                </button>
-                                <button type="button" class="btn btn-warning btn-xs"
-                                        (click)="item.cancel()" [disabled]="!item.isUploading">
-                                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
-                                </button>
-                                <button type="button" class="btn btn-danger btn-xs"
-                                        (click)="item.remove()">
-                                    <span class="glyphicon glyphicon-trash"></span> Remove
-                                </button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-         
-                    <div>
-                        <div>
-                            Queue progress:
-                            <div class="progress" >
-                                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label"></label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field is-narrow">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" formControlName="tos"> I Agree to the Terms of Servce and Privacy Policy.
+                                </label>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-success btn-s"
-                                (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
-                            <span class="glyphicon glyphicon-upload"></span> Upload all
-                        </button>
-                        <button type="button" class="btn btn-warning btn-s"
-                                (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
-                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
-                        </button>
-                        <button type="button" class="btn btn-danger btn-s"
-                                (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
-                            <span class="glyphicon glyphicon-trash"></span> Remove all
-                        </button>
-                    </div>
-         
-                </div--->
-
-                <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
-
-                <button type="button" class="btn btn-success btn-s" 
-                (click)="uploader.uploadAll()" 
-                [disabled]="!uploader.getNotUploadedItems().length" >
-                    Upload an File
-                </button>
-
-
-
-        
-                <div class="field is-horizontal">
-                    <div class="field-label">
-                    <label class="label"></label>
-                    </div>
-                    <div class="field-body">
-                    <div class="field is-narrow">
-                        <div class="control">
-                        <label class="checkbox">
-                            <input type="checkbox">
-                            I Agree to the Terms of Servce and Privacy Policy.
-                        </label>
-                        </div>
-                    </div>
                     </div>
                 </div>
 
                 <div class="field is-horizontal">
                     <div class="field-label">
-                    <!-- Left empty for spacing -->
+                        <!-- Left empty for spacing -->
                     </div>
                     <div class="field-body">
-                    <div class="field">
-                        <div class="control">
-                        <button class="button has-background-link has-text-white" (click)="uploaderData(fileTitle.value, subject.value, gradeLevel.value, worksheets.value, labs.value, exams.value, video.value, description.value, license.value)">
-                            Submit
-                        </button>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button has-background-link has-text-white" [disabled] = "fileToUpload === null" (click)="onSubmitFileClick()">
+                                    Submit
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    </div>
                 </div>
-            
+            </form>
         </div>
     </div>
-
-
-
 
 </body>
 

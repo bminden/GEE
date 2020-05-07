@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+
+<html lang="en" style = "overflow-y: hidden;">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +46,7 @@
                 <div class="navbar-item">
                     
                     <div class="buttons">
-                        <a routerLink="/uploadpage" routerLinkActive="active"
+                        <a *ngIf ="username" routerLink="/uploadpage" routerLinkActive="active"
                             class="button has-background-link has-text-white">
                             Upload
                         </a>
