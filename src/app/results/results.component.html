@@ -76,7 +76,7 @@
         <p>Sorry, we have no results!</p>
     </div>
 
-    <div *ngFor="let result of data">
+    <div *ngFor="let result of data; let i = index;">
         <div class="columns" id="columnContent">
             <!--Used for making columns and holds all contnet in the columns-->
             <div class="column is-one-fifth" id=leftColumn>
@@ -107,7 +107,7 @@
             </div>
             <div class="column" id=rightColumn>
                 <!--Right column for infromation an search result-->
-                <p>Search matching text to be determined.</p>
+                <p>Reasons are: {{reasons[i]}}</p>
             </div>
         </div>
         <hr _ngcontent-jme-c3="">
