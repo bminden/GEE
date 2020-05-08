@@ -16,6 +16,12 @@ export class NewUserComponent implements OnInit {
   displayPasswordNotification: boolean = false;
   displayGoodNotification: boolean = false;
   constructor(private apiService: ApiService, private router: Router) { }
+  
+  /**
+   * registers the user, checks if all fields are possibly valid info to be used for an account
+   * if so sends the info the backend, backend returns 0 if bad, 2 if info is taken by another user, 
+   * otherwise registers the new user and redirects them to the login page
+   */
   registerUser()
   {
     let text : string = this.NewUserForm.value.username;
@@ -59,16 +65,24 @@ export class NewUserComponent implements OnInit {
      
     });
   }
-    
+   /**
+    * toggles the display notification for invalid password format
+   */ 
   }
   togglePasswordDisplayNotification()
   {
     this. displayPasswordNotification = !this. displayPasswordNotification
   }
+     /**
+    * toggles the display notification for invalid username format
+   */ 
   toggleUserDisplayNotification()
   {
     this. displayUserNotification = !this. displayUserNotification;
   }
+       /**
+    * toggles the display notification for invalid email format
+   */ 
   toggleEmailDisplayNotification()
   {
     this. displayEmailNotification = !this.displayEmailNotification;

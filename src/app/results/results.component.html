@@ -21,6 +21,10 @@
             padding: 15px;
             text-align: center;
         }
+        div.fullSize{
+            position: absolute;
+            z-index: 30;
+            };
 
         .collapsible {
             background-color: #eee;
@@ -119,18 +123,17 @@
             </div>
         </div>
 
-        <!---pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" [zoom]="0.25" [show-all]="false" [page]="1"></pdf-viewer--->
-
-
-        <!--iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#toolbar=0"  scrolling="no" style=" width: 550px; height: 500px;  overflow: hidden;" ></iframe--->
-
-
-        <!--Placeholder images here for proof of concept-->
         <div class="column is-half" id="centerColumn">
-            <!--Center is the resource with preview image short discription, feedback and download button-->
             <div class=centerContent>
                 <div class="container is-desktop">
                     <div class="notification">
+                        <div class="column"  >
+                            <pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf"
+                                [zoom]="0.3" [show-all]="false" [page]="1" style="float:left;" (click)="togglePRF()"></pdf-viewer>
+                        </div>
+                        <div class="column"  class="fullSize" id="fullSize" >
+                            <pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" 
+                                [page]="1" [show-all]="false" [show-borders]="true" (click)="togglePRF()"></pdf-viewer>
                         
                         <div class="column">
                             <!--img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
@@ -357,6 +360,5 @@
             });
         } 
     </script>
-</body>
 
-</html>
+
