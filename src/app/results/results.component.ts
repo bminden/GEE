@@ -13,9 +13,6 @@ export class ResultsComponent implements OnInit {
   ResultForm: FormGroup;k
 
   data: any;
-  results: any;
-  reasons: any;
-
   public isCollapsed = false;
   //constructor() { }
 
@@ -26,7 +23,6 @@ export class ResultsComponent implements OnInit {
   constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService) { } 
 
   ngOnInit() {
-
     this.data = this.session.get("data");
     this.collapse();
     this.hideFull();
@@ -39,20 +35,6 @@ export class ResultsComponent implements OnInit {
     this.apiService.download().subscribe((resource)=>{
       console.log(resource);
      });
-  }
-
-  stage(){
-    let staging = this.session.get("data");
-    this.data = [staging[0], staging[1], staging[2], staging[3]];
-    this.results = staging[4];
-    this.reasons = [];
-    for(var x = 0; x < 4; x++){
-      let reason = "";
-      for(var y = 0; y < 3; y++){
-        reason = reason + this.results[(x * 3) + y];
-      }
-      this.reasons[x] = reason;
-    }
   }
 
   
