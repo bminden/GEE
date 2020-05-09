@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
@@ -25,6 +25,7 @@ import { AngularWebStorageModule } from 'angular-web-storage';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FileUploadModule } from 'ng2-file-upload';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SearchAllComponent } from './search-all/search-all.component';
 
 
 const appRoutes: Routes = [
@@ -32,14 +33,16 @@ const appRoutes: Routes = [
   {path: 'home', component: HomepageComponent},
   {path: 'search', component: SearchComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'uploadpage', component: UploadpageComponent},
   {path: 'userpage', component: UserpageComponent},
   {path: 'results', component: ResultsComponent},
   {path: 'newUser', component: NewUserComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'copyright', component: CopyrightComponent},
   {path: 'privacy', component: PrivacyComponent},
-  {path: 'support', component: SupportComponent}
+  {path: 'support', component: SupportComponent},
+  {path: 'uploadpage/:status', component: UploadpageComponent},
+  {path: 'login/:status', component: LoginComponent},
+  {path: 'searchall/:keyword', component: SearchAllComponent}
 ];
 
 @NgModule({
@@ -57,9 +60,11 @@ const appRoutes: Routes = [
     ContactComponent,
     CopyrightComponent,
     PrivacyComponent,
-    SupportComponent
+    SupportComponent,
+    SearchAllComponent
   ],
   imports: [
+    FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     AngularWebStorageModule,

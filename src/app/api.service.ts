@@ -19,20 +19,22 @@ export class ApiService {
     });
   }
 
-  public download (){
+  public download (filelocation:string){
     let headers = new HttpHeaders({
        // Auth header
       //No other headers needed
   });
-    this.httpClient
-    .get("http://198.211.98.83:3002/download", { headers, responseType: "blob" }) //set response Type properly (it is not part of headers)
+    return this.httpClient
+    .get("http://198.211.98.83:3002/download", { params:{filelocation:filelocation}, headers, responseType: "blob" }) //set response Type properly (it is not part of headers)
     .toPromise()
     .then(blob => {
         saveAs(blob); 
     })
     .catch(err => console.error("download error = ", err))
     return this.httpClient.get('http://198.211.98.83:3002/download', {
-      
+      params:{
+        filelocation: filelocation 
+      }
     });
   }
 
@@ -67,6 +69,14 @@ export class ApiService {
     });
   }
 
+  public searchall (keywords){
+    return this.httpClient.get('http://198.211.98.83:3002/searchall', {
+      params:{
+        keywords: keywords
+      }
+    });
+  }
+  
   public upload (username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags){
     return this.httpClient.get('http://198.211.98.83:3002/upload', {
       params:{

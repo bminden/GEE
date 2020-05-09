@@ -1,17 +1,17 @@
 import { Component, OnInit, ɵCompiler_compileModuleAndAllComponentsSync__POST_R3__ } from '@angular/core';
 import { ApiService } from '../api.service';
 import {SessionStorageService, SessionStorage } from 'angular-web-storage';
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl } from '@angular/forms';
-@Component({
-  selector: 'app-results',
-  templateUrl: './results.component.html',
-  styleUrls: ['./results.component.css']
-  
-})
-export class ResultsComponent implements OnInit {
-  ResultForm: FormGroup;
 
+@Component({
+  selector: 'app-search-all',
+  templateUrl: './search-all.component.html',
+  styleUrls: ['./search-all.component.css']
+})
+export class SearchAllComponent implements OnInit {
+  SearchAllForm: FormGroup;
+  keywordString: String = null;
   data: any;
   public isCollapsed = false;
   //constructor() { }
@@ -20,14 +20,34 @@ export class ResultsComponent implements OnInit {
    * This opens up the apiService to this component
    * @param apiService The api service is what connects the components to the backend API
    */
-  constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService) { } 
+  constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService,private activatedRoute: ActivatedRoute) 
+  { 
+    this.activatedRoute.params.subscribe(params => {
+      this.keywordString = params['keyword'];
+      console.log(this.keywordString);
+      });
+  } 
 
   ngOnInit() {
-    this.data = this.session.get("data");
+    
+    //this.session.set("data", data);
+    //this.router.navigateByUrl("results");
     this.collapse();
     this.hideFull();
-    this.ResultForm= new FormGroup({
+    this.data = this.session.get("data");
+    this.SearchAllForm = new FormGroup({
     });
+    this.apiService.searchall(this.keywordString).subscribe((data)=>{
+      console.log(data);
+      if (data["data"] === 0)
+      {
+       alert("Bad News");
+      } 
+      else{
+       this.session.set("data", data);
+       console.log(this.session.get("data"));
+     }
+   });
   }
   download(resource)
   {
@@ -55,7 +75,6 @@ export class ResultsComponent implements OnInit {
       });
     }
   }
-
   /**
    * This toggles pdf fullsize on and off
    */
@@ -71,11 +90,8 @@ export class ResultsComponent implements OnInit {
    * This hides the full sized pdf when the page is made
    */
   hideFull(){
-    var full = document.getElementById("fullSize");
-    full.style.display = "none";
+    //var full = document.getElementById("fullSize");
+    //full.style.display = "none";
   }
-
-
-
 
 }

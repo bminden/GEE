@@ -28,18 +28,27 @@
                 <div class="navbar-item">
                     <div class="field has-addons">
                         <div class="control">
-                            <input class="input" type="text" placeholder="Search lesson plans" />
+                            <input class="input" [(ngModel)] = "searchValue" type="text" placeholder="Search lesson plans" />
                         </div>
                         <div class="control">
-                            <a routerLink="/search" routerLinkActive="active" class="button has-background-link has-text-white">
+                            <a (click) = "routeToSearchAll()" routerLinkActive="active" class="button has-background-link has-text-white">
                                 Search
                             </a>
                         </div>
+                     
+                    </div>
+
+                </div>
+                <div class = "navbar-item">
+                    <div class="control">
+                        <a routerLink="/search" routerLinkActive="active" class="button has-background-link has-text-white">
+                            Advanced Search
+                        </a>
                     </div>
                 </div>
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a routerLink="/uploadpage" routerLinkActive="active" class="button has-background-link has-text-white">
+                        <a routerLink="/uploadpage/Bad" routerLinkActive="active" class="button has-background-link has-text-white">
                             Upload
                         </a>
                         <div *ngIf="!username">

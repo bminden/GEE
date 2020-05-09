@@ -6,6 +6,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { unwrapResolvedMetadata } from '@angular/compiler';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import {SessionStorageService, SessionStorage } from 'angular-web-storage';
+import { Router, ActivatedRoute } from '@angular/router';
 
 const URL = '198.211.98.83:3002/api/upload';
 
@@ -15,8 +16,6 @@ const URL = '198.211.98.83:3002/api/upload';
   styleUrls: ['./uploadpage.component.css']
 })
 export class UploadpageComponent implements OnInit {
-
-
 
   /**
    * This sends metadata about the file being uplaoded to the backend so that it can be processed
@@ -37,7 +36,36 @@ export class UploadpageComponent implements OnInit {
   errorString: string = null;
   faUpload = faUpload;
   toggleErrorNotification: boolean = false;
-  constructor (private apiService: ApiService, public session: SessionStorageService){}
+  toggleUploadStatus: boolean = false;
+  uploadStatus:string = null;
+  constructor (private apiService: ApiService, public session: SessionStorageService, public router: Router, private activatedRoute: ActivatedRoute)
+  {
+    this.activatedRoute.params.subscribe(params => {
+      this.uploadStatus = params['status'];
+      if (this.uploadStatus !== "Bad")
+      {
+        this.toggleUploadStatus = true;
+      }
+      else{
+        this.toggleUploadStatus = false;
+      }
+      this.UploadForm = new FormGroup({
+        filename: new FormControl('', [Validators.required]),
+        subject: new FormControl('', [Validators.required]),
+        includes_worksheets: new FormControl(''),
+        includes_labs: new FormControl(''),
+        includes_assesment: new FormControl(''),
+        includes_video: new FormControl(''),
+        description: new FormControl('', [Validators.required]),
+        license: new FormControl('', [Validators.required]),
+        grade: new FormControl('', [Validators.required]),
+        tos: new FormControl('', [Validators.required]),
+        tags: new FormControl('', [Validators.required])
+      });
+      });
+
+
+  }
   
 
   handleFileInput(files: FileList) {
@@ -93,7 +121,6 @@ export class UploadpageComponent implements OnInit {
         if (data["success"] == 0)
         {
           let username: string = this.session.get("username");
-          alert(username);
           let filename: string = this.correctFileNameForLinux(this.UploadForm.value.filename);
           let subject: string = this.UploadForm.value.subject;
           let includes_worksheets: string = this.UploadForm.value.includes_worksheets;
@@ -105,6 +132,7 @@ export class UploadpageComponent implements OnInit {
           let grade: string = this.UploadForm.value.grade;
           let tags: string = this.UploadForm.value.tags;
           this.uploaderData(username,filename, subject, grade, includes_worksheets, includes_labs, includes_assesment, includes_video, description, license, tags );
+          this.navigateToUploadPage(filename)
         }
         else if (data["success"] = 1)
         {
@@ -121,16 +149,21 @@ export class UploadpageComponent implements OnInit {
         
       });
   }
+
+  toggleUploadStatusNotification()
+  {
+    this.toggleUploadStatus = !this.toggleUploadStatus;
+  }
+
+  navigateToUploadPage(uploadStatus) {
+   
+    this.router.navigate([`uploadpage/` + uploadStatus]);
+    
+  }
+
   uploaderData(username:string, fileTitle:string, subject:string, gradeLevel:string, worksheets:string, labs:string, exams:string, video:string, description:string, license:string, tags:string){
     this.apiService.upload(username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags).subscribe((data)=>{
       console.log(data);
-      if (data["data"] === 0)
-      {
-        alert("Bad News");
-      } 
-      else{
-        alert("Verified");
-      }
     });
   }
   
