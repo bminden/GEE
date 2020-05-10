@@ -48,11 +48,15 @@
                 </div>
                 <div class="navbar-item">
                     <div class="buttons">
+                        <div *ngIf="username">
+
                         <a routerLink="/uploadpage/Bad" routerLinkActive="active" class="button has-background-link has-text-white">
                             Upload
                         </a>
+                    </div>
                         <div *ngIf="!username">
-                            <a class="button has-background-link has-text-white" routerLink="/newUser" routerLinkActive="active">
+                        
+                          <a class="button has-background-link has-text-white" routerLink="/newUser" routerLinkActive="active">
                                 Sign up
                             </a>
                             <a routerLink="/login" routerLinkActive="active" class="button has-background-link has-text-white">

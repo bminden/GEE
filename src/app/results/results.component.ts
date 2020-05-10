@@ -11,7 +11,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ResultsComponent implements OnInit {
   ResultForm: FormGroup;
-
   data: any;
   public isCollapsed = false;
   //constructor() { }

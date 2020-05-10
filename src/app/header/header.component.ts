@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  private ZIPLOGO = ("..\\search-all\\images\\zip.png");
   /**
    * stores username 
    */  

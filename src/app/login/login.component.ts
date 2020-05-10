@@ -22,16 +22,30 @@ export class LoginComponent implements OnInit {
   LoginForm: FormGroup;
   displayNotification: boolean = false;
   sub: any;
+  toggleLoginStatus: boolean = false;
+  loginStatus:string = null;
   /**
    * This opens up the apiService to this component
    * @param apiService The api service is what connects the components to the backend API
    */
-  constructor(private route: ActivatedRoute ,private router: Router, public session: SessionStorageService, private apiService: ApiService) { 
+  constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService, private activatedRoute: ActivatedRoute) { 
     this.displayNewAccountNotification = this.NewAccount;
-    
+    this.activatedRoute.params.subscribe(params => {
+      this.loginStatus = params['status'];
+      if (this.loginStatus === "Good")
+      {
+        this.toggleLoginStatus = true;
+      }
+
+     
+      });
+
     //alert(this.NewAccount);
   } 
-  
+  toggleLoginStatusNotification()
+  {
+    this.toggleLoginStatus = !this.toggleLoginStatus;
+  }
   /**
    * This method calls the getUsers method in app.service to call the api.
    * It then updates the angular page with a yes or no value deciding if the user
@@ -78,9 +92,6 @@ export class LoginComponent implements OnInit {
       password: new FormControl(''),
     });
     this.session.remove("username");
-    this.sub = this.route
-            .data
-            .subscribe(value => {console.log("HERE IS THE VALUE:"); console.log(value)});
   }
 
 }
