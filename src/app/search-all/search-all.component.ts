@@ -4,6 +4,7 @@ import {SessionStorageService, SessionStorage } from 'angular-web-storage';
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl } from '@angular/forms';
 import { faArrowUp, faArrowDown, faDownload, faComment } from '@fortawesome/free-solid-svg-icons';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @Component({
   selector: 'app-search-all',
@@ -11,6 +12,7 @@ import { faArrowUp, faArrowDown, faDownload, faComment } from '@fortawesome/free
   styleUrls: ['./search-all.component.css']
 })
 export class SearchAllComponent implements OnInit {
+  filepath:String = "C:\\Users\\myhog\\Desktop\\School\\Capstone\\Resources\\1.1_Anat\\1.1_Anat.pdf";
   SearchAllForm: FormGroup;
   keywordString: String = null;
   fileData: any;
@@ -26,6 +28,7 @@ export class SearchAllComponent implements OnInit {
   canDownvote:Boolean = true;
   canVote:Boolean = true;
   pdfSrc:any;
+
 
   promise: Promise<any>;
   //constructor() { }
@@ -161,18 +164,8 @@ toggleCommentNotification()
     this.submitVote(fileid, voteValue, originalVoteValue);
     
   }
-  onFileSelected(pdfLocation:any) {
-    let $img: any = document.querySelector(pdfLocation);
-  
-    if (typeof (FileReader) !== 'undefined') {
-      let reader = new FileReader();
-  
-      reader.onload = (e: any) => {
-        this.pdfSrc = e.target.result;
-      };
-  
-      reader.readAsArrayBuffer($img.files[0]);
-    }
+  onFileSelected() {
+ 
   }
  async submitVote(fileid:number, voteValue:number, originalVoteValue:number)
   {

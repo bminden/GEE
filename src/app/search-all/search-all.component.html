@@ -88,8 +88,9 @@
                                 <img src="/assets/img/zip.png" alt="Placeholder image" />
                             </figure>
                             <figure *ngIf = "result.pdflocation">
-                            <pdf-viewer src="result.pdflocation" [zoom]="0.3" [show-all]="false" [page]="1" style="float:left;"></pdf-viewer>
-                        </figure>
+                                <pdf-viewer [src]="result.pdflocation" [render-text]="true" style="display: block;" [zoom]="0.12"></pdf-viewer>
+                            <p></p>
+                            </figure>
                         </div>
 
                         <div class="card-content">

@@ -29,7 +29,7 @@
     "angular-web-storage": "^9.0.0",
     "file-saver": "^2.0.2",
     "ng2-file-upload": "^1.4.0",
-    "ng2-pdf-viewer": "^6.2.0",
+    "ng2-pdf-viewer": "^6.3.0",
     "rxjs": "~6.4.0",
     "selenium-webdriver": "^4.0.0-alpha.7",
     "tslib": "^1.10.0",
