@@ -10,8 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   
 })
 export class ResultsComponent implements OnInit {
-  ResultForm: FormGroup;k
-
+  ResultForm: FormGroup;
   data: any;
   public isCollapsed = false;
   //constructor() { }
@@ -31,10 +30,9 @@ export class ResultsComponent implements OnInit {
   }
   download(resource)
   {
+    resource = resource +".zip";
     console.log(resource);
-    this.apiService.download().subscribe((resource)=>{
-      console.log(resource);
-     });
+    this.apiService.download(resource);
   }
 
   
@@ -56,24 +54,6 @@ export class ResultsComponent implements OnInit {
       });
     }
   }
-
-  /*collapse() {
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      }
-      );
-    }
-  }*/
 
   /**
    * This toggles pdf fullsize on and off

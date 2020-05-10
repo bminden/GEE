@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Results</title>
+        <meta charset="utf-8" />
+        <style>
+            .fa-icon{
+                font-size:28px;
+            }
+            
+            div.size {
+                margin: auto;
+                width: 70%;
+            }
+
+            div.center {
+                padding: 15px;
+                text-align: center;
+                font-size: 2.2em;
+            }
+
+            div.centerContent {
+                padding: 15px;
+                text-align: center;
+            }
+            div.fullSize {
+                position: absolute;
+                z-index: 30;
+            }
+
+            .collapsible {
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
+
+            .active,
+            .collapsible:hover {
+                background-color: #ccc;
+            }
+
+            .feedback {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: #f1f1f1;
+            }
+
+            .commentText {
+                margin: 10px;
+            }
+
+            .vote {
+                float: right;
+                padding: 10px;
+            }
+
+            html {
+                overflow: inherit;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="center" id="ResultsHeader">
+            <h1>Results</h1>
+        </div>
+        <!--End ResultsHeader-->
+        <div *ngIf="fileData.length == 0">
+            <p>Sorry, we have no results!</p>
+        </div>
+
+        <div *ngFor="let result of fileData">
+            <div class="columns is-centered">
+                <div class="column is-half" id="centerColumn">
+                    <div class="card" style ="box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        <hr>
+                        <div class="card-image">
+
+                            <figure *ngIf = "!result.pdflocation" class="image is-128x128" style="margin: auto;">
+                                <img src="/assets/img/zip.png" alt="Placeholder image" />
+                            </figure>
+                            <figure *ngIf = "result.pdflocation">
+                            <pdf-viewer src="result.pdflocation" [zoom]="0.3" [show-all]="false" [page]="1" style="float:left;"></pdf-viewer>
+                        </figure>
+                        </div>
+
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left"></div>
+                                <div class="media-content has-text-centered">
+                                    <p class="title is-5">Author: {{result.author}}</p>
+                                </div>
+                            </div>
+
+                            <div class="content has-text-centered">
+                                <p>{{result.description}}</p>
+                                .
+                                <br />
+                                <time datetime="2016-1-1">Date added: {{result.dateadded}}</time>
+                                <p *ngIf = "result.license != http">License: {{result.license}}</p>
+                                <p *ngIf = "result.media_format">Includes: {{result.media_format}}</p>
+                                
+                                <hr style="border-top: 1px solid black;" />
+                                    <div class="columns is-mobile is-multiline is-centered">
+                                        
+                                        <div class="column">
+                                            <div class="column">
+                                            <button class="button is-link is-light is-large" (click)="download(result.filelocation)">
+                                                <fa-icon class="fa-icon"[icon]="faDownload"></fa-icon>
+                                            </button>
+                                        </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="column">
+                                                <button (click) ="getFeedbackByID(result.fileid)"class="button is-link is-light is-large"><fa-icon class="fa-icon" [icon]="faComment"></fa-icon></button>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="column">
+                                                <button  (click) = "upvote(result.fileid, result.upvotes)"class="button is-link is-light is-large"><fa-icon class="fa-icon" [icon]="faArrowUp"></fa-icon></button>
+                                            </div>
+                                        </div>
+                                        <div class="column" style="font-size: 32px;">
+                                          <p class="bd-notification is-primary" style = "font-size: 32;">
+                                            {{result.upvotes}}
+                                          </p>
+                                        </div>
+                                        <div class="column">
+                                            <div class="column">
+                                                <button (click) = "downvote(result.fileid, result.upvotes)" class="button is-link is-light is-large"><fa-icon class="fa-icon" [icon]="faArrowDown"></fa-icon></button>
+                                            </div>
+                                        </div>
+                                      </div>
+                               <div n></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="border-top: 1px solid black;" />
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <br />
+        <br />
+        <!--Used for collapsible section-->
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

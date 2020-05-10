@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -15,8 +16,14 @@ export class NewUserComponent implements OnInit {
   displayUserNotification: boolean = false;
   displayPasswordNotification: boolean = false;
   displayGoodNotification: boolean = false;
+  searchValue:string = null;
   constructor(private apiService: ApiService, private router: Router) { }
   
+  routeToSearchAll()
+  {
+      this.router.navigate([`login/` + "Good"]);
+    
+  }
   /**
    * registers the user, checks if all fields are possibly valid info to be used for an account
    * if so sends the info the backend, backend returns 0 if bad, 2 if info is taken by another user, 
@@ -60,7 +67,7 @@ export class NewUserComponent implements OnInit {
      } 
      else{
        this.displayGoodNotification = true;
-       this.router.navigate(['/login', { data: true }]);
+       this.routeToSearchAll();
      }
      
     });

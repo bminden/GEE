@@ -3,9 +3,9 @@
 <html lang="en">
 
 <body>
-  <div class="notification is-info" *ngIf="displayNewAccountNotification"> User was created successfully! To proceed, please login below.
-    <button class="delete" (click) = "toggleDisplayNewAccountNotification()"></button>
-  </div>
+  <div class="notification is-info has-text-centered" *ngIf="toggleLoginStatus"> Account created successfully! Please login below.
+    <button class="delete" (click)="toggleLoginStatusNotification()"></button>
+</div>
     <section class="hero is-success is-fullheight has-background-light">
         <div class="hero-body">
             <div class="container has-text-centered">>

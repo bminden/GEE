@@ -18,21 +18,41 @@ export class ApiService {
       }
     });
   }
+  public getFeedback(fileid){
+    return this.httpClient.get('http://198.211.98.83:3002/getfeedback', {
+      params:{
+       fileid:fileid
+      }
+    });
+  }
+  public submitFeedback(username, fileid, feedback){
+    return this.httpClient.get('http://198.211.98.83:3002/submitfeedback', {
+      params:{
+       username: username,
+        fileid:fileid,
+        feedback: feedback
+      }
+    });
+  }
 
-  public download (){
+  public download (filelocation:string){
+    let filenamelist = filelocation.split("/");
+    let filename = filenamelist[filenamelist.length - 1];
     let headers = new HttpHeaders({
        // Auth header
       //No other headers needed
   });
-    this.httpClient
-    .get("http://198.211.98.83:3002/download", { headers, responseType: "blob" }) //set response Type properly (it is not part of headers)
+    return this.httpClient
+    .get("http://198.211.98.83:3002/download", { params:{filelocation:filelocation}, headers, responseType: "blob" }) //set response Type properly (it is not part of headers)
     .toPromise()
     .then(blob => {
-        saveAs(blob); 
+        saveAs(blob, filename); 
     })
     .catch(err => console.error("download error = ", err))
     return this.httpClient.get('http://198.211.98.83:3002/download', {
-      
+      params:{
+        filelocation: filelocation 
+      }
     });
   }
 
@@ -67,6 +87,50 @@ export class ApiService {
     });
   }
 
+  
+  public searchall(term)
+  {
+    
+    
+      return this.httpClient.get('http://198.211.98.83:3002/searchall', {
+      params:{
+        keywords: term
+      }}).toPromise()
+      
+    
+
+  }
+  public getFile(fileid) : Promise<any>
+  {
+    return this.httpClient
+    .get("http://198.211.98.83:3002/getfile", { params:{fileid:fileid}}) //set response Type properly (it is not part of headers)
+    .toPromise()
+ 
+  }
+
+
+  public getUserVotes (username){
+    return this.httpClient.get('http://198.211.98.83:3002/getvotes', {
+      params:{
+        username:username
+      }
+    });
+  }
+
+  public submitUserVote(username, fileid, voteValue, originalVoteValue):Promise<any>{
+    return this.httpClient.get('http://198.211.98.83:3002/submitvote', {params:{
+      username:username,
+      voteValue:voteValue,
+      fileid:fileid,
+      originalVoteValue: originalVoteValue
+    }})
+    .toPromise()
+      
+    
+    
+  }
+  
+  
   public upload (username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags){
     return this.httpClient.get('http://198.211.98.83:3002/upload', {
       params:{

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {SessionStorageService, SessionStorage } from 'angular-web-storage';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +9,13 @@ import {SessionStorageService, SessionStorage } from 'angular-web-storage';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  private ZIPLOGO = ("..\\search-all\\images\\zip.png");
   /**
    * stores username 
    */  
   username: String;
-  constructor(public session: SessionStorageService) { }
+  searchValue: String = null;
+  constructor(public session: SessionStorageService, public router: Router) { }
 
   /**
    * initial get username 
@@ -28,6 +32,13 @@ export class HeaderComponent implements OnInit {
   @ViewChild('navBurger', {static: false}) navBurger: ElementRef;
   @ViewChild('navMenu', {static: false}) navMenu: ElementRef;
 
+  routeToSearchAll()
+  {
+    if (this.searchValue !== null && this.searchValue != "" && this.searchValue.replace(/\s/g, '').length)
+    {
+      this.router.navigate([`searchall/` + this.searchValue]);
+    }
+  }
 /**
  * toggles the navbar's fullsize for narrow dispalys
  */

@@ -9,11 +9,14 @@
 </head>
 
 <body>
-    <div class=c enter>
+    <div class= "center">
         <h1 class="title">Upload Content</h1>
     </div>
     <div class="notification is-danger has-text-centered" *ngIf="toggleErrorNotification && !UploadForm.valid"> {{errorString}}
         <button class="delete" (click)="toggleErrorMessageNotification()"></button>
+    </div>
+    <div class="notification is-info has-text-centered" *ngIf="toggleUploadStatus"> File was uploaded successfully!
+                <button class="delete" (click)="toggleUploadStatusNotification()"></button>
     </div>
     <div class="container is-desktop ">
         <div class="notification has-background-white">
