@@ -83,10 +83,10 @@
 					<hr>
 					<div class="card-image">
 						<figure *ngIf="!result.pdflocation" class="image is-128x128" style="margin: auto;">
-							<img src="getPDFLocation(result.pdflocation)" alt="Placeholder image" />
+							<img src="/assets/img/zip.png" alt="Placeholder image" />
 						</figure>
 						<figure *ngIf="result.pdflocation">
-						<pdf-viewer [src]="pdfSrc" [render-text]="true" style="display: block;" [zoom]="0.12"></pdf-viewer>
+						<pdf-viewer [src]="getPDFLocation(result.pdflocation)" [render-text]="true" style="display: block;" [zoom]="0.12"></pdf-viewer>
 							<p></p>
 						</figure>
 					</div>
