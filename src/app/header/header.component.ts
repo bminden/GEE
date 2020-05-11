@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {SessionStorageService, SessionStorage } from 'angular-web-storage';
-import { FormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({

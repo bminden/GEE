@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl } from '@angular/forms';
 import { faArrowUp, faArrowDown, faDownload, faComment } from '@fortawesome/free-solid-svg-icons';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-search-all',
@@ -30,9 +31,13 @@ export class SearchAllComponent implements OnInit {
   pdfSrc:any;
 
 
+
+
   promise: Promise<any>;
   //constructor() { }
 
+
+  
    /**
    * This opens up the apiService to this component
    * @param apiService The api service is what connects the components to the backend API
@@ -229,7 +234,7 @@ toggleCommentNotification()
 
     var coll = document.getElementsByClassName("collapsible");
     var i;
-
+    
     for (i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function() {
         this.classList.toggle("active");

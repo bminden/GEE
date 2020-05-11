@@ -26,6 +26,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FileUploadModule } from 'ng2-file-upload';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchAllComponent } from './search-all/search-all.component';
+import { StandardsComponent } from './standards/standards.component';
 
 
 const appRoutes: Routes = [
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
   {path: 'copyright', component: CopyrightComponent},
   {path: 'privacy', component: PrivacyComponent},
   {path: 'support', component: SupportComponent},
+  {path: 'standards', component: StandardsComponent},
   {path: 'uploadpage/:status', component: UploadpageComponent},
   {path: 'login/:status', component: LoginComponent},
   {path: 'searchall/:keyword', component: SearchAllComponent}
@@ -61,7 +63,8 @@ const appRoutes: Routes = [
     CopyrightComponent,
     PrivacyComponent,
     SupportComponent,
-    SearchAllComponent
+    SearchAllComponent,
+    StandardsComponent
   ],
   imports: [
     FormsModule,
