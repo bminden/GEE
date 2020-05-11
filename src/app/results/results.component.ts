@@ -12,6 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ResultsComponent implements OnInit {
   ResultForm: FormGroup;
   data: any;
+  reasons: any;
   public isCollapsed = false;
   //constructor() { }
 
@@ -22,7 +23,8 @@ export class ResultsComponent implements OnInit {
   constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService) { } 
 
   ngOnInit() {
-    this.data = this.session.get("data");
+    this.data = [];
+    this.parseData();
     this.collapse();
     this.hideFull();
     this.ResultForm= new FormGroup({
@@ -35,6 +37,14 @@ export class ResultsComponent implements OnInit {
     this.apiService.download(resource);
   }
 
+  parseData(){
+    this.reasons = ["First", "Second", "Third", "Fourth", "Fifth"];
+    var size = this.session.get("data").length;
+    for(var x = 0; x < size - 1; x++){
+      this.data[x] = this.session.get("data")[x];
+    }
+    this.reasons =  this.session.get("data")[size - 1];
+  }
   
   collapse()
   {
@@ -71,7 +81,7 @@ export class ResultsComponent implements OnInit {
    */
   hideFull(){
     var full = document.getElementById("fullSize");
-    full.style.display = "none";
+    //full.style.display = "none";
   }
 
 
