@@ -6,6 +6,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { faArrowUp, faArrowDown, faDownload, faComment } from '@fortawesome/free-solid-svg-icons';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
+
 @Component({
   selector: 'app-search-all',
   templateUrl: './search-all.component.html',
@@ -27,8 +28,8 @@ export class SearchAllComponent implements OnInit {
   canUpvote:Boolean = true;
   canDownvote:Boolean = true;
   canVote:Boolean = true;
-  pdfSrc:any;
-
+  pdfSrc:String ;
+  
 
   promise: Promise<any>;
   //constructor() { }
@@ -73,7 +74,7 @@ toggleCommentNotification()
 {
   this.toggleComments = !this.toggleComments;
 }
-   async ngOnInit() {
+async ngOnInit() {
     
     //this.session.set("data", data);
     //this.router.navigateByUrl("results");
@@ -85,6 +86,12 @@ toggleCommentNotification()
     this.SearchAllForm = new FormGroup({
     });
     await this.getUserVotes();
+    this.pdfSrc = "/assets/1.1_Anat.pdf";
+  }
+
+  getPDFLocation(filelocation:String)
+  {
+    return "/assets" + filelocation;
   }
   download(resource)
   {
@@ -165,7 +172,17 @@ toggleCommentNotification()
     
   }
   onFileSelected() {
- 
+    let img: any = document.querySelector("#file");
+
+    if(typeof (FileReader) !== 'undefined') {
+      let reader = new FileReader();
+
+      reader.onload = (e:any) => {
+        this.pdfSrc = e.target.result;
+      }
+
+      reader.readAsArrayBuffer(img.files[0]);
+    }
   }
  async submitVote(fileid:number, voteValue:number, originalVoteValue:number)
   {
