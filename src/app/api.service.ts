@@ -23,14 +23,15 @@ export class ApiService {
       params:{
        fileid:fileid
       }
-    });
+    }).toPromise();
   }
-  public submitFeedback(username, fileid, feedback){
+  public submitFeedback(username, fileid, feedback, dateadded){
     return this.httpClient.get('http://198.211.98.83:3002/submitfeedback', {
       params:{
        username: username,
         fileid:fileid,
-        feedback: feedback
+        feedback: feedback,
+        dateadded:dateadded,
       }
     });
   }

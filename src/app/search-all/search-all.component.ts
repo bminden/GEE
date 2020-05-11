@@ -2,7 +2,7 @@ import { Component, OnInit, ɵCompiler_compileModuleAndAllComponentsSync__POST_R
 import { ApiService } from '../api.service';
 import {SessionStorageService, SessionStorage } from 'angular-web-storage';
 import { Router, ActivatedRoute } from "@angular/router";
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { faArrowUp, faArrowDown, faDownload, faComment } from '@fortawesome/free-solid-svg-icons';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
@@ -23,13 +23,13 @@ export class SearchAllComponent implements OnInit {
   faComment = faComment;
   toggleComments:boolean = false;
   public isCollapsed = false;
-  feedbackData:any;
+  feedbackData:any = null;
   voteData:any = null;
   canUpvote:Boolean = true;
   canDownvote:Boolean = true;
   canVote:Boolean = true;
   pdfSrc:String ;
-  
+  displayModal = false;
 
   promise: Promise<any>;
   //constructor() { }
@@ -46,28 +46,47 @@ export class SearchAllComponent implements OnInit {
       console.log(this.keywordString);
       });
   } 
+
+toggleModal()
+{
+  this.displayModal = !this.displayModal;
+  if (this.displayModal)
+  {
+    let modal = document.querySelector("[id^='modal']");
+    modal.className = "modal is-active";
+  }
+  else
+  {
+    let modal = document.querySelector("[id^='modal']");
+    modal.className = "modal";
+  }
+}
+
 onLoad(keyword:String)
 {
 this.getSearchItems();
 this.ngOnInit();
 }
- async getSearchItems()
+async getSearchItems()
   {
     
   await this.apiService.searchall(this.keywordString).then((data)=>{
      this.session.set("data", data);
-     console.log(data);
-   });
+   });;
   }
 
-getFeedbackByID(id:number)
+async getFeedbackByID(id:number)
 {
+
   console.log("This is the file id: " + id);
-  this.apiService.getFeedback(id).subscribe((data)=>{
+  await this.apiService.getFeedback(id).then((data)=>{
     console.log(data);
     this.feedbackData = data;
     console.log(this.feedbackData);
    });
+
+   console.log("toggled");
+   this.toggleModal();
  
 }
 toggleCommentNotification()
@@ -84,6 +103,7 @@ async ngOnInit() {
     await this.getSearchItems();
     this.fileData = this.session.get("data");
     this.SearchAllForm = new FormGroup({
+      feedback: new FormControl('', [Validators.required])
     });
     await this.getUserVotes();
     this.pdfSrc = "/assets/1.1_Anat.pdf";
@@ -100,14 +120,32 @@ async ngOnInit() {
     this.apiService.download(resource);
   }
 
-  submitFeedbackByFileID(fileid:number, feedbackContent:string)
+  getCurrentDate()
   {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+    let dateObj = new Date();
+    let month = monthNames[dateObj.getMonth()];
+    let day = String(dateObj.getDate()).padStart(2, '0');
+    let year = dateObj.getFullYear();
+    let output = month  + '\n'+ day  + ', ' + year;
+    return output;
+  }
+
+
+  submitFeedbackByFileID()
+  {
+    let fileid = this.feedbackData[0].fileid;
+    let feedbackContent = this.SearchAllForm.value.feedback;
     let username:string = this.session.get("username");
-    this.apiService.submitFeedback(username, fileid, feedbackContent).subscribe((data)=>{
+    this.apiService.submitFeedback(username, fileid, feedbackContent, this.getCurrentDate()).subscribe((data)=>{
       console.log(data);
-      this.feedbackData = data;
-      console.log(this.feedbackData);
+      this.feedbackData.push({"userid:":1, "fileid":fileid,"feedback":feedbackContent, "username":username, "dateadded":this.getCurrentDate()});
      });
+    this.SearchAllForm = new FormGroup
+    ({
+      feedback: new FormControl('', [Validators.required])
+    });
   }
 
   async getUserVotes()

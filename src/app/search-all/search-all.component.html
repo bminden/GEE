@@ -69,13 +69,77 @@
 </head>
 
 <body>
+	<div class="modal" id="modal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<header class="modal-card-head">
+				<p class="modal-card-title"><strong>Comments:</strong>
+				</p>
+				<button (click)="toggleModal()" class="delete" aria-label="close"></button>
+            </header>
+           
+			<div *ngIf = "feedbackData !== null && feedbackData.length > 0" class="box">
+               
+				<div *ngFor="let comment of feedbackData">
+					<article class="media">
+						<div class="media-left">
+							<figure class="image is-64x64">
+								<img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+							</figure>
+						</div>
+						<div class="media-content">
+							<div class="content">
+								<p> <strong>{{comment.username}}</strong>  <small> {{comment.dateadded}}</small>
+									<br>{{comment.feedback}}</p>
+							</div>
+                        </div>
+					</article>
+					<hr style="border-top: 1px solid black;" />
+                </div>
+                <form [formGroup] = "SearchAllForm">
+                    <div class="control">
+                        <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
+                    </div>
+                    <hr>
+                    <div class="control">
+                        <button [disabled] ="!SearchAllForm.controls.feedback.valid" (click) = "submitFeedbackByFileID()" routerLinkActive="active" class="button has-background-link has-text-white">
+                            Add comment
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class = "box" *ngIf = "feedbackData === null || feedbackData.length === 0" >
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+    
+                          <strong>No comments found on this resource.</strong>
+                          <hr>
+                          <form [formGroup] = "SearchAllForm">
+                            <div class="control">
+                                <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
+                            </div>
+                            <hr>
+                            <div class="control">
+                                <button [disabled] ="!SearchAllForm.controls.feedback.valid" (click) = "submitFeedbackByFileID()" routerLinkActive="active" class="button has-background-link has-text-white">
+                                    Add comment
+                                </button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </article>
+            </div>
+		</div>
+		<button (click)="toggleModal()" class="modal-close is-large" aria-label="close"></button>
+	</div>
 	<div class="center" id="ResultsHeader">
 		<h1>Results</h1>
 	</div>
 	<!--End ResultsHeader-->
 	<div *ngIf="fileData.length == 0">
 		<p>Sorry, we have no results!</p>
-    </div>
+	</div>
 	<div *ngFor="let result of fileData">
 		<div class="columns is-centered">
 			<div class="column is-half" id="centerColumn">
@@ -86,7 +150,7 @@
 							<img src="/assets/img/zip.png" alt="Placeholder image" />
 						</figure>
 						<figure *ngIf="result.pdflocation">
-						<pdf-viewer class = "fullSize" [src]="getPDFLocation(result.pdflocation)" [page]="1" [show-all]="false" [show-borders]="true" (click)="togglePRF()" [zoom]="0.25"></pdf-viewer>
+							<pdf-viewer src="/assets/img/zip.png" [page]="1" [show-all]="false" [show-borders]="true" (click)="togglePRF()" [page]="1" [render-text]="true" style="display: block;" [zoom]="0.12"></pdf-viewer>
 							<p></p>
 						</figure>
 					</div>
@@ -114,7 +178,7 @@
 								</div>
 								<div class="column">
 									<div class="column">
-										<button (click)="getFeedbackByID(result.fileid)" class="button is-link is-light is-large mmm">
+										<button (click)="getFeedbackByID(result.fileid)" class="button is-link is-light is-large modal-operator">
 											<fa-icon class="fa-icon" [icon]="faComment"></fa-icon>
 										</button>
 									</div>
