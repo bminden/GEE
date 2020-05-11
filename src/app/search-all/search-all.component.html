@@ -86,7 +86,7 @@
 							<img src="/assets/img/zip.png" alt="Placeholder image" />
 						</figure>
 						<figure *ngIf="result.pdflocation">
-						<pdf-viewer [src]="getPDFLocation(result.pdflocation)" [render-text]="true" style="display: block;" [zoom]="0.12"></pdf-viewer>
+						<pdf-viewer class = "fullSize" [src]="getPDFLocation(result.pdflocation)" [page]="1" [show-all]="false" [show-borders]="true" (click)="togglePRF()" [zoom]="0.25"></pdf-viewer>
 							<p></p>
 						</figure>
 					</div>
