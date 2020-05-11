@@ -23,7 +23,7 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.session.get("data");
-    this.collapse();
+    this.collapse();//This is to ensure collapsable section should not need double click
     this.hideFull();
     this.ResultForm= new FormGroup({
     });
@@ -36,7 +36,7 @@ export class ResultsComponent implements OnInit {
   }
 
   
-  collapse()
+  collapse()//If sunction for collapsable section, will open/close on click
   {
 
     var coll = document.getElementsByClassName("collapsible");
