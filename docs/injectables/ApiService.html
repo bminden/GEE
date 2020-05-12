@@ -81,7 +81,23 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#getFeedback">getFeedback</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getFile">getFile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getUsers">getUsers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getUserVotes">getUserVotes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#postFile">postFile</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -90,6 +106,18 @@
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#search">search</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchall">searchall</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#submitFeedback">submitFeedback</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#submitUserVote">submitUserVote</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -178,15 +206,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>download(filename: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>download(filelocation: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/api.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/api.service.ts:39</a></div>
                 </td>
             </tr>
 
@@ -206,7 +234,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>filename</td>
+                                    <td>filelocation</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -224,6 +252,142 @@
                     </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFeedback"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getFeedback
+                        </b>
+                        <a href="#getFeedback"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFeedback(fileid)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/app/api.service.ts:21</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fileid</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFile"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getFile
+                        </b>
+                        <a href="#getFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFile(fileid)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/api.service.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fileid</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -314,6 +478,146 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getUserVotes"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getUserVotes
+                        </b>
+                        <a href="#getUserVotes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUserVotes(username)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/api.service.ts:113</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>username</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postFile"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            postFile
+                        </b>
+                        <a href="#postFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>postFile(fileToUpload: File)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/api.service.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fileToUpload</td>
+                                    <td>
+                                            <code>File</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="registerUser"></a>
                     <span class="name">
                         <b>
@@ -334,8 +638,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/api.service.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/api.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -420,8 +724,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/api.service.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/api.service.ts:79</a></div>
                 </td>
             </tr>
 
@@ -504,28 +808,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="upload"></a>
+                    <a name="searchall"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            upload
+                            searchall
                         </b>
-                        <a href="#upload"><span class="icon ion-ios-link"></span></a>
+                        <a href="#searchall"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>upload(fileTitle, subject, contentType, gradeLevel, includes, description)</code>
+                    <code>searchall(term)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/api.service.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/api.service.ts:92</a></div>
                 </td>
             </tr>
 
@@ -543,6 +847,273 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>term</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitFeedback"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            submitFeedback
+                        </b>
+                        <a href="#submitFeedback"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>submitFeedback(username, fileid, feedback, dateadded)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/api.service.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>username</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>fileid</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>feedback</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>dateadded</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitUserVote"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            submitUserVote
+                        </b>
+                        <a href="#submitUserVote"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>submitUserVote(username, fileid, voteValue, originalVoteValue)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/api.service.ts:121</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>username</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>fileid</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>voteValue</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>originalVoteValue</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="upload"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            upload
+                        </b>
+                        <a href="#upload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>upload(username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/app/api.service.ts:135</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>username</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                                 <tr>
                                     <td>fileTitle</td>
 
@@ -562,15 +1133,6 @@
 
                                 </tr>
                                 <tr>
-                                    <td>contentType</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
                                     <td>gradeLevel</td>
 
                                     <td>
@@ -580,7 +1142,43 @@
 
                                 </tr>
                                 <tr>
-                                    <td>includes</td>
+                                    <td>license</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>worksheets</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>labs</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>video</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>exams</td>
 
                                     <td>
                                         No
@@ -590,6 +1188,15 @@
                                 </tr>
                                 <tr>
                                     <td>description</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>tags</td>
 
                                     <td>
                                         No
@@ -639,21 +1246,42 @@ export class ApiService {
       }
     });
   }
+  public getFeedback(fileid){
+    return this.httpClient.get(&#x27;http://198.211.98.83:3002/getfeedback&#x27;, {
+      params:{
+       fileid:fileid
+      }
+    }).toPromise();
+  }
+  public submitFeedback(username, fileid, feedback, dateadded){
+    return this.httpClient.get(&#x27;http://198.211.98.83:3002/submitfeedback&#x27;, {
+      params:{
+       username: username,
+        fileid:fileid,
+        feedback: feedback,
+        dateadded:dateadded,
+      }
+    });
+  }
 
-  public download (filename:string){
+  public download (filelocation:string){
+    let filenamelist &#x3D; filelocation.split(&quot;/&quot;);
+    let filename &#x3D; filenamelist[filenamelist.length - 1];
     let headers &#x3D; new HttpHeaders({
        // Auth header
       //No other headers needed
   });
-    this.httpClient
-    .get(&quot;http://198.211.98.83:3002/download&quot;, { headers, responseType: &quot;blob&quot; }) //set response Type properly (it is not part of headers)
+    return this.httpClient
+    .get(&quot;http://198.211.98.83:3002/download&quot;, { params:{filelocation:filelocation}, headers, responseType: &quot;blob&quot; }) //set response Type properly (it is not part of headers)
     .toPromise()
     .then(blob &#x3D;&gt; {
         saveAs(blob, filename); 
     })
     .catch(err &#x3D;&gt; console.error(&quot;download error &#x3D; &quot;, err))
     return this.httpClient.get(&#x27;http://198.211.98.83:3002/download&#x27;, {
-      
+      params:{
+        filelocation: filelocation 
+      }
     });
   }
 
@@ -666,6 +1294,15 @@ export class ApiService {
       }
     });
   }
+
+  public postFile(fileToUpload: File) {
+    const endpoint &#x3D; &#x27;http://198.211.98.83:3002/api/upload&#x27;;
+    const formData: FormData &#x3D; new FormData();
+    formData.append(&#x27;file&#x27;, fileToUpload, fileToUpload.name);
+    return this.httpClient
+      .post(endpoint, formData, { })
+}
+  
   //public search (keywords, subject, contentType, gradeLevel){
   public search (keywords?, subject?, contentType?, gradeLevel?, includes?){
     return this.httpClient.get(&#x27;http://198.211.98.83:3002/search&#x27;, {
@@ -679,15 +1316,64 @@ export class ApiService {
     });
   }
 
-  public upload (fileTitle, subject, contentType, gradeLevel, includes, description){
+  
+  public searchall(term)
+  {
+    
+    
+      return this.httpClient.get(&#x27;http://198.211.98.83:3002/searchall&#x27;, {
+      params:{
+        keywords: term
+      }}).toPromise()
+      
+    
+
+  }
+  public getFile(fileid) : Promise&lt;any&gt;
+  {
+    return this.httpClient
+    .get(&quot;http://198.211.98.83:3002/getfile&quot;, { params:{fileid:fileid}}) //set response Type properly (it is not part of headers)
+    .toPromise()
+ 
+  }
+
+
+  public getUserVotes (username){
+    return this.httpClient.get(&#x27;http://198.211.98.83:3002/getvotes&#x27;, {
+      params:{
+        username:username
+      }
+    });
+  }
+
+  public submitUserVote(username, fileid, voteValue, originalVoteValue):Promise&lt;any&gt;{
+    return this.httpClient.get(&#x27;http://198.211.98.83:3002/submitvote&#x27;, {params:{
+      username:username,
+      voteValue:voteValue,
+      fileid:fileid,
+      originalVoteValue: originalVoteValue
+    }})
+    .toPromise()
+      
+    
+    
+  }
+  
+  
+  public upload (username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags){
     return this.httpClient.get(&#x27;http://198.211.98.83:3002/upload&#x27;, {
       params:{
         fileTitle: fileTitle,
         subject: subject,
-        contentType: contentType,
         gradeLevel: gradeLevel,
-        includes: includes,
-        description: description
+        labs: labs,
+        video: video,
+        exams: exams,
+        worksheets: worksheets,
+        description: description,
+        license: license,
+        tags: tags,
+        username: username
       }
     });
   }

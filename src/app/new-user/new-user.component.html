@@ -42,6 +42,37 @@
             <div class="notification is-danger" *ngIf="!NewUserForm.controls.email.valid && displayEmailNotification"> Email address is not valid. Please enter in a valid email address.
               <button class="delete" (click) = "toggleEmailDisplayNotification()"></button>
             </div>
+            <p class="subtitle has-text-black has-text-left">Security Question 1</p>
+            <div class="control">
+              <select class="select" formControlName="security1" [value] = "question">
+                <option *ngFor = "let question of securityQuestions">{{question}}</option>
+              </select>
+              <div class="notification is-danger" *ngIf="!NewUserForm.controls.security1.valid && displaySecurity1Notification"> The security question is not valid. Please choose a proper security question.
+                <button class="delete" (click) = "toggleSecurity1DisplayNotification()"></button>
+              </div>
+            </div>
+            <hr>
+            <p class="subtitle has-text-black has-text-left">Security Answer #1</p>
+            <input formControlName="security1ans" class="input" placeholder="Security Question Answer" type="text" id="security1ans"  title="Enter Security Question Answer" name="sec1" ><br><br>
+            <div class="notification is-danger" *ngIf="!NewUserForm.controls.security1ans.valid && displaySecurity1AnsNotification"> Security answer is not valid. Please enter in a security answer.
+              <button class="delete" (click) = "toggleSecurity1AnsDisplayNotification()"></button>
+            </div>
+            <p class="subtitle has-text-black has-text-left">Security Question 2</p>
+            <div class="control">
+              <select class="select" formControlName="security2" [value] = "question2">
+                <option *ngFor = "let question2 of securityQuestions">{{question2}}</option>
+              </select>
+              <div class="notification is-danger" *ngIf="!NewUserForm.controls.security2.valid && displaySecurity2Notification"> The security question is not valid. Please choose a proper security question.
+                <button class="delete" (click) = "toggleSecurity2DisplayNotification()"></button>
+              </div>
+            </div>
+            <hr>
+            <p class="subtitle has-text-black has-text-left">Security Answer #2</p>
+            <input formControlName="security2ans" class="input" placeholder="Security Question Answer" type="text" id="security2ans"  title="Enter Security Question Answer" name="sec1ans" ><br><br>
+            <div class="notification is-danger" *ngIf="!NewUserForm.controls.security2ans.valid && displaySecurity2AnsNotification"> Security answer is not valid. Please enter in a security answer.
+              <button class="delete" (click) = "toggleSecurity2AnsDisplayNotification()"></button>
+            </div>
+            
             <label for="password">Password</label>
             <input formControlName="password" class="input" placeholder="********" type="password" id="password" name="password" #password><br><br>
             <div class="notification is-danger" *ngIf="!NewUserForm.controls.password.valid && displayPasswordNotification"> Password is not valid. Please enter in a valid password.

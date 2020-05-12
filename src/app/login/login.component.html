@@ -3,7 +3,7 @@
 <html lang="en">
 
 <body>
-  <div class="notification is-info has-text-centered" *ngIf="toggleLoginStatus"> Account created successfully! Please login below.
+  <div class="notification is-info has-text-centered" *ngIf="toggleLoginStatus"> {{statusString}}
     <button class="delete" (click)="toggleLoginStatusNotification()"></button>
 </div>
     <section class="hero is-success is-fullheight has-background-light">
@@ -30,6 +30,7 @@
                                 
                                 <br><br>
                                 <button class="button is-link large is-fullwidth" (click)="checkUserInfo()">Login</button>
+                                
                               </form>
                               </div>
                      
@@ -37,6 +38,11 @@
                     <br>
                     <p class="has-text-grey">
                         <a routerLink="/newUser" routerLinkActive="active">Register</a>
+                      </p>
+                      <hr>
+                      <p class="has-text-grey">
+                       
+                        <a routerLink = "/resetPassword" routerLinkActive = "active">Forgot password?</a>
                     </p>
                 </div>
             </div>

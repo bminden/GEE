@@ -1,364 +1,261 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <title>Results</title>
-    <meta charset="utf-8" />
-    <style>
-        div.size {
-            margin: auto;
-            width: 70%;
-        }
-
-        div.center {
-            padding: 15px;
-            text-align: center;
-            font-size: 2.2em;
-        }
-
-        div.centerContent {
-            padding: 15px;
-            text-align: center;
-        }
-        div.fullSize{
-            position: absolute;
-            z-index: 30;
-            };
-
-        .collapsible {
-            background-color: #eee;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-        }
-
-        .active,
-        .collapsible:hover {
-            background-color: #ccc;
-        }
-
-        .feedback {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f1f1f1;
-        }
-
-        .commentText {
-            margin: 10px;
-        }
-
-        .vote{
-            float:right;
-            padding:10px;
-        }
-
-        html {
-            overflow: inherit
-        }
-    </style>
-
-
+	<title>Results</title>
+	<meta charset="utf-8" />
+	<style>
+		.fa-icon{
+						font-size:28px;
+						
+		            }
+		            
+		            div.size {
+		                margin: auto;
+		                width: 70%;
+		            }
+		
+		            div.center {
+		                padding: 15px;
+		                text-align: center;
+		                font-size: 2.2em;
+		            }
+		
+		            div.centerContent {
+		                padding: 15px;
+		                text-align: center;
+		            }
+		            div.fullSize {
+		                position: absolute;
+		                z-index: 30;
+		            }
+		
+		            .collapsible {
+		                background-color: #eee;
+		                color: #444;
+		                cursor: pointer;
+		                padding: 18px;
+		                width: 100%;
+		                border: none;
+		                text-align: left;
+		                outline: none;
+		                font-size: 15px;
+		            }
+		
+		            .active,
+		            .collapsible:hover {
+		                background-color: #ccc;
+		            }
+		
+		            .feedback {
+		                padding: 0 18px;
+		                display: none;
+		                overflow: hidden;
+		                background-color: #f1f1f1;
+		            }
+		
+		            .commentText {
+		                margin: 10px;
+		            }
+		
+		            .vote {
+		                float: right;
+		                padding: 10px;
+		            }
+		
+		            html {
+		                overflow: inherit;
+		            }
+	</style>
 </head>
 
 <body>
-    <div class=center id=ResultsHeader>
-        <h1>Results</h1>
-    </div>
-    <!--End ResultsHeader-->
-    <div *ngIf="data.length == 0">
-        <p>Sorry, we have no results!</p>
-    </div>
-
-    <div *ngFor="let result of data">
-        <div class="columns" id="columnContent">
-            <!--Used for making columns and holds all contnet in the columns-->
-            <div class="column is-one-fifth" id=leftColumn>
-                <!--Left Column for image of content type-->
-                <div class=center>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAMFBMVEXMzMyZmZm+vr7ExMTHx8ehoaGdnZ26urqvr6/AwMC2trakpKSgoKCoqKiysrKrq6vSeg5QAAABtElEQVR4nO3Wy5aDIBBFUQGpKPj4/79tkIfS9iCYXhmdPTIxuRYUosMAAAAAAAAAAAAAAAAAAMA7JpUPZlXo47PzIt59MeRqlJL4ahPXdLx+LaQJDH/Mh5tadTIOcfzizOhETV8KucRNq6iauKvtcioPN4x+/EJIIy+E/Mmr13nKqSUdLKqujNCqdM1J2cch7zDG6Jooaj7PrGXeJ7XXL8NvTSrEPA95s7KSGGZ8Du2w+3FJW0b9us7MrvwQx759EtJXVr21JWZJvsHDDMn549BGF1a1/yikr6ywLq0eR22PFtU+1fMlX7ctfBDSVZaecmts3GbkTGwGuoeZuC/fzpCesqpjxpdz/pfrydDGWwu7Qx6VNcZdxp+r1f/6udz3oM6Q52XVbXFr722r5I9HSWdIT1l2yUM75t+VW9o2SynchUauO+aTkK6yVmVTd3zcBOMGFD/MzXPj2EjdvY1dIX1lhf/6eG/7dNXwlA3rVbdPWXt0xd9a0hXSV1Z9J5H0+PDxsH0nyc9CU16mHoX0ljWYyYrYrcz37Q1uzj2Jk9A2pSMEAAAAAAAAAAAAAAAAAAD8hx+EAgxoODBEjgAAAABJRU5ErkJggg=="
-                        alt="placeholder image">
+	<div class="modal" id="modal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<header class="modal-card-head">
+				<p class="modal-card-title"><strong>Comments:</strong>
+				</p>
+				<button (click)="toggleModal()" class="delete" aria-label="close"></button>
+            </header>
+           
+			<div *ngIf = "feedbackData !== null && feedbackData.length > 0" class="box">
+               
+				<div *ngFor="let comment of feedbackData">
+					<article class="media">
+						<div class="media-left">
+							<figure class="image is-64x64">
+								<img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+							</figure>
+						</div>
+						<div class="media-content">
+							<div>
+								<p> <strong>{{comment.username}}</strong>  <small> {{comment.dateadded}}</small>
+									<br>{{comment.feedback}}</p>
+							</div>
+                        </div>
+					</article>
+					<hr style="border-top: 1px solid black;" />
                 </div>
+                <form [formGroup] = "SearchAllForm">
+                    <div class="control">
+                        <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
+                    </div>
+                    <hr>
+                    <div class="control">
+                        <button [disabled] ="!SearchAllForm.controls.feedback.valid" (click) = "submitFeedbackByFileID()" routerLinkActive="active" class="button has-background-link has-text-white">
+                            Add comment
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="column is-half" id="centerColumn">
-                <div class=centerContent>
-                    <div class="container is-desktop">
-                        <div class="notification">
-                            <p>Author: {{result.author}}</p>
-                            <p>{{result.description}}</p>
-                            <div class=center>
-                                <button class="button" (click)="download(result.filelocation)">Download Resource</button>
+            <div class = "box" *ngIf = "feedbackData === null || feedbackData.length === 0" >
+                <article class="media">
+                    <div class="media-content">
+                        <div>
     
-                                <div id="vote" class="vote"><!--Upvote/Downvote buttons Number is meant to be number of upvotes and downvotes-->
-                                    76<button class="button" (click)="upvote()">+</button>
-                                    <button class="button" (click)="downvote()">-</button>15
-                                </div>
-    
+                          <strong>No comments found on this resource.</strong>
+                          <hr>
+                          <form [formGroup] = "SearchAllForm">
+                            <div class="control">
+                                <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
                             </div>
+                            <hr>
+                            <div class="control">
+                                <button [disabled] ="!SearchAllForm.controls.feedback.valid" (click) = "submitFeedbackByFileID()" routerLinkActive="active" class="button has-background-link has-text-white">
+                                    Add comment
+                                </button>
+                            </div>
+                        </form>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
-            <div class="column" id=rightColumn>
-                <!--Right column for infromation an search result-->
-                <p>Search matching text to be determined.</p>
-            </div>
-        </div>
-        <hr _ngcontent-jme-c3="">
-    </div>
+		</div>
+		<button (click)="toggleModal()" class="modal-close is-large" aria-label="close"></button>
+	</div>
+	<div class="center" id="ResultsHeader">
+		<h1>Results</h1>
+	</div>
+	<!--End ResultsHeader-->
+	<div *ngIf="fileData !== null && fileData.length == 0">
+		<p>Sorry, we have no results!</p>
+	</div>
+	<div *ngFor="let result of fileData">
+		<div class="columns is-vcentered">
+			<div class="column is-one-third has-text-centered" id="leftColumn"><img style ="border: 1px solid black;" [src]="getPictureAt(result.fileid)" alt="Standards Image" /></div>
+			<div class="column is-one-third" id="centerColumn">
+				<div class="card" style="box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+					<hr>
+					<div class="card-image">
+						<figure *ngIf="!result.pdflocation" class="image is-128x128" style="margin: auto;">
+							<img src="/assets/img/zip.png" alt="Placeholder image" />
+						</figure>
+						<figure *ngIf="result.pdflocation">
+							<pdf-viewer src="/assets/img/zip.png" [page]="1" [show-all]="false" [show-borders]="true" (click)="togglePRF()" [page]="1" [render-text]="true" style="display: block;" [zoom]="0.12"></pdf-viewer>
+							<p></p>
+						</figure>
+					</div>
+					<div class="card-content">
+						<div class="media">
+							<div class="media-left"></div>
+							<div class="media-content has-text-centered">
+								<p class="title is-5">Title: {{getTitle(result.filelocation)}}</p>
+								<p class="title is-5">Author: {{result.author !== "" ? result.author : "No author found"}}</p>
+							</div>
+						</div>
+						<div class="has-text-centered">
 
-    <div class="columns" id="columnContent">
-        <!--Used for making columns and holds all contnet in the columns-->
-        <div class="column is-one-fifth" id=leftColumn>
-            <!--Left Column for image of content type-->
-            <div class=center>
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAMFBMVEXMzMyZmZm+vr7ExMTHx8ehoaGdnZ26urqvr6/AwMC2trakpKSgoKCoqKiysrKrq6vSeg5QAAABtElEQVR4nO3Wy5aDIBBFUQGpKPj4/79tkIfS9iCYXhmdPTIxuRYUosMAAAAAAAAAAAAAAAAAAMA7JpUPZlXo47PzIt59MeRqlJL4ahPXdLx+LaQJDH/Mh5tadTIOcfzizOhETV8KucRNq6iauKvtcioPN4x+/EJIIy+E/Mmr13nKqSUdLKqujNCqdM1J2cch7zDG6Jooaj7PrGXeJ7XXL8NvTSrEPA95s7KSGGZ8Du2w+3FJW0b9us7MrvwQx759EtJXVr21JWZJvsHDDMn549BGF1a1/yikr6ywLq0eR22PFtU+1fMlX7ctfBDSVZaecmts3GbkTGwGuoeZuC/fzpCesqpjxpdz/pfrydDGWwu7Qx6VNcZdxp+r1f/6udz3oM6Q52XVbXFr722r5I9HSWdIT1l2yUM75t+VW9o2SynchUauO+aTkK6yVmVTd3zcBOMGFD/MzXPj2EjdvY1dIX1lhf/6eG/7dNXwlA3rVbdPWXt0xd9a0hXSV1Z9J5H0+PDxsH0nyc9CU16mHoX0ljWYyYrYrcz37Q1uzj2Jk9A2pSMEAAAAAAAAAAAAAAAAAAD8hx+EAgxoODBEjgAAAABJRU5ErkJggg=="
-                    alt="placeholder image">
-            </div>
-        </div>
+							<p><strong>Description: </strong>{{result.description !== "" ? result.description : "No description found"}}</p>
+							<br>
+							<p><strong>Subject: </strong>{{result.subject}}</p>
+							<time datetime="2016-1-1"><strong>Date added: </strong> {{result.dateadded}}</time>
+							<p><strong>License: </strong> {{result.license === " http" ? "http://creativecommons.org/licenses/by-nc/4.0/" : result.license}}</p>
+							<p *ngIf="result.mediaformat"><strong>Includes: </strong> {{result.mediaformat}}</p>
+							<p *ngIf="result.tags"><strong>Tags: </strong> {{getTags(result.tags)}}</p>
+							<hr style="border-top: 1px solid black;" />
+							<div class="columns is-mobile is-multiline is-vcentered">
+								<div class="column">
+									<div class="column">
+										<button class="button is-link  is-large" (click)="download(result.filelocation)">
+											<fa-icon class="fa-icon" [icon]="faDownload"></fa-icon>
+										</button>
+									</div>
+								</div>
+								<div class="column">
+									<div class="column">
+										<button (click)="getFeedbackByID(result.fileid)" class="button is-link  is-large modal-operator">
+											<fa-icon class="fa-icon" [icon]="faComment"></fa-icon>
+										</button>
+									</div>
+								</div>
+								<div class="column">
+									<div class="column">
+										<button (click)="upvote(result.fileid, result.upvotes)" class="button is-link  is-large">
+											<fa-icon class="fa-icon" [icon]="faArrowUp"></fa-icon>
+										</button>
+									</div>
+								</div>
+								<div class="column is-narrow" style="font-size: 32px;">
+									<p class="bd-notification is-primary" style="font-size: 32;">{{result.upvotes}}</p>
+								</div>
+								<div class="column">
+									<div class="column">
+										<button (click)="downvote(result.fileid, result.upvotes)" class="button is-link is-large">
+											<fa-icon class="fa-icon" [icon]="faArrowDown"></fa-icon>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div></div>
+						</div>
+					</div>
+				</div>
+				<hr style="border-top: 1px solid black;" />
+			</div>
+			<div class="column is-one-third has-text-centered" id="rightolumn">
+				<div class="box" style = "border: 1px solid black;">
+					<article class="media">
+					  <div class="media-left">
+					  </div>
+					  <div class="media-content">
+						<div >
+							<p class="title is-5">The reason this resource was chosen:</p>
+						  <p>
+							These fields were matched in your search: {{reasonData[1]}}
+						  </p>
+						</div>
+						<nav class="level is-mobile">
+						  <div class="level-left">
+							<a class="level-item" aria-label="reply">
+							  <span class="icon is-small">
+								<i class="fas fa-reply" aria-hidden="true"></i>
+							  </span>
+							</a>
+							<a class="level-item" aria-label="retweet">
+							  <span class="icon is-small">
+								<i class="fas fa-retweet" aria-hidden="true"></i>
+							  </span>
+							</a>
+							<a class="level-item" aria-label="like">
+							  <span class="icon is-small">
+								<i class="fas fa-heart" aria-hidden="true"></i>
+							  </span>
+							</a>
+						  </div>
+						</nav>
+					  </div>
+					</article>
+				  </div>
 
-        <div class="column is-half" id="centerColumn">
-            <div class=centerContent>
-                <div class="container is-desktop">
-                    <div class="notification">
-                        <div class="column"  >
-                            <pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf"
-                                [zoom]="0.3" [show-all]="false" [page]="1" style="float:left;" (click)="togglePRF()"></pdf-viewer>
-                        </div>
-                        <div class="column"  class="fullSize" id="fullSize" >
-                            <pdf-viewer src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" 
-                                [page]="1" [show-all]="false" [show-borders]="true" (click)="togglePRF()"></pdf-viewer>
-                        
-                        <div class="column">
-                            <!--img src="https://www.openscied.org/wp-content/uploads/2019/08/openscied_cover_6.2_TE-2.jpg"
-                            alt="Resource image" style="width:225px;height:225px; float:left;"-->
-                            <pdf-viewer
-                                src="https://cors-anywhere.herokuapp.com/https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf"
-                                [zoom]="0.3" [show-all]="false" [page]="1" style="float:left;"></pdf-viewer>
-                        </div>
-                        <div class="column">
-                            <p>This unit on thermal energy transfer begins with students testing whether a new plastic
-                                cup
-                                sold
-                                by a
-                                store
-                                keeps a drink colder for longer compared to the regular plastic cup that comes free with
-                                the
-                                drink.
-                                Students
-                                find that the drink in the regular cup warms up more than the drink in the special cup.
-                                This
-                                prompts
-                                students to identify features of the cups that are different, such as the lid, walls,
-                                and
-                                hole
-                                for the
-                                straw, that might explain why one drink warms up more than the other.</p><br>
-                        </div>
-                        <div class=center>
-                            <button class="button" (click)="download()">Download Resource</button>
+			</div>
+		</div>
+	</div>
+	<hr />
+	<br />
+	<br />
+	<!--Used for collapsible section-->
 
-                            <div id="vote" class="vote"><!--Upvote/Downvote buttons Number is meant to be number of upvotes and downvotes-->
-                                76<button class="button" (click)="upvote()">+</button>
-                                <button class="button" (click)="downvote()">-</button>15
-                            </div>
+</body>
 
-                        </div>
-                        <div id="feedbackButton"><!--Section for containing feedback, including the collapsible button and its content.-->
-                            <button type="button" class="collapsible">Click for Feedback</button><!--Opens/closed collapsable feedback-->
-                            <div class="feedback">
-                                <!--Start of collapsable section-->
-                                <div id="comments">
-                                    <div id="userComment" style="padding:10px;">
-                                        <!--Section for user comment-->
-                                        <img src="https://www.bh-bims.org/wp-content/uploads/2017/02/profile-placeholder.gif"
-                                            alt="User image" style="width:45px; height:45px; float:left;">
-                                        <div class="commentText">
-                                            <p>7.8/10 too much water.
-                                            </p>
-                                        </div>
-                                        <hr>
-                                    </div>
-                                    <!--End user comment-->
-                                    <div id="userComment" style="padding:10px;">
-                                        <!--Section for user comment-->
-                                        <img src="https://www.bh-bims.org/wp-content/uploads/2017/02/profile-placeholder.gif"
-                                            alt="User image" style="width:45px; height:45px; float:left;">
-                                        <!--User profile image if used-->
-                                        <div class="commentText">
-                                            <p>Example text ment to repesent a user comment because i can't think of
-                                                another
-                                                good example of a good comment.
-                                            </p>
-                                        </div>
-                                        <hr>
-                                    </div>
-                                    <!--End user comment-->
-                                </div>
-                                <!--End comments-->
-                                <div id="enterComment" style="margin-top: 5px;"><!--Section for user entering a comment-->
-                                    You can submit a comment about this resource here:
-                                    <form [formGroup] = "ResultForm"  action="/comment.php">
-                                        <textarea name="comment" rows="10"
-                                            cols="30">Enter comment feedback here</textarea>
-                                        <br>
-                                        <input type="submit" value="Submit Comment">
-                                    </form>
-                                </div>
-                                <!--End enter comment-->
-                            </div>
-                            <!--End feedback collapsable section-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="column" id=rightColumn>
-            <!--Right column for infromation an search result-->
-            <p>Search matching text to be determined.</p>
-        </div>
-    </div>
-    <hr>
-
-
-
-
-
-
-
-    <!--REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER-->
-    <!--REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER-->
-    <!--REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER-->
-    <!--This is just a temp block to show more then one resource REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER-->
-    <div class="columns" id="columnContent">
-        <!--Used for making columns and holds all contnet in the columns-->
-        <div class="column is-one-fifth" id=leftColumn>
-            <div class=center>
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAMFBMVEXMzMyZmZm+vr7ExMTHx8ehoaGdnZ26urqvr6/AwMC2trakpKSgoKCoqKiysrKrq6vSeg5QAAABtElEQVR4nO3Wy5aDIBBFUQGpKPj4/79tkIfS9iCYXhmdPTIxuRYUosMAAAAAAAAAAAAAAAAAAMA7JpUPZlXo47PzIt59MeRqlJL4ahPXdLx+LaQJDH/Mh5tadTIOcfzizOhETV8KucRNq6iauKvtcioPN4x+/EJIIy+E/Mmr13nKqSUdLKqujNCqdM1J2cch7zDG6Jooaj7PrGXeJ7XXL8NvTSrEPA95s7KSGGZ8Du2w+3FJW0b9us7MrvwQx759EtJXVr21JWZJvsHDDMn549BGF1a1/yikr6ywLq0eR22PFtU+1fMlX7ctfBDSVZaecmts3GbkTGwGuoeZuC/fzpCesqpjxpdz/pfrydDGWwu7Qx6VNcZdxp+r1f/6udz3oM6Q52XVbXFr722r5I9HSWdIT1l2yUM75t+VW9o2SynchUauO+aTkK6yVmVTd3zcBOMGFD/MzXPj2EjdvY1dIX1lhf/6eG/7dNXwlA3rVbdPWXt0xd9a0hXSV1Z9J5H0+PDxsH0nyc9CU16mHoX0ljWYyYrYrcz37Q1uzj2Jk9A2pSMEAAAAAAAAAAAAAAAAAAD8hx+EAgxoODBEjgAAAABJRU5ErkJggg=="
-                    alt="placeholder image">
-            </div>
-        </div>
-
-        <!--Placeholder images here for proof of concept-->
-        <div class="column is-half" id="centerColumn">
-            <div class=centerContent>
-                <div class="container is-desktop">
-                    <div class="notification">
-                        <img src="https://raw.githubusercontent.com/jgthms/bulma/master/docs/images/bulma-banner.png"
-                            alt="Resource image" style="width:225px;height:225px; float:left;">
-                        <p>This unit on thermal energy transfer begins with students testing whether a new plastic
-                            cup
-                            sold
-                            by a
-                            store
-                            keeps a drink colder for longer compared to the regular plastic cup that comes free with
-                            the
-                            drink.
-                            Students
-                            find that the drink in the regular cup warms up more than the drink in the special cup.
-                            This
-                            prompts
-                            students to identify features of the cups that are different, such as the lid, walls,
-                            and
-                            hole
-                            for the
-                            straw, that might explain why one drink warms up more than the other.</p><br>
-                        <div class=center>
-                            <button class="button">Download Resource</button>
-
-                            <div id="vote" class="vote">
-                                52<button class="button" (click)="upvote()">+</button>
-                                <button class="button" (click)="downvote()">-</button>27
-                            </div>
-                        </div>
-                        <div id="feedbackButton">
-
-                            <button type="button" class="collapsible">Click for Feedback</button>
-                            <div class="feedback">
-                                <!--Start of collapsable section-->
-                                <div id="comments">
-                                    <div id="userComment" style="padding:10px;">
-                                        <!--Section for user comment-->
-                                        <img src="https://www.bh-bims.org/wp-content/uploads/2017/02/profile-placeholder.gif"
-                                            alt="User image" style="width:45px; height:45px; float:left;">
-                                        <p>3.2/10 Not enough water.
-                                        </p>
-                                        <hr>
-                                    </div>
-                                    <!--End user comment-->
-                                    <div id="userComment" style="padding:10px;">
-                                        <!--Section for user comment-->
-                                        <img src="https://www.bh-bims.org/wp-content/uploads/2017/02/profile-placeholder.gif"
-                                            alt="User image" style="width:45px; height:45px; float:left;">
-                                        <!--User profile image if used-->
-                                        <p>Another example comment ment to show this section's design just with
-                                            different text
-                                            to confirm it is indeeded, a different comment.
-                                        </p>
-                                        <hr>
-                                    </div>
-                                    <!--End user comment-->
-                                </div>
-                                <!--End comments-->
-                                <div id="enterComment" style="margin-top: 5px;">
-                                    You can submit additional feedback to be displayed here
-                                    <form [formGroup] = "ResultForm"> action="/comment.php">
-                                        <textarea name="comment" rows="10"
-                                            cols="30">Enter comment feedback here</textarea>
-                                        <br>
-                                        <input type="submit" value="Submit Comment">
-                                    </form>
-                                </div>
-                                <!--End enter comment-->
-                            </div>
-                            <!--End feedback collapsable section-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="column" id=rightColumn>
-            <p>Search matching text to be determined.</p>
-        </div>
-    </div>
-    <!--End of columns contnet div-->
-    <hr>
-    <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
-    <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
-    <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
-    <!--End REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER REMOVE LATER section-->
-
-
-
-
-
-
-
-    
-    <br><br>
-    <!--Used for collapsible section-->
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        } 
-    </script>
-
-
+</html>

@@ -1,21 +1,39 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, ComponentFixture, async, fakeAsync, tick } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
+import {Location} from "@angular/common";
+import {Router} from "@angular/router";
+import { By } from "@angular/platform-browser";
+
 describe('AppComponent', () => {
+
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let location: Location;
+  let router: Router;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent, FooterComponent, HeaderComponent 
       ],
-      imports: [HttpClientTestingModule, RouterTestingModule]
+      imports: [HttpClientTestingModule, FormsModule, RouterTestingModule]
     }).compileComponents();
   }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    router = TestBed.get(Router); 
+    location = TestBed.get(Location); 
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -29,10 +47,6 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('GEE');
   });
 
-  //it('should render title', () => {
-    //const fixture = TestBed.createComponent(AppComponent);
-    //fixture.detectChanges();
-    //const compiled = fixture.debugElement.nativeElement;
-    //expect(compiled.querySelector('.content span').textContent).toContain('GEE app is running!');
-  //});
+
+
 });
