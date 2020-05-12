@@ -47,12 +47,14 @@
                     </div>
                 </div>
                 <div class="navbar-item">
+                    <a routerLink="/uploadpage/Bad" routerLinkActive="active" class="button has-background-link has-text-white">
+                        Upload
+                    </a>
                     <div class="buttons">
                         <div *ngIf="username">
-
-                        <a routerLink="/uploadpage/Bad" routerLinkActive="active" class="button has-background-link has-text-white">
-                            Upload
-                        </a>
+                            
+                        
+                        &nbsp;
                     </div>
                         <div *ngIf="!username">
                         
@@ -64,6 +66,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div *ngIf="username">
                         Welcome, {{username}}!
                         <button (click)="handleClick($event)" type="button" class="button has-background-link has-text-white">Log out</button>
