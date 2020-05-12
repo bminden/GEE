@@ -406,4 +406,8 @@ async ngOnInit() {
     //var full = document.getElementById("fullSize");
     //full.style.display = "none";
   }
+
+
+
+
 }
