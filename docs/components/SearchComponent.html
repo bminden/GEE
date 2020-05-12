@@ -121,6 +121,24 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#SearchForm">SearchForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#session">session</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -154,12 +172,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(apiService: <a href="../injectables/ApiService.html">ApiService</a>)</code>
+<code>constructor(apiService: <a href="../injectables/ApiService.html">ApiService</a>, session: SessionStorageService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/search/search.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/search/search.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -181,6 +199,30 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>session</td>
+                                                  
+                                                        <td>
+                                                                    <code>SessionStorageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -228,8 +270,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/search/search.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/search/search.component.ts:32</a></div>
                 </td>
             </tr>
 
@@ -267,8 +309,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/search/search.component.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/search/search.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -388,6 +430,67 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SearchForm"></a>
+                        <span class="name">
+                            <b>
+                            SearchForm</b>
+                            <a href="#SearchForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/search/search.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="session"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            session</b>
+                            <a href="#session"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SessionStorageService</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/search/search.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
@@ -396,6 +499,11 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ApiService } from &#x27;../api.service&#x27;;
 import { stringify } from &#x27;querystring&#x27;;
+import { Router, ActivatedRoute } from &quot;@angular/router&quot;;
+import {SessionStorageService, SessionStorage } from &#x27;angular-web-storage&#x27;;
+import { FormGroup, FormControl } from &#x27;@angular/forms&#x27;;
+
+
 
 @Component({
   selector: &#x27;app-search&#x27;,
@@ -403,8 +511,8 @@ import { stringify } from &#x27;querystring&#x27;;
   styleUrls: [&#x27;./search.component.css&#x27;]
 })
 export class SearchComponent implements OnInit {
-
-  constructor(private apiService: ApiService) { }
+  SearchForm: FormGroup
+  constructor(private apiService: ApiService, public session: SessionStorageService, private router: Router) { }
   searcher(keywords:string, subject:string, gradeLevel:string, contentType:string, worksheets:string, labs:string, exams:string){
     var includes &#x3D; worksheets.concat(&quot;, &quot;, labs, &quot;, &quot;, exams);
     this.apiService.search(keywords, subject, gradeLevel, contentType, includes).subscribe((data)&#x3D;&gt;{
@@ -414,11 +522,15 @@ export class SearchComponent implements OnInit {
       alert(&quot;Bad News&quot;);
      } 
      else{
-      alert(&quot;Verified&quot;);
-     }
+      this.session.set(&quot;data&quot;, data);
+      this.router.navigateByUrl(&quot;results&quot;);
+    }
   });}
 
   ngOnInit() {
+    
+    this.SearchForm &#x3D; new FormGroup({
+    });
   }
 
 }
@@ -449,7 +561,7 @@ export class SearchComponent implements OnInit {
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;div class&#x3D; center id&#x3D;advancedSearchHeader&gt;
+    &lt;div class&#x3D;center id&#x3D;advancedSearchHeader&gt;
         &lt;h1&gt;Advanced Search&lt;/h1&gt;
     &lt;/div&gt;
     &lt;!--End advancedSearchHeader--&gt;
@@ -457,7 +569,7 @@ export class SearchComponent implements OnInit {
     &lt;!--Never delt with input data in HTML yet so this may need some fixes--&gt;
     &lt;div class&#x3D;&quot;container is-desktop&quot; &gt;
         &lt;div class&#x3D;&quot;notification&quot;&gt;
-    &lt;form &gt;
+    &lt;form [formGroup] &#x3D; &quot;SearchForm&quot;&gt;
         &lt;div class&#x3D;size&gt;
         &lt;div class&#x3D;&quot;columns&quot;&gt;
             &lt;div class&#x3D;&quot;column is-half&quot;&gt;
@@ -591,8 +703,8 @@ export class SearchComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html lang="en"><head>    <title>Advanced Search</title>    <meta charset="utf-8" />    <style>              div.size {          margin: auto;          width: 70%;        }        div.center {        padding: 15px;        text-align: center;        font-size: 2.2em;        }        </style></head><body>    <div class= center id=advancedSearchHeader>        <h1>Advanced Search</h1>    </div>    <!--End advancedSearchHeader-->    <!--Never delt with input data in HTML yet so this may need some fixes-->    <div class="container is-desktop" >        <div class="notification">    <form >        <div class=size>        <div class="columns">            <div class="column is-half">            <!--Combo box for grade-->            <div class="field">                <label for="grade">Grade Level</label>                <div class="control">                    <div class="select">                        <select id="grade" #gradeLevel>                            <option value="Any">Any</option>                            <option value="6th">6th</option>                            <option value="7th">7th</option>                            <option value="8th">8th</option>                            <option value="9th">9th</option>                            <option value="10th">10th</option>                            <option value="11th">11th</option>                            <option value="12th">12th</option>                        </select>                    </div>                </div>            </div>            <br><br><br>            <!--Combo box for subject-->            <div class="field">                    <label for="subject">Subject</label>                    <div class="control">                        <div class="select">                    <select id="subject" #subject>                        <option value="Any">Any</option>                        <option value="tempSubject1">TEMP SUBJECT 1</option>                        <option value="tempSubject2">TEMP SUBJECT 2</option>                        <option value="tempSubject3">TEMP SUBJECT 3</option>                        <option value="tempSubject4">TEMP SUBJECT 4</option>                        <option value="tempSubject5">TEMP SUBJECT 5</option>                        <option value="tempSubject6">TEMP SUBJECT 6</option>                        <option value="tempSubject7">TEMP SUBJECT 7</option>                    </select>                        </div>                    </div>            </div>            <br><br><br>            <!--Combo box for content type-->            <div class="field">            <label for="contentType">Content Type</label>            <div class="control">                <div class="select">            <select id="contentType" #contentType>				<option value="Any">Any</option>                <option value="tempContentType1">TEMP CONTENT TYPE 1</option>                <option value="tempContentType2">TEMP CONTENT TYPE 2</option>                <option value="tempContentType3">TEMP CONTENT TYPE 3</option>            </select>                </div></div></div>            <br><br><br>        </div>        <!--End column 1 div-->        <div class="column is-half"><!--May use external CSS to move to center-->            <h3>Includes</h3>            <!--Check boxs for includes-->            <div class="field">                <div class="control">                    <input type="checkbox" id="worksheet" name="worksheet" value="worksheet" #worksheets>                    <label class="checkbox" for="worksheet">Worksheets</label><br><br>                    <input type="checkbox" id="lab" name="lab" value="lab" #labs>                    <label class="checkbox" for="lab">Labs</label><br><br>                    <input type="checkbox" id="exam" name="exam" value="exam" #exams>                    <label class="checkbox" for="exam">Exams</label><br><br>                </div>            </div>            <!--Test box for keyword input-->            <label for="keyword">Keyword(s)</label>            <div class="control">            <input type="text" id="keyword" name="keyword" class="input" #keyword><br><br>            <button class="button is-link" (click)="searcher(keyword.value, contentType.value, gradeLevel.value, subject.value, exams.value, labs.value, worksheets.value)"  required="required" >Search</button>            </div>            <div></div>        </div></div>        <!--End column 2 div--></div>    </form>        </div></div>        <!--test -->   <!----- <div id="column3" style="float:right">        <img src="images/imageName.png" alt="Image" />    </div> -->    <br><br>    <!--End column 3 div-->    </body></html></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
+        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html lang="en"><head>    <title>Advanced Search</title>    <meta charset="utf-8" />    <style>              div.size {          margin: auto;          width: 70%;        }        div.center {        padding: 15px;        text-align: center;        font-size: 2.2em;        }        </style></head><body>    <div class=center id=advancedSearchHeader>        <h1>Advanced Search</h1>    </div>    <!--End advancedSearchHeader-->    <!--Never delt with input data in HTML yet so this may need some fixes-->    <div class="container is-desktop" >        <div class="notification">    <form [formGroup] = "SearchForm">        <div class=size>        <div class="columns">            <div class="column is-half">            <!--Combo box for grade-->            <div class="field">                <label for="grade">Grade Level</label>                <div class="control">                    <div class="select">                        <select id="grade" #gradeLevel>                            <option value="Any">Any</option>                            <option value="6th">6th</option>                            <option value="7th">7th</option>                            <option value="8th">8th</option>                            <option value="9th">9th</option>                            <option value="10th">10th</option>                            <option value="11th">11th</option>                            <option value="12th">12th</option>                        </select>                    </div>                </div>            </div>            <br><br><br>            <!--Combo box for subject-->            <div class="field">                    <label for="subject">Subject</label>                    <div class="control">                        <div class="select">                    <select id="subject" #subject>                        <option value="Any">Any</option>                        <option value="tempSubject1">TEMP SUBJECT 1</option>                        <option value="tempSubject2">TEMP SUBJECT 2</option>                        <option value="tempSubject3">TEMP SUBJECT 3</option>                        <option value="tempSubject4">TEMP SUBJECT 4</option>                        <option value="tempSubject5">TEMP SUBJECT 5</option>                        <option value="tempSubject6">TEMP SUBJECT 6</option>                        <option value="tempSubject7">TEMP SUBJECT 7</option>                    </select>                        </div>                    </div>            </div>            <br><br><br>            <!--Combo box for content type-->            <div class="field">            <label for="contentType">Content Type</label>            <div class="control">                <div class="select">            <select id="contentType" #contentType>				<option value="Any">Any</option>                <option value="tempContentType1">TEMP CONTENT TYPE 1</option>                <option value="tempContentType2">TEMP CONTENT TYPE 2</option>                <option value="tempContentType3">TEMP CONTENT TYPE 3</option>            </select>                </div></div></div>            <br><br><br>        </div>        <!--End column 1 div-->        <div class="column is-half"><!--May use external CSS to move to center-->            <h3>Includes</h3>            <!--Check boxs for includes-->            <div class="field">                <div class="control">                    <input type="checkbox" id="worksheet" name="worksheet" value="worksheet" #worksheets>                    <label class="checkbox" for="worksheet">Worksheets</label><br><br>                    <input type="checkbox" id="lab" name="lab" value="lab" #labs>                    <label class="checkbox" for="lab">Labs</label><br><br>                    <input type="checkbox" id="exam" name="exam" value="exam" #exams>                    <label class="checkbox" for="exam">Exams</label><br><br>                </div>            </div>            <!--Test box for keyword input-->            <label for="keyword">Keyword(s)</label>            <div class="control">            <input type="text" id="keyword" name="keyword" class="input" #keyword><br><br>            <button class="button is-link" (click)="searcher(keyword.value, contentType.value, gradeLevel.value, subject.value, exams.value, labs.value, worksheets.value)"  required="required" >Search</button>            </div>            <div></div>        </div></div>        <!--End column 2 div--></div>    </form>        </div></div>        <!--test -->   <!----- <div id="column3" style="float:right">        <img src="images/imageName.png" alt="Image" />    </div> -->    <br><br>    <!--End column 3 div-->    </body></html></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CopyrightComponent', 'selector': 'app-contact'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'PrivacyComponent', 'selector': 'app-contact'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchAllComponent', 'selector': 'app-search-all'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SearchComponent'};
 </script>

@@ -55,16 +55,24 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-271d114b1dedd0aaff7bd57aa37b5a1a"' : 'data-target="#xs-components-links-module-AppModule-271d114b1dedd0aaff7bd57aa37b5a1a"' }>
+                                            'data-target="#components-links-module-AppModule-71378b8ae074ad95d915ffa36f2f4610"' : 'data-target="#xs-components-links-module-AppModule-71378b8ae074ad95d915ffa36f2f4610"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-271d114b1dedd0aaff7bd57aa37b5a1a"' :
-                                            'id="xs-components-links-module-AppModule-271d114b1dedd0aaff7bd57aa37b5a1a"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-71378b8ae074ad95d915ffa36f2f4610"' :
+                                            'id="xs-components-links-module-AppModule-71378b8ae074ad95d915ffa36f2f4610"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ContactComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ContactComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/CopyrightComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">CopyrightComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/FooterComponent.html"
@@ -87,12 +95,24 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">NewUserComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/PrivacyComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PrivacyComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/ResultsComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ResultsComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/SearchAllComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SearchAllComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/SearchComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">SearchComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/SupportComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SupportComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/UploadpageComponent.html"

@@ -137,10 +137,21 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#router">router</a>
+                            </li>
+                            <li>
+                                <a href="#searchValue">searchValue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#session">session</a>
                             </li>
                             <li>
                                 <a href="#username">username</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#ZIPLOGO">ZIPLOGO</a>
                             </li>
                         </ul>
                     </td>
@@ -155,7 +166,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#handleClick">handleClick</a>
+                            </li>
+                            <li>
+                                <a href="#ngDoCheck">ngDoCheck</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#routeToSearchAll">routeToSearchAll</a>
                             </li>
                             <li>
                                 <a href="#toggleNavbar">toggleNavbar</a>
@@ -178,12 +198,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(session: SessionStorageService)</code>
+<code>constructor(session: SessionStorageService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/header/header.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/header/header.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -205,6 +225,18 @@
                                                   
                                                         <td>
                                                                     <code>SessionStorageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -234,6 +266,122 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="handleClick"></a>
+                    <span class="name">
+                        <b>
+                            handleClick
+                        </b>
+                        <a href="#handleClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleClick(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/header/header.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The event of logging out causes the username String to be removed</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngDoCheck"></a>
+                    <span class="name">
+                        <b>
+                            ngDoCheck
+                        </b>
+                        <a href="#ngDoCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngDoCheck()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/header/header.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>check on username changes</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
@@ -252,8 +400,49 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/header/header.component.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/header/header.component.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>initial get username </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routeToSearchAll"></a>
+                    <span class="name">
+                        <b>
+                            routeToSearchAll
+                        </b>
+                        <a href="#routeToSearchAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>routeToSearchAll()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/header/header.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -291,14 +480,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/header/header.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/header/header.component.ts:46</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>toggles the navbar&#39;s fullsize for narrow dispalys</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -343,7 +534,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/header/header.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/header/header.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -379,6 +570,66 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/header/header.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="router"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            router</b>
+                            <a href="#router"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/header/header.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchValue"></a>
+                        <span class="name">
+                            <b>
+                            searchValue</b>
+                            <a href="#searchValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/header/header.component.ts:17</a></div>
                             </td>
                         </tr>
@@ -407,7 +658,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/header/header.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/header/header.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -434,7 +685,40 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/header/header.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/header/header.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>stores username </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ZIPLOGO"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            ZIPLOGO</b>
+                            <a href="#ZIPLOGO"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(&quot;..\\search-all\\images\\zip.png&quot;)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/header/header.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -449,6 +733,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, ElementRef } from &#x27;@angular/core&#x27;;
 import {SessionStorageService, SessionStorage } from &#x27;angular-web-storage&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-header&#x27;,
@@ -456,18 +742,50 @@ import {SessionStorageService, SessionStorage } from &#x27;angular-web-storage&#
   styleUrls: [&#x27;./header.component.css&#x27;]
 })
 export class HeaderComponent implements OnInit {
+  private ZIPLOGO &#x3D; (&quot;..\\search-all\\images\\zip.png&quot;);
+  /**
+   * stores username 
+   */  
   username: String;
-  constructor(public session: SessionStorageService) { }
+  searchValue: String &#x3D; null;
+  constructor(public session: SessionStorageService, public router: Router) { }
 
+  /**
+   * initial get username 
+   */
   ngOnInit() {
+    this.username &#x3D; this.session.get(&quot;username&quot;);
+  }
+  /**
+   * check on username changes
+   */
+  ngDoCheck() {
     this.username &#x3D; this.session.get(&quot;username&quot;);
   }
   @ViewChild(&#x27;navBurger&#x27;, {static: false}) navBurger: ElementRef;
   @ViewChild(&#x27;navMenu&#x27;, {static: false}) navMenu: ElementRef;
 
+  routeToSearchAll()
+  {
+    if (this.searchValue !&#x3D;&#x3D; null &amp;&amp; this.searchValue !&#x3D; &quot;&quot; &amp;&amp; this.searchValue.replace(/\s/g, &#x27;&#x27;).length)
+    {
+      this.router.navigate([&#x60;searchall/&#x60; + this.searchValue]);
+    }
+  }
+/**
+ * toggles the navbar&#x27;s fullsize for narrow dispalys
+ */
+
   toggleNavbar() {
     this.navBurger.nativeElement.classList.toggle(&#x27;is-active&#x27;);
     this.navMenu.nativeElement.classList.toggle(&#x27;is-active&#x27;);
+  }
+  /**
+   * @param event The event of logging out causes the username String to be removed
+   */
+
+  handleClick(event: Event) {
+    this.session.remove(&quot;username&quot;);
   }
 }
 </code></pre>
@@ -475,19 +793,18 @@ export class HeaderComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;head&gt;
-    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;
-    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1&quot;&gt;
-    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css&quot;&gt;
+    &lt;meta charset&#x3D;&quot;utf-8&quot; /&gt;
+    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1&quot; /&gt;
+    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css&quot; /&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;nav class&#x3D;&quot;navbar has-background-white-ter	&quot; role&#x3D;&quot;navigation&quot; aria-label&#x3D;&quot;main navigation&quot;&gt;
+    &lt;nav class&#x3D;&quot;navbar has-background-white-ter&quot; role&#x3D;&quot;navigation&quot; aria-label&#x3D;&quot;main navigation&quot;&gt;
         &lt;div class&#x3D;&quot;navbar-brand&quot;&gt;
             &lt;a class&#x3D;&quot;navbar-item&quot; href&#x3D;&quot;home&quot;&gt;
-                &lt;img src&#x3D;&quot;https://media.graytvinc.com/images/690*388/ops+logo+new+1280.jpg&quot; width&#x3D;&quot;62&quot; height&#x3D;&quot;50&quot;&gt;
+                &lt;img src&#x3D;&quot;https://media.graytvinc.com/images/690*388/ops+logo+new+1280.jpg&quot; width&#x3D;&quot;62&quot; height&#x3D;&quot;50&quot; /&gt;
             &lt;/a&gt;
-            &lt;a (click)&#x3D;&quot;toggleNavbar()&quot; role&#x3D;&quot;button&quot; #navBurger class&#x3D;&quot;navbar-burger burger&quot; aria-label&#x3D;&quot;menu&quot;
-                aria-expanded&#x3D;&quot;false&quot; data-target&#x3D;&quot;navbarBasicExample&quot;&gt;
+            &lt;a (click)&#x3D;&quot;toggleNavbar()&quot; role&#x3D;&quot;button&quot; #navBurger class&#x3D;&quot;navbar-burger burger&quot; aria-label&#x3D;&quot;menu&quot; aria-expanded&#x3D;&quot;false&quot; data-target&#x3D;&quot;navbarBasicExample&quot;&gt;
                 &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/span&gt;
                 &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/span&gt;
                 &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/span&gt;
@@ -505,41 +822,52 @@ export class HeaderComponent implements OnInit {
                 &lt;div class&#x3D;&quot;navbar-item&quot;&gt;
                     &lt;div class&#x3D;&quot;field has-addons&quot;&gt;
                         &lt;div class&#x3D;&quot;control&quot;&gt;
-                            &lt;input class&#x3D;&quot;input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search lesson plans&quot;&gt;
+                            &lt;input class&#x3D;&quot;input&quot; [(ngModel)] &#x3D; &quot;searchValue&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search lesson plans&quot; /&gt;
                         &lt;/div&gt;
                         &lt;div class&#x3D;&quot;control&quot;&gt;
-                            &lt;a routerLink&#x3D;&quot;/search&quot; routerLinkActive&#x3D;&quot;active&quot;
-                                class&#x3D;&quot;button has-background-link has-text-white&quot;&gt;
+                            &lt;a (click) &#x3D; &quot;routeToSearchAll()&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;button has-background-link has-text-white&quot;&gt;
                                 Search
                             &lt;/a&gt;
                         &lt;/div&gt;
+                     
                     &lt;/div&gt;
 
                 &lt;/div&gt;
+                &lt;div class &#x3D; &quot;navbar-item&quot;&gt;
+                    &lt;div class&#x3D;&quot;control&quot;&gt;
+                        &lt;a routerLink&#x3D;&quot;/search&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;button has-background-link has-text-white&quot;&gt;
+                            Advanced Search
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
                 &lt;div class&#x3D;&quot;navbar-item&quot;&gt;
-                    
                     &lt;div class&#x3D;&quot;buttons&quot;&gt;
-                        &lt;a routerLink&#x3D;&quot;/uploadpage&quot; routerLinkActive&#x3D;&quot;active&quot;
-                            class&#x3D;&quot;button has-background-link has-text-white&quot;&gt;
+                        &lt;div *ngIf&#x3D;&quot;username&quot;&gt;
+
+                        &lt;a routerLink&#x3D;&quot;/uploadpage/Bad&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;button has-background-link has-text-white&quot;&gt;
                             Upload
                         &lt;/a&gt;
-                            &lt;div *ngIf&#x3D;&quot;!username&quot;&gt;
-                                &lt;a class&#x3D;&quot;button has-background-link has-text-white&quot; routerLink&#x3D;&quot;/newUser&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
-                                    Sign up
-                                &lt;/a&gt;
-                                &lt;a routerLink&#x3D;&quot;/login&quot; routerLinkActive&#x3D;&quot;active&quot;
-                                    class&#x3D;&quot;button has-background-link has-text-white&quot;&gt;
-                                    Log in
-                                &lt;/a&gt;
-                            &lt;/div&gt;
+                    &lt;/div&gt;
+                        &lt;div *ngIf&#x3D;&quot;!username&quot;&gt;
+                        
+                          &lt;a class&#x3D;&quot;button has-background-link has-text-white&quot; routerLink&#x3D;&quot;/newUser&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
+                                Sign up
+                            &lt;/a&gt;
+                            &lt;a routerLink&#x3D;&quot;/login&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;button has-background-link has-text-white&quot;&gt;
+                                Log in
+                            &lt;/a&gt;
                         &lt;/div&gt;
-                    &lt;div *ngIf&#x3D;&quot;username&quot;&gt;Welcome, {{username}}!&lt;/div&gt;
-
+                    &lt;/div&gt;
+                    &lt;div *ngIf&#x3D;&quot;username&quot;&gt;
+                        Welcome, {{username}}!
+                        &lt;button (click)&#x3D;&quot;handleClick($event)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;button has-background-link has-text-white&quot;&gt;Log out&lt;/button&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/nav&gt;
-&lt;/body&gt;</code></pre>
+&lt;/body&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -574,8 +902,8 @@ export class HeaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><head>    <meta charset="utf-8">    <meta name="viewport" content="width=device-width, initial-scale=1">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"></head><body>    <nav class="navbar has-background-white-ter	" role="navigation" aria-label="main navigation">        <div class="navbar-brand">            <a class="navbar-item" href="home">                <img src="https://media.graytvinc.com/images/690*388/ops+logo+new+1280.jpg" width="62" height="50">            </a>            <a (click)="toggleNavbar()" role="button" #navBurger class="navbar-burger burger" aria-label="menu"                aria-expanded="false" data-target="navbarBasicExample">                <span aria-hidden="true"></span>                <span aria-hidden="true"></span>                <span aria-hidden="true"></span>            </a>        </div>        <div id="navbarBasicExample" class="navbar-menu" #navMenu>            <div class="navbar-end">                <a class="navbar-item">                    About                </a>                <a class="navbar-item">                    Standards                </a>                <div class="navbar-item">                    <div class="field has-addons">                        <div class="control">                            <input class="input" type="text" placeholder="Search lesson plans">                        </div>                        <div class="control">                            <a routerLink="/search" routerLinkActive="active"                                class="button has-background-link has-text-white">                                Search                            </a>                        </div>                    </div>                </div>                <div class="navbar-item">                                        <div class="buttons">                        <a routerLink="/uploadpage" routerLinkActive="active"                            class="button has-background-link has-text-white">                            Upload                        </a>                            <div *ngIf="!username">                                <a class="button has-background-link has-text-white" routerLink="/newUser" routerLinkActive="active">                                    Sign up                                </a>                                <a routerLink="/login" routerLinkActive="active"                                    class="button has-background-link has-text-white">                                    Log in                                </a>                            </div>                        </div>                    <div *ngIf="username">Welcome, {{username}}!</div>                </div>            </div>        </div>    </nav></body></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
+        var COMPONENT_TEMPLATE = '<div><head>    <meta charset="utf-8" />    <meta name="viewport" content="width=device-width, initial-scale=1" />    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" /></head><body>    <nav class="navbar has-background-white-ter" role="navigation" aria-label="main navigation">        <div class="navbar-brand">            <a class="navbar-item" href="home">                <img src="https://media.graytvinc.com/images/690*388/ops+logo+new+1280.jpg" width="62" height="50" />            </a>            <a (click)="toggleNavbar()" role="button" #navBurger class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">                <span aria-hidden="true"></span>                <span aria-hidden="true"></span>                <span aria-hidden="true"></span>            </a>        </div>        <div id="navbarBasicExample" class="navbar-menu" #navMenu>            <div class="navbar-end">                <a class="navbar-item">                    About                </a>                <a class="navbar-item">                    Standards                </a>                <div class="navbar-item">                    <div class="field has-addons">                        <div class="control">                            <input class="input" [(ngModel)] = "searchValue" type="text" placeholder="Search lesson plans" />                        </div>                        <div class="control">                            <a (click) = "routeToSearchAll()" routerLinkActive="active" class="button has-background-link has-text-white">                                Search                            </a>                        </div>                                         </div>                </div>                <div class = "navbar-item">                    <div class="control">                        <a routerLink="/search" routerLinkActive="active" class="button has-background-link has-text-white">                            Advanced Search                        </a>                    </div>                </div>                <div class="navbar-item">                    <div class="buttons">                        <div *ngIf="username">                        <a routerLink="/uploadpage/Bad" routerLinkActive="active" class="button has-background-link has-text-white">                            Upload                        </a>                    </div>                        <div *ngIf="!username">                                                  <a class="button has-background-link has-text-white" routerLink="/newUser" routerLinkActive="active">                                Sign up                            </a>                            <a routerLink="/login" routerLinkActive="active" class="button has-background-link has-text-white">                                Log in                            </a>                        </div>                    </div>                    <div *ngIf="username">                        Welcome, {{username}}!                        <button (click)="handleClick($event)" type="button" class="button has-background-link has-text-white">Log out</button>                    </div>                </div>            </div>        </div>    </nav></body></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CopyrightComponent', 'selector': 'app-contact'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'PrivacyComponent', 'selector': 'app-contact'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchAllComponent', 'selector': 'app-search-all'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
 </script>
