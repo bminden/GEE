@@ -121,6 +121,35 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#displayEmailNotification">displayEmailNotification</a>
+                            </li>
+                            <li>
+                                <a href="#displayGoodNotification">displayGoodNotification</a>
+                            </li>
+                            <li>
+                                <a href="#displayPasswordNotification">displayPasswordNotification</a>
+                            </li>
+                            <li>
+                                <a href="#displayUserNotification">displayUserNotification</a>
+                            </li>
+                            <li>
+                                <a href="#NewUserForm">NewUserForm</a>
+                            </li>
+                            <li>
+                                <a href="#searchValue">searchValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -134,7 +163,19 @@
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
-                                <a href="#showText">showText</a>
+                                <a href="#registerUser">registerUser</a>
+                            </li>
+                            <li>
+                                <a href="#routeToSearchAll">routeToSearchAll</a>
+                            </li>
+                            <li>
+                                <a href="#toggleEmailDisplayNotification">toggleEmailDisplayNotification</a>
+                            </li>
+                            <li>
+                                <a href="#togglePasswordDisplayNotification">togglePasswordDisplayNotification</a>
+                            </li>
+                            <li>
+                                <a href="#toggleUserDisplayNotification">toggleUserDisplayNotification</a>
                             </li>
                         </ul>
                     </td>
@@ -154,12 +195,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(apiService: <a href="../injectables/ApiService.html">ApiService</a>)</code>
+<code>constructor(apiService: <a href="../injectables/ApiService.html">ApiService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/new-user/new-user.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/new-user/new-user.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -181,6 +222,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -228,8 +281,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/new-user/new-user.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/new-user/new-user.component.ts:97</a></div>
                 </td>
             </tr>
 
@@ -249,96 +302,398 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="showText"></a>
+                    <a name="registerUser"></a>
                     <span class="name">
                         <b>
-                            showText
+                            registerUser
                         </b>
-                        <a href="#showText"><span class="icon ion-ios-link"></span></a>
+                        <a href="#registerUser"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>showText(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>registerUser()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/new-user/new-user.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/new-user/new-user.component.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>registers the user, checks if all fields are possibly valid info to be used for an account
+if so sends the info the backend, backend returns 0 if bad, 2 if info is taken by another user, 
+otherwise registers the new user and redirects them to the login page</p>
+</div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>text</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>password</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>email</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routeToSearchAll"></a>
+                    <span class="name">
+                        <b>
+                            routeToSearchAll
+                        </b>
+                        <a href="#routeToSearchAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>routeToSearchAll()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/new-user/new-user.component.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleEmailDisplayNotification"></a>
+                    <span class="name">
+                        <b>
+                            toggleEmailDisplayNotification
+                        </b>
+                        <a href="#toggleEmailDisplayNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleEmailDisplayNotification()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/new-user/new-user.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>toggles the display notification for invalid email format</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="togglePasswordDisplayNotification"></a>
+                    <span class="name">
+                        <b>
+                            togglePasswordDisplayNotification
+                        </b>
+                        <a href="#togglePasswordDisplayNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>togglePasswordDisplayNotification()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/new-user/new-user.component.ts:79</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleUserDisplayNotification"></a>
+                    <span class="name">
+                        <b>
+                            toggleUserDisplayNotification
+                        </b>
+                        <a href="#toggleUserDisplayNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleUserDisplayNotification()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/new-user/new-user.component.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>toggles the display notification for invalid username format</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayEmailNotification"></a>
+                        <span class="name">
+                            <b>
+                            displayEmailNotification</b>
+                            <a href="#displayEmailNotification"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/new-user/new-user.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayGoodNotification"></a>
+                        <span class="name">
+                            <b>
+                            displayGoodNotification</b>
+                            <a href="#displayGoodNotification"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/new-user/new-user.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayPasswordNotification"></a>
+                        <span class="name">
+                            <b>
+                            displayPasswordNotification</b>
+                            <a href="#displayPasswordNotification"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/new-user/new-user.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayUserNotification"></a>
+                        <span class="name">
+                            <b>
+                            displayUserNotification</b>
+                            <a href="#displayUserNotification"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/new-user/new-user.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="NewUserForm"></a>
+                        <span class="name">
+                            <b>
+                            NewUserForm</b>
+                            <a href="#NewUserForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/new-user/new-user.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchValue"></a>
+                        <span class="name">
+                            <b>
+                            searchValue</b>
+                            <a href="#searchValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/new-user/new-user.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
 </section>
 
 </div>
@@ -347,6 +702,10 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ApiService } from &#x27;../api.service&#x27;;
+import { FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { Router } from &quot;@angular/router&quot;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+
 
 @Component({
   selector: &#x27;app-new-user&#x27;,
@@ -354,10 +713,50 @@ import { ApiService } from &#x27;../api.service&#x27;;
   styleUrls: [&#x27;./new-user.component.css&#x27;]
 })
 export class NewUserComponent implements OnInit {
-
-  constructor(private apiService: ApiService) { }
-  showText(text:string, password:string, email:string)
+  NewUserForm: FormGroup;
+  displayEmailNotification: boolean &#x3D; false;
+  displayUserNotification: boolean &#x3D; false;
+  displayPasswordNotification: boolean &#x3D; false;
+  displayGoodNotification: boolean &#x3D; false;
+  searchValue:string &#x3D; null;
+  constructor(private apiService: ApiService, private router: Router) { }
+  
+  routeToSearchAll()
   {
+      this.router.navigate([&#x60;login/&#x60; + &quot;Good&quot;]);
+    
+  }
+  /**
+   * registers the user, checks if all fields are possibly valid info to be used for an account
+   * if so sends the info the backend, backend returns 0 if bad, 2 if info is taken by another user, 
+   * otherwise registers the new user and redirects them to the login page
+   */
+  registerUser()
+  {
+    let text : string &#x3D; this.NewUserForm.value.username;
+    let password : string &#x3D; this.NewUserForm.value.username;
+    let email : string &#x3D; this.NewUserForm.value.username;
+    this.displayEmailNotification &#x3D; false;
+    this.displayUserNotification &#x3D; false;
+    this.displayPasswordNotification&#x3D; false;
+    this.displayGoodNotification&#x3D; false;
+    if (!this.NewUserForm.controls.email.valid)
+    {
+      this.displayEmailNotification &#x3D; true;
+    }
+    if (!this.NewUserForm.controls.password.valid)
+    {
+      this.displayPasswordNotification &#x3D; true;
+    }
+    if (!this.NewUserForm.controls.username.valid)
+    {
+      this.displayUserNotification &#x3D; true;
+    }
+    if (this.displayEmailNotification || this.displayPasswordNotification || this.displayUserNotification)
+    {
+      return;
+    }
+    else{
     this.apiService.registerUser(text, password, email).subscribe((data)&#x3D;&gt;{
      console.log(data);
      if (data[&quot;data&quot;] &#x3D;&#x3D;&#x3D; 0)
@@ -366,14 +765,43 @@ export class NewUserComponent implements OnInit {
      } 
      if (data[&quot;data&quot;] &#x3D;&#x3D;&#x3D; 2)
      {
-      alert(&quot;Username taken&quot;);
+      this.displayUserNotification &#x3D; true;
      } 
      else{
-      alert(&quot;Verified&quot;);
+       this.displayGoodNotification &#x3D; true;
+       this.routeToSearchAll();
      }
+     
     });
   }
+   /**
+    * toggles the display notification for invalid password format
+   */ 
+  }
+  togglePasswordDisplayNotification()
+  {
+    this. displayPasswordNotification &#x3D; !this. displayPasswordNotification
+  }
+     /**
+    * toggles the display notification for invalid username format
+   */ 
+  toggleUserDisplayNotification()
+  {
+    this. displayUserNotification &#x3D; !this. displayUserNotification;
+  }
+       /**
+    * toggles the display notification for invalid email format
+   */ 
+  toggleEmailDisplayNotification()
+  {
+    this. displayEmailNotification &#x3D; !this.displayEmailNotification;
+  }
   ngOnInit() {
+    this.NewUserForm &#x3D; new FormGroup({
+      username: new FormControl(&#x27;&#x27;, [Validators.required]),
+      password: new FormControl(&#x27;&#x27;, [Validators.required]),
+      email: new FormControl(&#x27;&#x27;, [Validators.required, Validators.email])
+    });
   }
 
 
@@ -385,7 +813,7 @@ export class NewUserComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 
-&lt;html lang&#x3D;&quot;en&quot;&gt;
+&lt;html lang&#x3D;&quot;en&quot; style &#x3D; &quot;overflow-y: hidden;&quot;&gt;
 
 &lt;head&gt;
     &lt;title&gt;Sign Up&lt;/title&gt;
@@ -416,14 +844,23 @@ export class NewUserComponent implements OnInit {
   &lt;div class&#x3D;&quot;container is-desktop&quot; &gt;
     &lt;div class&#x3D;&quot;notification has-background-white&quot;&gt;
     &lt;div id&#x3D;&quot;login&quot;&gt;&lt;!--May use external CSS to move to center--&gt;
-        &lt;form&gt;
+        &lt;form [formGroup] &#x3D; &quot;NewUserForm&quot;&gt;
             &lt;label for&#x3D;&quot;userName&quot;&gt;Username&lt;/label&gt;
-            &lt;input class&#x3D;&quot;input&quot; placeholder&#x3D;&quot;Username&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;userName&quot; required&#x3D;&quot;required&quot; name&#x3D;&quot;userName&quot; #text&gt;&lt;br&gt;&lt;br&gt;
-            &lt;label for&#x3D;&quot;password&quot;&gt;Password&lt;/label&gt;
-            &lt;input class&#x3D;&quot;input&quot; placeholder&#x3D;&quot;Username&quot; type&#x3D;&quot;password&quot; id&#x3D;&quot;password&quot; required&#x3D;&quot;required&quot; name&#x3D;&quot;password&quot; #password&gt;&lt;br&gt;&lt;br&gt;
+            &lt;input formControlName&#x3D;&quot;username&quot; class&#x3D;&quot;input&quot; placeholder&#x3D;&quot;Username&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;userName&quot;  name&#x3D;&quot;userName&quot; #text&gt;&lt;br&gt;&lt;br&gt;
+            &lt;div class&#x3D;&quot;notification is-danger&quot; *ngIf&#x3D;&quot;!NewUserForm.controls.password.valid &amp;&amp; displayUserNotification&quot;&gt; Username is not valid or it is already taken. Please enter in a valid username.
+              &lt;button class&#x3D;&quot;delete&quot; (click) &#x3D; &quot;toggleUserDisplayNotification()&quot;&gt;&lt;/button&gt;
+            &lt;/div&gt;
             &lt;label for&#x3D;&quot;userName&quot;&gt;Email&lt;/label&gt;
-            &lt;input class&#x3D;&quot;input&quot; placeholder&#x3D;&quot;User Email&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;emailName&quot; required&#x3D;&quot;required&quot; pattern&#x3D;&quot;[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$&quot; title&#x3D;&quot;Enter valid Email format&quot; name&#x3D;&quot;emailName&quot; #email &gt;&lt;br&gt;&lt;br&gt;
-            &lt;button class&#x3D;&quot;button is-link&quot; (click)&#x3D;&quot;showText(text.value, password.value, email.value)&quot; &gt;Sign up!&lt;/button&gt;
+            &lt;input formControlName&#x3D;&quot;email&quot; class&#x3D;&quot;input&quot; placeholder&#x3D;&quot;Email&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;emailName&quot;  title&#x3D;&quot;Enter valid Email format&quot; name&#x3D;&quot;emailName&quot; #email &gt;&lt;br&gt;&lt;br&gt;
+            &lt;div class&#x3D;&quot;notification is-danger&quot; *ngIf&#x3D;&quot;!NewUserForm.controls.email.valid &amp;&amp; displayEmailNotification&quot;&gt; Email address is not valid. Please enter in a valid email address.
+              &lt;button class&#x3D;&quot;delete&quot; (click) &#x3D; &quot;toggleEmailDisplayNotification()&quot;&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;label for&#x3D;&quot;password&quot;&gt;Password&lt;/label&gt;
+            &lt;input formControlName&#x3D;&quot;password&quot; class&#x3D;&quot;input&quot; placeholder&#x3D;&quot;********&quot; type&#x3D;&quot;password&quot; id&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; #password&gt;&lt;br&gt;&lt;br&gt;
+            &lt;div class&#x3D;&quot;notification is-danger&quot; *ngIf&#x3D;&quot;!NewUserForm.controls.password.valid &amp;&amp; displayPasswordNotification&quot;&gt; Password is not valid. Please enter in a valid password.
+              &lt;button class&#x3D;&quot;delete&quot; (click) &#x3D; &quot;togglePasswordDisplayNotification()&quot;&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;button is-link&quot; (click)&#x3D;&quot;registerUser()&quot;&gt;Sign up!&lt;/button&gt;
         &lt;/form&gt;
             &lt;br&gt;&lt;br&gt;&lt;br&gt;
            &lt;!---
@@ -479,8 +916,8 @@ export class NewUserComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html lang="en"><head>    <title>Sign Up</title>    <meta charset="utf-8" />    <style>    html { overflow-y: hidden; }            div.size {        margin: auto;        width: 70%;        overflow-y: hidden;      }      div.center {        padding: 15px;        text-align: center;        font-size: 2.2em;        overflow-y: hidden;        }      </style></head><body>  <br><br>  <div class= center>    <h1 class="title">New User Sign up</h1>    </div>  <div class=size>  <div class="container is-desktop" >    <div class="notification has-background-white">    <div id="login"><!--May use external CSS to move to center-->        <form>            <label for="userName">Username</label>            <input class="input" placeholder="Username" type="text" id="userName" required="required" name="userName" #text><br><br>            <label for="password">Password</label>            <input class="input" placeholder="Username" type="password" id="password" required="required" name="password" #password><br><br>            <label for="userName">Email</label>            <input class="input" placeholder="User Email" type="text" id="emailName" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter valid Email format" name="emailName" #email ><br><br>            <button class="button is-link" (click)="showText(text.value, password.value, email.value)" >Sign up!</button>        </form>            <br><br><br>           <!---            <label for="userName">Email Test</label>            <form>                <label for="email">Email:</label>                <input type="email" class="input" placeholder="User Email" id="email" name="email" #poop pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">                <input class="button is-link" (click)="showText(text.value, password.value, email.value)" type="submit">              </form>              --->                        </div>    </div></div></div>    <br><br><br></body></html></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
+        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html lang="en" style = "overflow-y: hidden;"><head>    <title>Sign Up</title>    <meta charset="utf-8" />    <style>    html { overflow-y: hidden; }            div.size {        margin: auto;        width: 70%;        overflow-y: hidden;      }      div.center {        padding: 15px;        text-align: center;        font-size: 2.2em;        overflow-y: hidden;        }      </style></head><body>  <br><br>  <div class= center>    <h1 class="title">New User Sign up</h1>    </div>  <div class=size>  <div class="container is-desktop" >    <div class="notification has-background-white">    <div id="login"><!--May use external CSS to move to center-->        <form [formGroup] = "NewUserForm">            <label for="userName">Username</label>            <input formControlName="username" class="input" placeholder="Username" type="text" id="userName"  name="userName" #text><br><br>            <div class="notification is-danger" *ngIf="!NewUserForm.controls.password.valid && displayUserNotification"> Username is not valid or it is already taken. Please enter in a valid username.              <button class="delete" (click) = "toggleUserDisplayNotification()"></button>            </div>            <label for="userName">Email</label>            <input formControlName="email" class="input" placeholder="Email" type="text" id="emailName"  title="Enter valid Email format" name="emailName" #email ><br><br>            <div class="notification is-danger" *ngIf="!NewUserForm.controls.email.valid && displayEmailNotification"> Email address is not valid. Please enter in a valid email address.              <button class="delete" (click) = "toggleEmailDisplayNotification()"></button>            </div>            <label for="password">Password</label>            <input formControlName="password" class="input" placeholder="********" type="password" id="password" name="password" #password><br><br>            <div class="notification is-danger" *ngIf="!NewUserForm.controls.password.valid && displayPasswordNotification"> Password is not valid. Please enter in a valid password.              <button class="delete" (click) = "togglePasswordDisplayNotification()"></button>            </div>            <button type="submit" class="button is-link" (click)="registerUser()">Sign up!</button>        </form>            <br><br><br>           <!---            <label for="userName">Email Test</label>            <form>                <label for="email">Email:</label>                <input type="email" class="input" placeholder="User Email" id="email" name="email" #poop pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">                <input class="button is-link" (click)="showText(text.value, password.value, email.value)" type="submit">              </form>              --->                        </div>    </div></div></div>    <br><br><br></body></html></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CopyrightComponent', 'selector': 'app-contact'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'PrivacyComponent', 'selector': 'app-contact'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchAllComponent', 'selector': 'app-search-all'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NewUserComponent'};
 </script>
