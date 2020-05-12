@@ -26,6 +26,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FileUploadModule } from 'ng2-file-upload';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchAllComponent } from './search-all/search-all.component';
+import { StandardsComponent } from './standards/standards.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
   {path: 'copyright', component: CopyrightComponent},
   {path: 'privacy', component: PrivacyComponent},
   {path: 'support', component: SupportComponent},
+  {path: 'standards', component: StandardsComponent},
   {path: 'resetPassword', component: ResetPasswordComponent},
   {path: 'uploadpage/:status', component: UploadpageComponent},
   {path: 'login/:status', component: LoginComponent},
@@ -65,6 +67,7 @@ const appRoutes: Routes = [
     PrivacyComponent,
     SupportComponent,
     SearchAllComponent,
+    StandardsComponent,
     ResetPasswordComponent
   ],
   imports: [

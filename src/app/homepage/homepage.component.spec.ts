@@ -4,6 +4,7 @@ import { HomepageComponent } from './homepage.component';
 
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('HomepageComponent', () => {
   let component: HomepageComponent;
@@ -12,7 +13,7 @@ describe('HomepageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HomepageComponent ],
-      imports:[RouterTestingModule, HttpClientTestingModule]
+      imports:[RouterTestingModule, HttpClientTestingModule, FormsModule]
     })
     .compileComponents();
   }));
