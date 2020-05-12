@@ -23,16 +23,37 @@ export class ApiService {
       params:{
        fileid:fileid
       }
-    });
+    }).toPromise();
   }
-  public submitFeedback(username, fileid, feedback){
+  public submitFeedback(username, fileid, feedback, dateadded){
     return this.httpClient.get('http://198.211.98.83:3002/submitfeedback', {
       params:{
        username: username,
         fileid:fileid,
-        feedback: feedback
+        feedback: feedback,
+        dateadded:dateadded,
       }
     });
+  }
+
+  public changePassword(username, sec1, sec2, password)
+  {
+    return this.httpClient.get('http://198.211.98.83:3002/changePassword', {
+      params:{
+       username: username,
+       security1ans:sec1,
+       security2ans: sec2,
+        password:password,
+      }
+    }).toPromise();
+  }
+  public getSecurityQuestions(username)
+  {
+    return this.httpClient.get('http://198.211.98.83:3002/getSecurityQuestions', {
+      params:{
+       username: username,
+      }
+    }).toPromise();
   }
 
   public download (filelocation:string){
@@ -56,12 +77,17 @@ export class ApiService {
     });
   }
 
-  public registerUser (usr, pwd, email){
+  public registerUser (usr, pwd, email, sec1, sec2, sec1ans, sec2ans,){
     return this.httpClient.get('http://198.211.98.83:3002/registerUser', {
       params:{
         username: usr,
         password: pwd,
-        email: email
+        email: email,
+        security1:sec1,
+        security2:sec2,
+        security1ans: sec1ans,
+        security2ans:sec2ans
+
       }
     });
   }
@@ -84,7 +110,7 @@ export class ApiService {
         gradeLevel: gradeLevel,
         includes: includes
       }
-    });
+    }).toPromise();
   }
 
   

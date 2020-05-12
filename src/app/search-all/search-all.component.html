@@ -1,173 +1,237 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <title>Results</title>
-        <meta charset="utf-8" />
-        <style>
-            .fa-icon{
-                font-size:28px;
-            }
-            
-            div.size {
-                margin: auto;
-                width: 70%;
-            }
 
-            div.center {
-                padding: 15px;
-                text-align: center;
-                font-size: 2.2em;
-            }
+<head>
+	<title>Results</title>
+	<meta charset="utf-8" />
+	<style>
+		.fa-icon{
+		                font-size:28px;
+		            }
+		            
+		            div.size {
+		                margin: auto;
+		                width: 70%;
+		            }
+		
+		            div.center {
+		                padding: 15px;
+		                text-align: center;
+		                font-size: 2.2em;
+		            }
+		
+		            div.centerContent {
+		                padding: 15px;
+		                text-align: center;
+		            }
+		            div.fullSize {
+		                position: absolute;
+		                z-index: 30;
+		            }
+		
+		            .collapsible {
+		                background-color: #eee;
+		                color: #444;
+		                cursor: pointer;
+		                padding: 18px;
+		                width: 100%;
+		                border: none;
+		                text-align: left;
+		                outline: none;
+		                font-size: 15px;
+		            }
+		
+		            .active,
+		            .collapsible:hover {
+		                background-color: #ccc;
+		            }
+		
+		            .feedback {
+		                padding: 0 18px;
+		                display: none;
+		                overflow: hidden;
+		                background-color: #f1f1f1;
+		            }
+		
+		            .commentText {
+		                margin: 10px;
+		            }
+		
+		            .vote {
+		                float: right;
+		                padding: 10px;
+		            }
+		
+		            html {
+		                overflow: inherit;
+		            }
+	</style>
+</head>
 
-            div.centerContent {
-                padding: 15px;
-                text-align: center;
-            }
-            div.fullSize {
-                position: absolute;
-                z-index: 30;
-            }
-
-            .collapsible {
-                background-color: #eee;
-                color: #444;
-                cursor: pointer;
-                padding: 18px;
-                width: 100%;
-                border: none;
-                text-align: left;
-                outline: none;
-                font-size: 15px;
-            }
-
-            .active,
-            .collapsible:hover {
-                background-color: #ccc;
-            }
-
-            .feedback {
-                padding: 0 18px;
-                display: none;
-                overflow: hidden;
-                background-color: #f1f1f1;
-            }
-
-            .commentText {
-                margin: 10px;
-            }
-
-            .vote {
-                float: right;
-                padding: 10px;
-            }
-
-            html {
-                overflow: inherit;
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="center" id="ResultsHeader">
-            <h1>Results</h1>
-        </div>
-        <!--End ResultsHeader-->
-        <div *ngIf="fileData.length == 0">
-            <p>Sorry, we have no results!</p>
-        </div>
-
-        <div *ngFor="let result of fileData">
-            <div class="columns is-centered">
-                <div class="column is-half" id="centerColumn">
-                    <div class="card" style ="box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                        <hr>
-                        <div class="card-image">
-
-                            <figure *ngIf = "!result.pdflocation" class="image is-128x128" style="margin: auto;">
-                                <img src="/assets/img/zip.png" alt="Placeholder image" />
-                            </figure>
-                            <figure *ngIf = "result.pdflocation">
-                                <pdf-viewer [src]="result.pdflocation" [render-text]="true" style="display: block;" [zoom]="0.12"></pdf-viewer>
-                            <p></p>
-                            </figure>
+<body>
+	<div class="modal" id="modal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<header class="modal-card-head">
+				<p class="modal-card-title"><strong>Comments:</strong>
+				</p>
+				<button (click)="toggleModal()" class="delete" aria-label="close"></button>
+            </header>
+           
+			<div *ngIf = "feedbackData !== null && feedbackData.length > 0" class="box">
+               
+				<div *ngFor="let comment of feedbackData">
+					<article class="media">
+						<div class="media-left">
+							<figure class="image is-64x64">
+								<img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+							</figure>
+						</div>
+						<div class="media-content">
+							<div class="content">
+								<p> <strong>{{comment.username}}</strong>  <small> {{comment.dateadded}}</small>
+									<br>{{comment.feedback}}</p>
+							</div>
                         </div>
-
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left"></div>
-                                <div class="media-content has-text-centered">
-                                    <p class="title is-5">Author: {{result.author}}</p>
-                                </div>
+					</article>
+					<hr style="border-top: 1px solid black;" />
+                </div>
+                <form *ngIf = "userSignedIn" [formGroup] = "SearchAllForm">
+                    <div class="control">
+                        <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
+                    </div>
+                    <hr>
+                    <div class="control">
+                        <button [disabled] ="!SearchAllForm.controls.feedback.valid" (click) = "submitFeedbackByFileID()" routerLinkActive="active" class="button has-background-link has-text-white">
+                            Add comment
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class = "box" *ngIf = "feedbackData === null || feedbackData.length === 0" >
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+    
+                          <strong>No comments found on this resource.</strong>
+                          <hr>
+                          <form *ngIf = "userSignedIn" [formGroup] = "SearchAllForm">
+                            <div class="control">
+                                <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
                             </div>
-
-                            <div class="content has-text-centered">
-                                <p>{{result.description}}</p>
-                                .
-                                <br />
-                                <time datetime="2016-1-1">Date added: {{result.dateadded}}</time>
-                                <p *ngIf = "result.license != http">License: {{result.license}}</p>
-                                <p *ngIf = "result.media_format">Includes: {{result.media_format}}</p>
-                                
-                                <hr style="border-top: 1px solid black;" />
-                                    <div class="columns is-mobile is-multiline is-centered">
-                                        
-                                        <div class="column">
-                                            <div class="column">
-                                            <button class="button is-link is-light is-large" (click)="download(result.filelocation)">
-                                                <fa-icon class="fa-icon"[icon]="faDownload"></fa-icon>
-                                            </button>
-                                        </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="column">
-                                                <button (click) ="getFeedbackByID(result.fileid)"class="button is-link is-light is-large"><fa-icon class="fa-icon" [icon]="faComment"></fa-icon></button>
-                                            </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="column">
-                                                <button  (click) = "upvote(result.fileid, result.upvotes)"class="button is-link is-light is-large"><fa-icon class="fa-icon" [icon]="faArrowUp"></fa-icon></button>
-                                            </div>
-                                        </div>
-                                        <div class="column" style="font-size: 32px;">
-                                          <p class="bd-notification is-primary" style = "font-size: 32;">
-                                            {{result.upvotes}}
-                                          </p>
-                                        </div>
-                                        <div class="column">
-                                            <div class="column">
-                                                <button (click) = "downvote(result.fileid, result.upvotes)" class="button is-link is-light is-large"><fa-icon class="fa-icon" [icon]="faArrowDown"></fa-icon></button>
-                                            </div>
-                                        </div>
-                                      </div>
-                               <div n></div>
+                            <hr>
+                            <div  class="control">
+                                <button [disabled] ="!SearchAllForm.controls.feedback.valid" (click) = "submitFeedbackByFileID()" routerLinkActive="active" class="button has-background-link has-text-white">
+                                    Add comment
+                                </button>
                             </div>
+                        </form>
                         </div>
                     </div>
-                    <hr style="border-top: 1px solid black;" />
-                </div>
+                </article>
             </div>
-        </div>
-        <hr />
+		</div>
+		<button (click)="toggleModal()" class="modal-close is-large" aria-label="close"></button>
+	</div>
+	<div class="center" id="ResultsHeader">
+		<h1>Results</h1>
+	</div>
+	<!--End ResultsHeader-->
+	<div *ngIf="fileData !== null && fileData.length == 0">
+		<p>Sorry, we have no results!</p>
+	</div>
+	<div *ngFor="let result of fileData">
+		<div class="columns is-centered">
+			<div class="column is-half" id="centerColumn">
+				<div class="card" style="box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+					<hr>
+					<div class="card-image">
+						<figure *ngIf="!result.pdflocation" class="image is-128x128" style="margin: auto;">
+							<img src="/assets/img/zip.png" alt="Placeholder image" />
+						</figure>
+						<figure *ngIf="result.pdflocation">
+							<pdf-viewer src="/assets/img/zip.png" [page]="1" [show-all]="false" [show-borders]="true" (click)="togglePRF()" [page]="1" [render-text]="true" style="display: block;" [zoom]="0.12"></pdf-viewer>
+							<p></p>
+						</figure>
+					</div>
+					<div class="card-content">
+						<div class="media">
+							<div class="media-left"></div>
+							<div class="media-content has-text-centered">
+								<p class="title is-5">Title: {{getTitle(result.filelocation)}}</p>
+								<p class="title is-5">Author: {{result.author !== "" ? result.author : "No author found"}}</p>
+							</div>
+						</div>
+						<div class="content has-text-centered">
 
-        <br />
-        <br />
-        <!--Used for collapsible section-->
-        <script>
-            var coll = document.getElementsByClassName("collapsible");
-            var i;
-            
-            for (i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.display === "block") {
-                        content.style.display = "none";
-                    } else {
-                        content.style.display = "block";
-                    }
-                });
-            }
-        </script>
-    </body>
+							<p><strong>Description: </strong>{{result.description !== "" ? result.description : "No description found"}}</p>
+							<br>
+							<p><strong>Subject: </strong>{{result.subject}}</p>
+							<time datetime="2016-1-1"><strong>Date added: </strong> {{result.dateadded}}</time>
+							<p><strong>License: </strong> {{result.license === " http" ? "http://creativecommons.org/licenses/by-nc/4.0/" : result.license}}</p>
+							<p *ngIf="result.mediaformat"><strong>Includes: </strong> {{result.mediaformat}}</p>
+							<p *ngIf="result.tags"><strong>Tags: </strong> {{getTags(result.tags)}}</p>
+							<hr style="border-top: 1px solid black;" />
+							<div class="columns is-mobile is-multiline is-vcentered">
+								<div class="column">
+									<div class="column">
+										<button class="button is-link  is-large" (click)="download(result.filelocation)">
+											<fa-icon class="fa-icon" [icon]="faDownload"></fa-icon>
+										</button>
+									</div>
+								</div>
+								<div class="column">
+									<div class="column">
+										<button (click)="getFeedbackByID(result.fileid)" class="button is-link is-large modal-operator">
+											<fa-icon class="fa-icon" [icon]="faComment"></fa-icon>
+										</button>
+									</div>
+								</div>
+								<div class="column">
+									<div class="column">
+										<button [disabled] = "!userSignedIn" (click)="upvote(result.fileid, result.upvotes)" class="button is-link is-large">
+											<fa-icon class="fa-icon" [icon]="faArrowUp"></fa-icon>
+										</button>
+									</div>
+								</div>
+								<div class="column is-narrow" style="font-size: 32px;">
+									<p class="bd-notification is-primary" style="font-size: 32;">{{result.upvotes}}</p>
+								</div>
+								<div class="column">
+									<div class="column">
+										<button  [disabled] = "!userSignedIn" (click)="downvote(result.fileid, result.upvotes)" class="button is-link is-large">
+											<fa-icon class="fa-icon" [icon]="faArrowDown"></fa-icon>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div></div>
+						</div>
+					</div>
+				</div>
+				<hr style="border-top: 1px solid black;" />
+			</div>
+		</div>
+	</div>
+	<hr />
+	<br />
+	<br />
+	<!--Used for collapsible section-->
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		            var i;
+		            for (i = 0; i < coll.length; i++) {
+		                coll[i].addEventListener("click", function () {
+		                    this.classList.toggle("active");
+		                    var content = this.nextElementSibling;
+		                    if (content.style.display === "block") {
+		                        content.style.display = "none";
+		                    } else {
+		                        content.style.display = "block";
+		                    }
+		                });
+		            }
+	</script>
+</body>
+
 </html>
