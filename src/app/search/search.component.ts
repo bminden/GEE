@@ -14,10 +14,18 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
   SearchForm: FormGroup
+  searchValue: String = null;
+  keywords:String = null;
+  gradeLevel:String = null;
+  contentType:String = null;
+  worksheets:String = null;
+  labs:String = null;
+  exams:String = null;
   constructor(private apiService: ApiService, public session: SessionStorageService, private router: Router) { }
+  
   searcher(keywords:string, subject:string, gradeLevel:string, contentType:string, worksheets:string, labs:string, exams:string){
     var includes = worksheets.concat(", ", labs, ", ", exams);
-    this.apiService.search(keywords, subject, gradeLevel, contentType, includes).subscribe((data)=>{
+    this.apiService.search(keywords, subject, gradeLevel, contentType, includes).then((data)=>{
      console.log(data);
      if (data["data"] === 0)
      {

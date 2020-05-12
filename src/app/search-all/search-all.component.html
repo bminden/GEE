@@ -96,7 +96,7 @@
 					</article>
 					<hr style="border-top: 1px solid black;" />
                 </div>
-                <form [formGroup] = "SearchAllForm">
+                <form *ngIf = "userSignedIn" [formGroup] = "SearchAllForm">
                     <div class="control">
                         <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
                     </div>
@@ -115,12 +115,12 @@
     
                           <strong>No comments found on this resource.</strong>
                           <hr>
-                          <form [formGroup] = "SearchAllForm">
+                          <form *ngIf = "userSignedIn" [formGroup] = "SearchAllForm">
                             <div class="control">
                                 <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
                             </div>
                             <hr>
-                            <div class="control">
+                            <div  class="control">
                                 <button [disabled] ="!SearchAllForm.controls.feedback.valid" (click) = "submitFeedbackByFileID()" routerLinkActive="active" class="button has-background-link has-text-white">
                                     Add comment
                                 </button>
@@ -137,7 +137,7 @@
 		<h1>Results</h1>
 	</div>
 	<!--End ResultsHeader-->
-	<div *ngIf="fileData.length == 0">
+	<div *ngIf="fileData !== null && fileData.length == 0">
 		<p>Sorry, we have no results!</p>
 	</div>
 	<div *ngFor="let result of fileData">
@@ -158,50 +158,54 @@
 						<div class="media">
 							<div class="media-left"></div>
 							<div class="media-content has-text-centered">
-								<p class="title is-5">Author: {{result.author}}</p>
+								<p class="title is-5">Title: {{getTitle(result.filelocation)}}</p>
+								<p class="title is-5">Author: {{result.author !== "" ? result.author : "No author found"}}</p>
 							</div>
 						</div>
 						<div class="content has-text-centered">
-							<p>{{result.description}}</p>.
-							<br />
-							<time datetime="2016-1-1">Date added: {{result.dateadded}}</time>
-							<p *ngIf="result.license != http">License: {{result.license}}</p>
-							<p *ngIf="result.media_format">Includes: {{result.media_format}}</p>
+
+							<p><strong>Description: </strong>{{result.description !== "" ? result.description : "No description found"}}</p>
+							<br>
+							<p><strong>Subject: </strong>{{result.subject}}</p>
+							<time datetime="2016-1-1"><strong>Date added: </strong> {{result.dateadded}}</time>
+							<p><strong>License: </strong> {{result.license === " http" ? "http://creativecommons.org/licenses/by-nc/4.0/" : result.license}}</p>
+							<p *ngIf="result.mediaformat"><strong>Includes: </strong> {{result.mediaformat}}</p>
+							<p *ngIf="result.tags"><strong>Tags: </strong> {{getTags(result.tags)}}</p>
 							<hr style="border-top: 1px solid black;" />
-							<div class="columns is-mobile is-multiline is-centered">
+							<div class="columns is-mobile is-multiline is-vcentered">
 								<div class="column">
 									<div class="column">
-										<button class="button is-link is-light is-large" (click)="download(result.filelocation)">
+										<button class="button is-link  is-large" (click)="download(result.filelocation)">
 											<fa-icon class="fa-icon" [icon]="faDownload"></fa-icon>
 										</button>
 									</div>
 								</div>
 								<div class="column">
 									<div class="column">
-										<button (click)="getFeedbackByID(result.fileid)" class="button is-link is-light is-large modal-operator">
+										<button (click)="getFeedbackByID(result.fileid)" class="button is-link is-large modal-operator">
 											<fa-icon class="fa-icon" [icon]="faComment"></fa-icon>
 										</button>
 									</div>
 								</div>
 								<div class="column">
 									<div class="column">
-										<button (click)="upvote(result.fileid, result.upvotes)" class="button is-link is-light is-large">
+										<button [disabled] = "!userSignedIn" (click)="upvote(result.fileid, result.upvotes)" class="button is-link is-large">
 											<fa-icon class="fa-icon" [icon]="faArrowUp"></fa-icon>
 										</button>
 									</div>
 								</div>
-								<div class="column" style="font-size: 32px;">
+								<div class="column is-narrow" style="font-size: 32px;">
 									<p class="bd-notification is-primary" style="font-size: 32;">{{result.upvotes}}</p>
 								</div>
 								<div class="column">
 									<div class="column">
-										<button (click)="downvote(result.fileid, result.upvotes)" class="button is-link is-light is-large">
+										<button  [disabled] = "!userSignedIn" (click)="downvote(result.fileid, result.upvotes)" class="button is-link is-large">
 											<fa-icon class="fa-icon" [icon]="faArrowDown"></fa-icon>
 										</button>
 									</div>
 								</div>
 							</div>
-							<div n></div>
+							<div></div>
 						</div>
 					</div>
 				</div>
