@@ -54,14 +54,18 @@
                     </div>
                 </div>
                 <div class="navbar-item">
-                    <div class="control">
+
+              <div *ngIf="username">
+                    <a routerLink="/uploadpage/Bad" routerLinkActive="active" class="button has-background-link has-text-white">
+                        Upload
+                    </a>
+              </div>
                     <div class="buttons">
                         <div *ngIf="username">
-
-                        <a routerLink="/uploadpage/Bad" routerLinkActive="active" class="button has-background-link has-text-white">
-                            Upload
-                        </a>
-                    </div></div>
+                            
+                        
+                        &nbsp;
+                    </div>
                         <div *ngIf="!username">
                         
                           <a class="button has-background-link has-text-white" routerLink="/newUser" routerLinkActive="active">
@@ -72,6 +76,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div *ngIf="username">
                         <div class="control">
                             <button class="button has-background-link has-text-white">
