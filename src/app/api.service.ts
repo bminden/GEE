@@ -156,9 +156,10 @@ export class ApiService {
   }
   
   
-  public upload (username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags){
+  public upload (filelocation, username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags){
     return this.httpClient.get('http://198.211.98.83:3002/upload', {
       params:{
+        filelocation:filelocation,
         fileTitle: fileTitle,
         subject: subject,
         gradeLevel: gradeLevel,

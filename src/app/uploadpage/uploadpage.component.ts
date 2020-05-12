@@ -38,6 +38,7 @@ export class UploadpageComponent implements OnInit {
   toggleErrorNotification: boolean = false;
   toggleUploadStatus: boolean = false;
   uploadStatus:string = null;
+  fileName:string = null;
   constructor (private apiService: ApiService, public session: SessionStorageService, public router: Router, private activatedRoute: ActivatedRoute)
   {
     this.activatedRoute.params.subscribe(params => {
@@ -131,7 +132,9 @@ export class UploadpageComponent implements OnInit {
           let license: string = this.UploadForm.value.license;
           let grade: string = this.UploadForm.value.grade;
           let tags: string = this.UploadForm.value.tags;
-          this.uploaderData(username,filename, subject, grade, includes_worksheets, includes_labs, includes_assesment, includes_video, description, license, tags );
+          console.log("file location: " );
+          console.log(data["filelocation"]);
+          this.uploaderData(data["filelocation"], username,filename, subject, grade, includes_worksheets, includes_labs, includes_assesment, includes_video, description, license, tags );
           this.navigateToUploadPage(filename)
         }
         else if (data["success"] = 1)
@@ -161,8 +164,8 @@ export class UploadpageComponent implements OnInit {
     
   }
 
-  uploaderData(username:string, fileTitle:string, subject:string, gradeLevel:string, worksheets:string, labs:string, exams:string, video:string, description:string, license:string, tags:string){
-    this.apiService.upload(username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags).subscribe((data)=>{
+  uploaderData(filelocation: string, username:string, fileTitle:string, subject:string, gradeLevel:string, worksheets:string, labs:string, exams:string, video:string, description:string, license:string, tags:string){
+    this.apiService.upload(filelocation, username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags).subscribe((data)=>{
       console.log(data);
     });
   }
