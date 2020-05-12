@@ -144,7 +144,7 @@ async ngOnInit() {
    //await this.getUserVotes();
     this.collapse();
     this.hideFull();
-    if (this.session.get["username"] !== "")
+    if (this.session.get("username") !== null)
     {
       this.userSignedIn = true;
     }

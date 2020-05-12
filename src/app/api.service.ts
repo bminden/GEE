@@ -101,12 +101,11 @@ export class ApiService {
 }
   
   //public search (keywords, subject, contentType, gradeLevel){
-  public search (keywords?, subject?, contentType?, gradeLevel?, includes?){
+  public search (keywords?, subject?, gradeLevel?, includes?){
     return this.httpClient.get('http://198.211.98.83:3002/search', {
       params:{
         keywords: keywords,
         subject: subject,
-        contentType: contentType,
         gradeLevel: gradeLevel,
         includes: includes
       }

@@ -23,9 +23,13 @@ export class SearchComponent implements OnInit {
   exams:String = null;
   constructor(private apiService: ApiService, public session: SessionStorageService, private router: Router) { }
   
-  searcher(keywords:string, subject:string, gradeLevel:string, contentType:string, worksheets:string, labs:string, exams:string){
-    var includes = worksheets.concat(", ", labs, ", ", exams);
-    this.apiService.search(keywords, subject, gradeLevel, contentType, includes).then((data)=>{
+  ye(test:string)
+  {
+    console.log("This is test: " + test);
+  }
+  searcher(keywords:string, subject:string, gradeLevel:string, worksheets:string, labs:string, exams:string){
+    let includes = labs + "," + worksheets;
+    this.apiService.search(keywords, subject, gradeLevel, includes).then((data)=>{
      console.log(data);
      if (data["data"] === 0)
      {

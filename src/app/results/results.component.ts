@@ -34,6 +34,7 @@ export class ResultsComponent implements OnInit {
   currentCommentFileID: number;
   promise: Promise<any>;
   counter:number = 0;
+  userSignedIn:boolean = false;
 
 
   getPictureAt(fileid:number)
@@ -162,6 +163,10 @@ async ngOnInit() {
     //this.session.set("data", data);
     //this.router.navigateByUrl("results");
    //await this.getUserVotes();
+   if (this.session.get("username") !== null)
+   {
+     this.userSignedIn = true;
+   }
     this.collapse();
     this.hideFull();
    // await this.getSearchItems();

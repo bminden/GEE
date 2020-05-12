@@ -53,5 +53,6 @@ export class HeaderComponent implements OnInit {
 
   handleClick(event: Event) {
     this.session.remove("username");
+    this.router.navigate(["home/"]);
   }
 }

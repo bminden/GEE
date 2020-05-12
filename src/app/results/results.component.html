@@ -70,6 +70,7 @@
 </head>
 
 <body>
+	
 	<div class="modal" id="modal">
 		<div class="modal-background"></div>
 		<div class="modal-content">
@@ -97,7 +98,7 @@
 					</article>
 					<hr style="border-top: 1px solid black;" />
                 </div>
-                <form [formGroup] = "SearchAllForm">
+                <form *ngIf = "userSignedIn" [formGroup] = "SearchAllForm">
                     <div class="control">
                         <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
                     </div>
@@ -116,7 +117,7 @@
     
                           <strong>No comments found on this resource.</strong>
                           <hr>
-                          <form [formGroup] = "SearchAllForm">
+                          <form *ngIf = "userSignedIn" [formGroup] = "SearchAllForm">
                             <div class="control">
                                 <input formControlName="feedback" class="input" type="text" placeholder="Add comment" />
                             </div>
@@ -138,9 +139,10 @@
 		<h1>Results</h1>
 	</div>
 	<!--End ResultsHeader-->
-	<div *ngIf="fileData !== null && fileData.length == 0">
-		<p>Sorry, we have no results!</p>
+	<div *ngIf="fileData[1] === null">
+		<p class="title is-5">Sorry, we have no results!</p>
 	</div>
+	<div *ngIf ="fileData[1] !== null">
 	<div *ngFor="let result of fileData">
 		<div class="columns is-vcentered">
 			<div class="column is-one-third has-text-centered" id="leftColumn"><img style ="border: 1px solid black;" [src]="getPictureAt(result.fileid)" alt="Standards Image" /></div>
@@ -191,7 +193,7 @@
 								</div>
 								<div class="column">
 									<div class="column">
-										<button (click)="upvote(result.fileid, result.upvotes)" class="button is-link  is-large">
+										<button [disabled] = "!userSignedIn" (click)="upvote(result.fileid, result.upvotes)" class="button is-link  is-large">
 											<fa-icon class="fa-icon" [icon]="faArrowUp"></fa-icon>
 										</button>
 									</div>
@@ -201,7 +203,7 @@
 								</div>
 								<div class="column">
 									<div class="column">
-										<button (click)="downvote(result.fileid, result.upvotes)" class="button is-link is-large">
+										<button [disabled] = "!userSignedIn" (click)="downvote(result.fileid, result.upvotes)" class="button is-link is-large">
 											<fa-icon class="fa-icon" [icon]="faArrowDown"></fa-icon>
 										</button>
 									</div>
@@ -250,6 +252,7 @@
 
 			</div>
 		</div>
+	</div>
 	</div>
 	<hr />
 	<br />

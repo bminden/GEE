@@ -93,10 +93,10 @@
             </div>
 
             <!--Test box for keyword input-->
-            <label for="keyword">Keyword(s)</label>
+            <label for="keyword">Keyword</label>
             <div class="control">
             <input type="text" id="keyword" name="keyword" class="input" #keyword><br><br>
-            <button class="button is-link" (click)="searcher(keyword.value, contentType.value, gradeLevel.value, subject.value, exams.value, labs.value, worksheets.value)"  required="required" >Search</button>
+            <button class="button is-link" (click)="searcher(keyword.value, gradeLevel.value, subject.value, exams.value, labs.value, worksheets.value)"  required="required" >Search</button>
             </div>
             <div></div>
 
