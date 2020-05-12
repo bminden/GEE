@@ -4,58 +4,60 @@ import {SessionStorageService, SessionStorage } from 'angular-web-storage';
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl } from '@angular/forms';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
-
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-reset-password',
+  templateUrl: './reset-password.component.html',
+  styleUrls: ['./reset-password.component.css']
 })
+export class ResetPasswordComponent implements OnInit {
 
-/**
- * This class represents the Logic for the Login Component that controls
- * user logins.
- */
-export class LoginComponent implements OnInit {
   @Input() NewAccount: boolean;
   displayNewAccountNotification = false;
-  LoginForm: FormGroup;
+  ResetForm: FormGroup;
   displayNotification: boolean = false;
   sub: any;
   toggleLoginStatus: boolean = false;
-  loginStatus:string = null;
-  statusString:string = null;
+  passwordFlag: boolean = false;
+  securityQuestion1: string;
+  securityQuestion2: string;
+  usernameFlag:boolean = false;
+  usernameBadFlag:boolean = false;
   /**
    * This opens up the apiService to this component
    * @param apiService The api service is what connects the components to the backend API
    */
   constructor(private router: Router, public session: SessionStorageService, private apiService: ApiService, private activatedRoute: ActivatedRoute) { 
     this.displayNewAccountNotification = this.NewAccount;
-    this.activatedRoute.params.subscribe(params => {
-      this.loginStatus = params['status'];
-      if (this.loginStatus === "Good")
-      {
-        this.toggleLoginStatus = true;
-        this.statusString = "Account successfully created, please login below!";
-      }
-      else if (this.loginStatus == "Good Reset")
-      {
-
-        this.toggleLoginStatus = true;
-        this.statusString = "Password successfully reset, please login below!";
-      }
-      else if (this.loginStatus == "Bad Reset")
-      {
-
-        this.toggleLoginStatus = true;
-        this.statusString = "Your answers to the security questions were incorrect.";
-      }
-
-     
-      });
 
     //alert(this.NewAccount);
   } 
+  toggleBadNotification()
+  {
+    this.usernameBadFlag = !this.usernameBadFlag;
+  }
+  async getSecurityQuestions()
+  {
+   
+     await this.apiService.getSecurityQuestions(this.ResetForm.value.username).then((data)=>{
+
+      if (data["status"] === 500)
+      {
+        this.usernameBadFlag = true;
+      }
+      else
+      {
+      this.securityQuestion1 = data["security1"];
+      this.securityQuestion2 = data["security2"];
+      this.usernameFlag = true;
+      this.usernameBadFlag = false;
+      }
+    });;
+  }
+ 
+  routeToLogin(text:string)
+  {
+      this.router.navigate([`login/` + text]);
+  }
   toggleLoginStatusNotification()
   {
     this.toggleLoginStatus = !this.toggleLoginStatus;
@@ -67,27 +69,18 @@ export class LoginComponent implements OnInit {
    * @param text This is the username
    * @param password This is the password
    */
-  checkUserInfo()
+  async checkUserInfo()
   {
-    let text: string = this.LoginForm.value.username;
-    let password: string = this.LoginForm.value.password;
-    // API call
-    this.apiService.getUsers(text, password).subscribe((data)=>{
-     console.log(data["status"]);
-     if (data["status"] == 500)
-     {
-      this.displayNotification = true;
-     } 
-
-     else
-     {
-      console.log("I am here");
-      this.displayNotification = false;
-      this.session.set("username", text);
-      this.router.navigateByUrl("home");
-      //this.router.navigateByUrl("home");
-     }
-    });
+    await this.apiService.changePassword(this.ResetForm.value.username, this.ResetForm.value.sec1ans,this.ResetForm.value.sec2ans,this.ResetForm.value.password).then((data)=>{
+      if (data["status"] === 200)
+      {
+        this.routeToLogin("Good Reset");
+      }
+      else
+      {
+        this.routeToLogin("Bad Reset");
+      }
+    });;
   }
   toggleDisplayNotification()
   {
@@ -97,16 +90,16 @@ export class LoginComponent implements OnInit {
   {
     this.displayNewAccountNotification = !this.displayNewAccountNotification;
   }
-  /**
-   * Nothing to do on Init
-   */
-  ngOnInit() {
 
-    this.LoginForm = new FormGroup({
+  ngOnInit() {
+    this.ResetForm = new FormGroup({
       username: new FormControl(''),
       password: new FormControl(''),
+      sec1ans: new FormControl(''),
+      sec2ans: new FormControl(''),
+      sec1: new FormControl(''),
+      sec2: new FormControl('')
     });
     this.session.remove("username");
   }
-
 }

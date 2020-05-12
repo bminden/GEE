@@ -121,6 +121,49 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#errorString">errorString</a>
+                            </li>
+                            <li>
+                                <a href="#faUpload">faUpload</a>
+                            </li>
+                            <li>
+                                <a href="#fileSuccessfulFlag">fileSuccessfulFlag</a>
+                            </li>
+                            <li>
+                                <a href="#fileToUpload">fileToUpload</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router">router</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#session">session</a>
+                            </li>
+                            <li>
+                                <a href="#toggleErrorNotification">toggleErrorNotification</a>
+                            </li>
+                            <li>
+                                <a href="#toggleUploadStatus">toggleUploadStatus</a>
+                            </li>
+                            <li>
+                                <a href="#UploadForm">UploadForm</a>
+                            </li>
+                            <li>
+                                <a href="#uploadStatus">uploadStatus</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -131,10 +174,28 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#correctFileNameForLinux">correctFileNameForLinux</a>
+                            </li>
+                            <li>
+                                <a href="#handleFileInput">handleFileInput</a>
+                            </li>
+                            <li>
+                                <a href="#navigateToUploadPage">navigateToUploadPage</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
-                                <a href="#uploader">uploader</a>
+                                <a href="#onSubmitFileClick">onSubmitFileClick</a>
+                            </li>
+                            <li>
+                                <a href="#toggleErrorMessageNotification">toggleErrorMessageNotification</a>
+                            </li>
+                            <li>
+                                <a href="#toggleUploadStatusNotification">toggleUploadStatusNotification</a>
+                            </li>
+                            <li>
+                                <a href="#uploaderData">uploaderData</a>
                             </li>
                         </ul>
                     </td>
@@ -154,12 +215,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(apiService: <a href="../injectables/ApiService.html">ApiService</a>)</code>
+<code>constructor(apiService: <a href="../injectables/ApiService.html">ApiService</a>, session: SessionStorageService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:40</a></div>
                             </td>
                         </tr>
 
@@ -181,6 +242,42 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>session</td>
+                                                  
+                                                        <td>
+                                                                    <code>SessionStorageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -210,6 +307,212 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="correctFileNameForLinux"></a>
+                    <span class="name">
+                        <b>
+                            correctFileNameForLinux
+                        </b>
+                        <a href="#correctFileNameForLinux"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>correctFileNameForLinux(new_dir_title: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:170</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>new_dir_title</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleFileInput"></a>
+                    <span class="name">
+                        <b>
+                            handleFileInput
+                        </b>
+                        <a href="#handleFileInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleFileInput(files: FileList)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>files</td>
+                                    <td>
+                                            <code>FileList</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateToUploadPage"></a>
+                    <span class="name">
+                        <b>
+                            navigateToUploadPage
+                        </b>
+                        <a href="#navigateToUploadPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateToUploadPage(uploadStatus)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="158"
+                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:158</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uploadStatus</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
@@ -228,8 +531,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="190"
+                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:190</a></div>
                 </td>
             </tr>
 
@@ -249,26 +552,143 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="uploader"></a>
+                    <a name="onSubmitFileClick"></a>
                     <span class="name">
                         <b>
-                            uploader
+                            onSubmitFileClick
                         </b>
-                        <a href="#uploader"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onSubmitFileClick"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>uploader(fileTitle: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, subject: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, gradeLevel: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, contentType: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, worksheets: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, labs: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, exams: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, description: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>onSubmitFileClick()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleErrorMessageNotification"></a>
+                    <span class="name">
+                        <b>
+                            toggleErrorMessageNotification
+                        </b>
+                        <a href="#toggleErrorMessageNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleErrorMessageNotification()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleUploadStatusNotification"></a>
+                    <span class="name">
+                        <b>
+                            toggleUploadStatusNotification
+                        </b>
+                        <a href="#toggleUploadStatusNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleUploadStatusNotification()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:153</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploaderData"></a>
+                    <span class="name">
+                        <b>
+                            uploaderData
+                        </b>
+                        <a href="#uploaderData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>uploaderData(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fileTitle: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, subject: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, gradeLevel: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, worksheets: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, labs: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, exams: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, video: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, description: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, license: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, tags: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:164</a></div>
                 </td>
             </tr>
 
@@ -287,6 +707,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>username</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                                 <tr>
                                     <td>fileTitle</td>
                                     <td>
@@ -313,18 +745,6 @@
                                 </tr>
                                 <tr>
                                     <td>gradeLevel</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>contentType</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -372,7 +792,43 @@
 
                                 </tr>
                                 <tr>
+                                    <td>video</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
                                     <td>description</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>license</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>tags</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -400,6 +856,400 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="errorString"></a>
+                        <span class="name">
+                            <b>
+                            errorString</b>
+                            <a href="#errorString"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faUpload"></a>
+                        <span class="name">
+                            <b>
+                            faUpload</b>
+                            <a href="#faUpload"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>faUpload</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fileSuccessfulFlag"></a>
+                        <span class="name">
+                            <b>
+                            fileSuccessfulFlag</b>
+                            <a href="#fileSuccessfulFlag"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fileToUpload"></a>
+                        <span class="name">
+                            <b>
+                            fileToUpload</b>
+                            <a href="#fileToUpload"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>File</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="router"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            router</b>
+                            <a href="#router"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="session"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            session</b>
+                            <a href="#session"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SessionStorageService</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toggleErrorNotification"></a>
+                        <span class="name">
+                            <b>
+                            toggleErrorNotification</b>
+                            <a href="#toggleErrorNotification"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toggleUploadStatus"></a>
+                        <span class="name">
+                            <b>
+                            toggleUploadStatus</b>
+                            <a href="#toggleUploadStatus"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="UploadForm"></a>
+                        <span class="name">
+                            <b>
+                            UploadForm</b>
+                            <a href="#UploadForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This sends metadata about the file being uplaoded to the backend so that it can be processed</p>
+</div>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>fileTitle</td>
+                                                        <td>
+                                                                <code><p>title of the file</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>subject</td>
+                                                        <td>
+                                                                <code><p>the subject of the file</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>gradeLevel</td>
+                                                        <td>
+                                                                <code><p>the grade level</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>worksheets</td>
+                                                        <td>
+                                                                <code><p>if the document has worksheets</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>labs</td>
+                                                        <td>
+                                                                <code><p>if the document has labs</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>exams</td>
+                                                        <td>
+                                                                <code><p>if the document has exams </p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>video</td>
+                                                        <td>
+                                                                <code><p>if the document has videos</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>description</td>
+                                                        <td>
+                                                                <code><p>a discription of the file</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>license</td>
+                                                        <td>
+                                                                <code><p>file uplaoder&#39;s license for the file
+backend returns 0 if something went wrong</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uploadStatus"></a>
+                        <span class="name">
+                            <b>
+                            uploadStatus</b>
+                            <a href="#uploadStatus"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/uploadpage/uploadpage.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
@@ -407,6 +1257,15 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ApiService } from &#x27;../api.service&#x27;;
+UploadForm: FormGroup
+//const URL &#x3D; &#x27;198.211.98.83:3002/api/upload?file&#x27;;
+import { FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { unwrapResolvedMetadata } from &#x27;@angular/compiler&#x27;;
+import { faUpload } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+import {SessionStorageService, SessionStorage } from &#x27;angular-web-storage&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+
+const URL &#x3D; &#x27;198.211.98.83:3002/api/upload&#x27;;
 
 @Component({
   selector: &#x27;app-uploadpage&#x27;,
@@ -415,22 +1274,191 @@ import { ApiService } from &#x27;../api.service&#x27;;
 })
 export class UploadpageComponent implements OnInit {
 
+  /**
+   * This sends metadata about the file being uplaoded to the backend so that it can be processed
+   * @param fileTitle title of the file
+   * @param subject the subject of the file
+   * @param gradeLevel the grade level
+   * @param worksheets if the document has worksheets
+   * @param labs if the document has labs
+   * @param exams if the document has exams 
+   * @param video if the document has videos
+   * @param description a discription of the file
+   * @param license file uplaoder&#x27;s license for the file
+   * backend returns 0 if something went wrong
+   */
+  UploadForm: FormGroup;
+  fileToUpload: File &#x3D; null;
+  fileSuccessfulFlag: boolean &#x3D; false;
+  errorString: string &#x3D; null;
+  faUpload &#x3D; faUpload;
+  toggleErrorNotification: boolean &#x3D; false;
+  toggleUploadStatus: boolean &#x3D; false;
+  uploadStatus:string &#x3D; null;
+  constructor (private apiService: ApiService, public session: SessionStorageService, public router: Router, private activatedRoute: ActivatedRoute)
+  {
+    this.activatedRoute.params.subscribe(params &#x3D;&gt; {
+      this.uploadStatus &#x3D; params[&#x27;status&#x27;];
+      if (this.uploadStatus !&#x3D;&#x3D; &quot;Bad&quot;)
+      {
+        this.toggleUploadStatus &#x3D; true;
+      }
+      else{
+        this.toggleUploadStatus &#x3D; false;
+      }
+      this.UploadForm &#x3D; new FormGroup({
+        filename: new FormControl(&#x27;&#x27;, [Validators.required]),
+        subject: new FormControl(&#x27;&#x27;, [Validators.required]),
+        includes_worksheets: new FormControl(&#x27;&#x27;),
+        includes_labs: new FormControl(&#x27;&#x27;),
+        includes_assesment: new FormControl(&#x27;&#x27;),
+        includes_video: new FormControl(&#x27;&#x27;),
+        description: new FormControl(&#x27;&#x27;, [Validators.required]),
+        license: new FormControl(&#x27;&#x27;, [Validators.required]),
+        grade: new FormControl(&#x27;&#x27;, [Validators.required]),
+        tos: new FormControl(&#x27;&#x27;, [Validators.required]),
+        tags: new FormControl(&#x27;&#x27;, [Validators.required])
+      });
+      });
 
-  constructor(private apiService: ApiService) { }
-  uploader(fileTitle:string, subject:string, gradeLevel:string, contentType:string, worksheets:string, labs:string, exams:string, description:string){
-    var includes &#x3D; worksheets.concat(&quot;, &quot;, labs, &quot;, &quot;, exams);
-    this.apiService.upload(fileTitle, subject, gradeLevel, contentType, includes, description).subscribe((data)&#x3D;&gt;{
-     console.log(data);
-     if (data[&quot;data&quot;] &#x3D;&#x3D;&#x3D; 0)
-     {
-      alert(&quot;Bad News&quot;);
-     } 
-     else{
-      alert(&quot;Verified&quot;);
-     }
-  });}
+
+  }
+  
+
+  handleFileInput(files: FileList) {
+    this.fileToUpload &#x3D; files.item(0);
+    //this.uploadFileToActivity()
+}
+
+  toggleErrorMessageNotification()
+  {
+    this.toggleErrorNotification &#x3D; !this.toggleErrorNotification;
+  }
+  onSubmitFileClick()
+  {
+    this.errorString &#x3D; &quot;&quot;;
+    if (!this.UploadForm.valid)
+    {
+      this.errorString &#x3D; &quot;The following required fields have not been filled out:\n&quot;;
+      
+      if (!this.UploadForm.controls.filename.valid)
+      {
+        this.errorString +&#x3D; &quot;File Title &quot;;
+      }
+      if (!this.UploadForm.controls.tags.valid)
+      {
+        this.errorString +&#x3D; &quot;Tags &quot;;
+      }
+      if (!this.UploadForm.controls.subject.valid)
+      {
+        this.errorString +&#x3D; &quot;Subject &quot;;
+      } 
+      if (!this.UploadForm.controls.description.valid)
+      {
+        this.errorString +&#x3D; &quot;Description &quot;;
+      } 
+      if (!this.UploadForm.controls.license.valid)
+      {
+        this.errorString +&#x3D; &quot;License &quot;;
+      }
+      if (!this.UploadForm.controls.grade.valid)
+      {
+        this.errorString +&#x3D; &quot;Grade &quot;;
+      }
+      if (!this.UploadForm.controls.tos.valid)
+      {
+        this.errorString +&#x3D; &quot;Terms of Service and Privacy Policy&quot;;
+      }
+      this.toggleErrorNotification&#x3D; true;
+      return;
+    }
+    
+    this.apiService.postFile(this.fileToUpload).subscribe(data &#x3D;&gt; {
+      // do something, if upload success
+        if (data[&quot;success&quot;] &#x3D;&#x3D; 0)
+        {
+          let username: string &#x3D; this.session.get(&quot;username&quot;);
+          let filename: string &#x3D; this.correctFileNameForLinux(this.UploadForm.value.filename);
+          let subject: string &#x3D; this.UploadForm.value.subject;
+          let includes_worksheets: string &#x3D; this.UploadForm.value.includes_worksheets;
+          let includes_labs: string &#x3D; this.UploadForm.value.includes_labs;
+          let includes_assesment: string &#x3D; this.UploadForm.value.includes_assesment;
+          let includes_video: string &#x3D; this.UploadForm.value.includes_video;
+          let description: string &#x3D; this.UploadForm.value.description;
+          let license: string &#x3D; this.UploadForm.value.license;
+          let grade: string &#x3D; this.UploadForm.value.grade;
+          let tags: string &#x3D; this.UploadForm.value.tags;
+          this.uploaderData(username,filename, subject, grade, includes_worksheets, includes_labs, includes_assesment, includes_video, description, license, tags );
+          this.navigateToUploadPage(filename)
+        }
+        else if (data[&quot;success&quot;] &#x3D; 1)
+        {
+          this.errorString &#x3D; &quot;File name already taken, please choose a different file name.&quot;;
+          this.toggleErrorNotification&#x3D; true;
+        }
+        else // Unknown error
+        {
+          this.errorString &#x3D; &quot;Terms of Service and Privacy Policy&quot;;
+          this.toggleErrorNotification&#x3D; true;
+        }
+      }, error &#x3D;&gt; {
+        console.log(error);
+        
+      });
+  }
+
+  toggleUploadStatusNotification()
+  {
+    this.toggleUploadStatus &#x3D; !this.toggleUploadStatus;
+  }
+
+  navigateToUploadPage(uploadStatus) {
+   
+    this.router.navigate([&#x60;uploadpage/&#x60; + uploadStatus]);
+    
+  }
+
+  uploaderData(username:string, fileTitle:string, subject:string, gradeLevel:string, worksheets:string, labs:string, exams:string, video:string, description:string, license:string, tags:string){
+    this.apiService.upload(username, fileTitle, subject, gradeLevel, license, worksheets, labs, video, exams, description, tags).subscribe((data)&#x3D;&gt;{
+      console.log(data);
+    });
+  }
+  
+  correctFileNameForLinux(new_dir_title: string)
+  {
+    let new_file_name:string &#x3D; &quot;&quot;;
+    for (var i &#x3D; 0; i&lt; new_dir_title.length; i++)
+    {
+      let c &#x3D; new_dir_title.charAt(i);
+
+      if (c &#x3D;&#x3D; &#x27; &#x27; || c &#x3D;&#x3D; &#x27;/&#x27; || c &#x3D;&#x3D; &#x27;&gt;&#x27; || c &#x3D;&#x3D; &#x27;&lt;&#x27; || c &#x3D;&#x3D; &#x27;|&#x27; || c &#x3D;&#x3D; &#x27;:&#x27; || c &#x3D;&#x3D; &#x27;&amp;&#x27; || c &#x3D;&#x3D; &#x27;?&#x27; || c &#x3D;&#x3D; &#x27;&quot;&#x27;)
+      {
+        new_file_name +&#x3D; &quot;_&quot;;
+      }
+      else
+      {
+        new_file_name +&#x3D; c;
+      }
+    }
+
+    return new_file_name;
+  }
 
   ngOnInit() {
+    
+     this.UploadForm &#x3D; new FormGroup({
+      filename: new FormControl(&#x27;&#x27;, [Validators.required]),
+      subject: new FormControl(&#x27;&#x27;, [Validators.required]),
+      includes_worksheets: new FormControl(&#x27;&#x27;),
+      includes_labs: new FormControl(&#x27;&#x27;),
+      includes_assesment: new FormControl(&#x27;&#x27;),
+      includes_video: new FormControl(&#x27;&#x27;),
+      description: new FormControl(&#x27;&#x27;, [Validators.required]),
+      license: new FormControl(&#x27;&#x27;, [Validators.required]),
+      grade: new FormControl(&#x27;&#x27;, [Validators.required]),
+      tos: new FormControl(&#x27;&#x27;, [Validators.required]),
+      tags: new FormControl(&#x27;&#x27;, [Validators.required])
+    });
   }
 
 }
@@ -440,43 +1468,105 @@ export class UploadpageComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
 
-&lt;html lang&#x3D;&quot;en&quot;&gt;
+&lt;html lang&#x3D;&quot;en&quot; style &#x3D; &quot;overflow-y: hidden;&quot;&gt;
 
 &lt;head&gt;
     &lt;title&gt;Upload Content&lt;/title&gt;
     &lt;meta charset&#x3D;&quot;utf-8&quot; /&gt;
     &lt;!--&lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text/css&quot; href&#x3D;&quot;CSS PATH HERE&quot; /&gt;--&gt;
-    &lt;style&gt;      
-        div.size {
-          margin: auto;
-          width: 70%;
-        }
-        div.center {
-        padding: 15px;
-        text-align: center;
-        font-size: 2.2em;
-        }
-        &lt;/style&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;div class&#x3D; center&gt;
+    &lt;div class&#x3D; &quot;center&quot;&gt;
         &lt;h1 class&#x3D;&quot;title&quot;&gt;Upload Content&lt;/h1&gt;
     &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;container is-desktop &quot; &gt;
+    &lt;div class&#x3D;&quot;notification is-danger has-text-centered&quot; *ngIf&#x3D;&quot;toggleErrorNotification &amp;&amp; !UploadForm.valid&quot;&gt; {{errorString}}
+        &lt;button class&#x3D;&quot;delete&quot; (click)&#x3D;&quot;toggleErrorMessageNotification()&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;notification is-info has-text-centered&quot; *ngIf&#x3D;&quot;toggleUploadStatus&quot;&gt; File was uploaded successfully!
+                &lt;button class&#x3D;&quot;delete&quot; (click)&#x3D;&quot;toggleUploadStatusNotification()&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;container is-desktop &quot;&gt;
         &lt;div class&#x3D;&quot;notification has-background-white&quot;&gt;
-            &lt;form action&#x3D;&quot;/PATH FOR HANDLING INPUT&quot;&gt;
+            &lt;form [formGroup]&#x3D;&quot;UploadForm&quot;&gt;
                 &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
                     &lt;div class&#x3D;&quot;field-label is-normal&quot;&gt;
-                    &lt;label class&#x3D;&quot;label&quot;&gt;File Title&lt;/label&gt;
+                        &lt;label class&#x3D;&quot;label&quot;&gt;Title&lt;/label&gt;
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;field-body&quot;&gt;
-                    &lt;div class&#x3D;&quot;field&quot;&gt;
-                        &lt;p class&#x3D;&quot;control&quot;&gt;
-                            &lt;input class&#x3D;&quot;input&quot; type&#x3D;&quot;text&quot; #fileTitle&gt;
-                        &lt;/p&gt;
+                        &lt;div class&#x3D;&quot;field&quot;&gt;
+                            &lt;p class&#x3D;&quot;control&quot;&gt;
+                                &lt;input class&#x3D;&quot;input&quot; type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;filename&quot;&gt;
+                            &lt;/p&gt;
+                        &lt;/div&gt;
                     &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
+                    &lt;div class&#x3D;&quot;field-label is-normal&quot;&gt;
+                        &lt;label class&#x3D;&quot;label&quot;&gt;Subject&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;field-body&quot;&gt;
+                        &lt;div class&#x3D;&quot;field&quot;&gt;
+                            &lt;p class&#x3D;&quot;control&quot;&gt;
+                                &lt;input class&#x3D;&quot;input&quot; type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;subject&quot;&gt;
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
+                    &lt;div class&#x3D;&quot;field-label is-normal&quot;&gt;
+                        &lt;label class&#x3D;&quot;label&quot;&gt;Grade&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;field-body&quot;&gt;
+                        &lt;div class&#x3D;&quot;control&quot;&gt;
+                            &lt;div class&#x3D;&quot;select&quot;&gt;
+                                &lt;select id&#x3D;&quot;grade&quot; formControlName&#x3D;&quot;grade&quot;&gt;
+                                    &lt;option&gt;Any&lt;/option&gt;
+                                    &lt;option&gt;6th&lt;/option&gt;
+                                    &lt;option&gt;7th&lt;/option&gt;
+                                    &lt;option&gt;8th&lt;/option&gt;
+                                    &lt;option&gt;High school&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
+                    &lt;div class&#x3D;&quot;field-label&quot;&gt;
+                        &lt;label class&#x3D;&quot;label&quot;&gt;Includes:&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;field-body&quot;&gt;
+                        &lt;div class&#x3D;&quot;field is-narrow&quot;&gt;
+                            &lt;div class&#x3D;&quot;control&quot;&gt;
+                                &lt;label class&#x3D;&quot;checkbox&quot;&gt;
+                                    &lt;input type&#x3D;&quot;checkbox&quot; formControlName&#x3D;&quot;includes_worksheets&quot;&gt; Worksheets
+                                &lt;/label&gt;
+                                &lt;label class&#x3D;&quot;checkbox&quot; class&#x3D;s pacing&gt;
+                                    &lt;input type&#x3D;&quot;checkbox&quot; formControlName&#x3D;&quot;includes_labs&quot;&gt; Labs
+                                &lt;/label&gt;
+                                &lt;label class&#x3D;&quot;checkbox&quot; class&#x3D;s pacing&gt;
+                                    &lt;input type&#x3D;&quot;checkbox&quot; formControlName&#x3D;&quot;includes_assesment&quot;&gt; Assessment
+                                &lt;/label&gt;
+                                &lt;label class&#x3D;&quot;checkbox&quot; class&#x3D;s pacing&gt;
+                                    &lt;input type&#x3D;&quot;checkbox&quot; formControlName&#x3D;&quot;includes_video&quot;&gt; Video
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
+                    &lt;div class&#x3D;&quot;field-label is-normal&quot;&gt;
+                        &lt;label class&#x3D;&quot;label&quot;&gt;Content Description&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;field-body&quot;&gt;
+                        &lt;div class&#x3D;&quot;field&quot;&gt;
+                            &lt;div class&#x3D;&quot;control&quot;&gt;
+                                &lt;textarea class&#x3D;&quot;textarea&quot; placeholder&#x3D;&quot;Explain the content of this upload&quot; formControlName&#x3D;&quot;description&quot;&gt;&lt;/textarea&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
                 &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
@@ -484,149 +1574,83 @@ export class UploadpageComponent implements OnInit {
                         &lt;label class&#x3D;&quot;label&quot;&gt;Tags&lt;/label&gt;
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;field-body&quot;&gt;
-                        &lt;div class&#x3D;&quot;control&quot;&gt;
-                            &lt;div class&#x3D;&quot;select&quot;&gt;
-                            &lt;select id&#x3D;&quot;grade&quot; #grade&gt;
-                                &lt;option&gt;Select Grade&lt;/option&gt;
-                                &lt;option&gt;6th&lt;/option&gt;
-                                &lt;option&gt;7th&lt;/option&gt;
-                                &lt;option&gt;8th&lt;/option&gt;
-                                &lt;option&gt;High school&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class&#x3D;&quot;control&quot;&gt;
-                            &lt;div class&#x3D;&quot;select&quot;&gt;
-                            &lt;select id&#x3D;&quot;subject&quot; #subject&gt;
-                                &lt;option&gt;Select Subject&lt;/option&gt;
-                                &lt;option&gt;Biology&lt;/option&gt;
-                                &lt;option&gt;Earth Science&lt;/option&gt;
-                                &lt;option&gt;Chemestry&lt;/option&gt;
-                                &lt;option&gt;Physics&lt;/option&gt;
-                                &lt;option&gt;Anatomy&lt;/option&gt;
-                                &lt;option&gt;Other&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class&#x3D;&quot;control&quot;&gt;
-                            &lt;div class&#x3D;&quot;select&quot;&gt;
-                            &lt;select id&#x3D;&quot;contentType&quot; #contentType&gt;
-                                &lt;option&gt;Content Type&lt;/option&gt;
-                                &lt;option&gt;-&lt;/option&gt;
-                                &lt;option&gt;-&lt;/option&gt;
-                                &lt;option&gt;-&lt;/option&gt;
-                                &lt;option&gt;High school&lt;/option&gt;
-                                &lt;/select&gt;
+                        &lt;div class&#x3D;&quot;field&quot;&gt;
+                            &lt;div class&#x3D;&quot;control&quot;&gt;
+                                &lt;textarea class&#x3D;&quot;textarea&quot; placeholder&#x3D;&quot;Please add tags that help describe what is in the upload, seperated by commas. E.G. Cellular Energy, Science, Gravity, Neuton &quot; formControlName&#x3D;&quot;tags&quot;&gt;&lt;/textarea&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
-                    &lt;div class&#x3D;&quot;field-label&quot;&gt;
-                    &lt;label class&#x3D;&quot;label&quot;&gt;Includes:&lt;/label&gt;
-                    &lt;/div&gt;
-                    &lt;div class&#x3D;&quot;field-body&quot;&gt;
-                    &lt;div class&#x3D;&quot;field is-narrow&quot;&gt;
-                        &lt;div class&#x3D;&quot;control&quot;&gt;
-                        &lt;label class&#x3D;&quot;checkbox&quot;&gt;
-                            &lt;input type&#x3D;&quot;checkbox&quot; #workSheets&gt;
-                            Worksheets
-                        &lt;/label&gt;
-                        &lt;label class&#x3D;&quot;checkbox&quot;&gt;
-                            &lt;input type&#x3D;&quot;checkbox&quot; #labs&gt;
-                            Labs
-                        &lt;/label&gt;
-                        &lt;label class&#x3D;&quot;checkbox&quot;&gt;
-                            &lt;input type&#x3D;&quot;checkbox&quot; #exams&gt;
-                            Assessment
-                        &lt;/label&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
+
                 &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
                     &lt;div class&#x3D;&quot;field-label is-normal&quot;&gt;
-                    &lt;label class&#x3D;&quot;label&quot;&gt;Content Description&lt;/label&gt;
+                        &lt;label class&#x3D;&quot;label&quot;&gt;Content Licensing&lt;/label&gt;
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;field-body&quot;&gt;
-                    &lt;div class&#x3D;&quot;field&quot;&gt;
-                        &lt;div class&#x3D;&quot;control&quot;&gt;
-                        &lt;textarea class&#x3D;&quot;textarea&quot; placeholder&#x3D;&quot;Explain the content of this upload&quot; #description&gt;&lt;/textarea&gt;
+                        &lt;div class&#x3D;&quot;field&quot;&gt;
+                            &lt;div class&#x3D;&quot;control&quot;&gt;
+                                &lt;textarea class&#x3D;&quot;textarea&quot; placeholder&#x3D;&quot;Content license information, enter none for no license.&quot; formControlName&#x3D;&quot;license&quot;&gt;&lt;/textarea&gt;
+                            &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
-                    &lt;/div&gt;
                 &lt;/div&gt;
-                
+
                 &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
                     &lt;div class&#x3D;&quot;field-label is-normal&quot;&gt;
-                        &lt;label class&#x3D;&quot;label&quot;&gt;Compressed Folder Upload&lt;/label&gt;
+                        &lt;label class&#x3D;&quot;label&quot;&gt;File Upload&lt;/label&gt;
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;field-body&quot;&gt;
-                        &lt;div class&#x3D;&quot;file&quot;&gt;
+                        &lt;div class&#x3D;&quot;file has-name&quot;&gt;
                             &lt;label class&#x3D;&quot;file-label&quot;&gt;
-                            &lt;input class&#x3D;&quot;file-input&quot; type&#x3D;&quot;file&quot; name&#x3D;&quot;resume&quot; id&#x3D;&quot;previewImage&quot; accept&#x3D;&quot;.zip, .rar, .7z&quot;&gt;
-                            &lt;span class&#x3D;&quot;file-cta&quot;&gt;
-                                &lt;span class&#x3D;&quot;file-label&quot;&gt;
-                                Choose a file…
+                                &lt;input (change)&#x3D;&quot;handleFileInput($event.target.files)&quot; class&#x3D;&quot;file-input&quot; type&#x3D;&quot;file&quot; name&#x3D;&quot;resume&quot;&gt;
+                                &lt;span class&#x3D;&quot;file-cta&quot;&gt;
+                                &lt;span class&#x3D;&quot;file-icon&quot;&gt;
+                                  &lt;fa-icon [icon] &#x3D; &quot;faUpload&quot;&gt;&lt;/fa-icon&gt;
                                 &lt;/span&gt;
-                            &lt;/span&gt;
-                            &lt;/label&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
-                    &lt;div class&#x3D;&quot;field-label is-normal&quot;&gt;
-                        &lt;label class&#x3D;&quot;label&quot;&gt;File Preview Image&lt;/label&gt;
-                    &lt;/div&gt;
-                    &lt;div class&#x3D;&quot;field-body&quot;&gt;
-                        &lt;div class&#x3D;&quot;file&quot;&gt;
-                            &lt;label class&#x3D;&quot;file-label&quot;&gt;
-                            &lt;input class&#x3D;&quot;file-input&quot; type&#x3D;&quot;file&quot; name&#x3D;&quot;resume&quot; id&#x3D;&quot;previewImage&quot; accept&#x3D;&quot;.png, .jpg, .jpeg&quot;&gt;
-                            &lt;span class&#x3D;&quot;file-cta&quot;&gt;
                                 &lt;span class&#x3D;&quot;file-label&quot;&gt;
-                                Choose a picture…
+                                    Choose a file or a compressed folder (.zip or .rar)
                                 &lt;/span&gt;
-                            &lt;/span&gt;
+
+                                &lt;/span&gt;
+                                &lt;span class&#x3D;&quot;file-name&quot;&gt;
+                                {{fileToUpload !&#x3D; null ? fileToUpload.name : &#x27;No File Chosen&#x27;}}
+                              &lt;/span&gt;
                             &lt;/label&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
                 &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
                     &lt;div class&#x3D;&quot;field-label&quot;&gt;
-                    &lt;label class&#x3D;&quot;label&quot;&gt;&lt;/label&gt;
+                        &lt;label class&#x3D;&quot;label&quot;&gt;&lt;/label&gt;
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;field-body&quot;&gt;
-                    &lt;div class&#x3D;&quot;field is-narrow&quot;&gt;
-                        &lt;div class&#x3D;&quot;control&quot;&gt;
-                        &lt;label class&#x3D;&quot;checkbox&quot;&gt;
-                            &lt;input type&#x3D;&quot;checkbox&quot;&gt;
-                            I Agree to the Terms of Servce and Privacy Policy.
-                        &lt;/label&gt;
+                        &lt;div class&#x3D;&quot;field is-narrow&quot;&gt;
+                            &lt;div class&#x3D;&quot;control&quot;&gt;
+                                &lt;label class&#x3D;&quot;checkbox&quot;&gt;
+                                    &lt;input type&#x3D;&quot;checkbox&quot; formControlName&#x3D;&quot;tos&quot;&gt; I Agree to the Terms of Servce and Privacy Policy.
+                                &lt;/label&gt;
+                            &lt;/div&gt;
                         &lt;/div&gt;
-                    &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
 
                 &lt;div class&#x3D;&quot;field is-horizontal&quot;&gt;
                     &lt;div class&#x3D;&quot;field-label&quot;&gt;
-                    &lt;!-- Left empty for spacing --&gt;
+                        &lt;!-- Left empty for spacing --&gt;
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;field-body&quot;&gt;
-                    &lt;div class&#x3D;&quot;field&quot;&gt;
-                        &lt;div class&#x3D;&quot;control&quot;&gt;
-                        &lt;button class&#x3D;&quot;button has-background-link has-text-white&quot; (click)&#x3D;&quot;uploader(fileTitle.value, contentType.value, gradeLevel.value, subject.value, exams.value, labs.value, worksheets.value, description.value)&quot;&gt;
-                            Submit
-                        &lt;/button&gt;
+                        &lt;div class&#x3D;&quot;field&quot;&gt;
+                            &lt;div class&#x3D;&quot;control&quot;&gt;
+                                &lt;button class&#x3D;&quot;button has-background-link has-text-white&quot; [disabled] &#x3D; &quot;fileToUpload &#x3D;&#x3D;&#x3D; null&quot; (click)&#x3D;&quot;onSubmitFileClick()&quot;&gt;
+                                    Submit
+                                &lt;/button&gt;
+                            &lt;/div&gt;
                         &lt;/div&gt;
-                    &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/form&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-
-
-
 
 &lt;/body&gt;
 
@@ -637,7 +1661,23 @@ export class UploadpageComponent implements OnInit {
                 <p class="comment">
                     <code>./uploadpage.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">div.size {
+    margin: auto;
+    width: 70%;
+  }
+  div.center {
+  padding: 15px;
+  text-align: center;
+  font-size: 2.2em;
+  }
+  label.spacing{
+      margin-left:10px;
+  }
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green; }
+
+html, body { height: 100%; }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -665,8 +1705,8 @@ export class UploadpageComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html lang="en"><head>    <title>Upload Content</title>    <meta charset="utf-8" />    <!--<link rel="stylesheet" type="text/css" href="CSS PATH HERE" />-->    <style>              div.size {          margin: auto;          width: 70%;        }        div.center {        padding: 15px;        text-align: center;        font-size: 2.2em;        }        </style></head><body>    <div class= center>        <h1 class="title">Upload Content</h1>    </div>    <div class="container is-desktop " >        <div class="notification has-background-white">            <form action="/PATH FOR HANDLING INPUT">                <div class="field is-horizontal">                    <div class="field-label is-normal">                    <label class="label">File Title</label>                    </div>                    <div class="field-body">                    <div class="field">                        <p class="control">                            <input class="input" type="text" #fileTitle>                        </p>                    </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">Tags</label>                    </div>                    <div class="field-body">                        <div class="control">                            <div class="select">                            <select id="grade" #grade>                                <option>Select Grade</option>                                <option>6th</option>                                <option>7th</option>                                <option>8th</option>                                <option>High school</option>                                </select>                            </div>                        </div>                        <div class="control">                            <div class="select">                            <select id="subject" #subject>                                <option>Select Subject</option>                                <option>Biology</option>                                <option>Earth Science</option>                                <option>Chemestry</option>                                <option>Physics</option>                                <option>Anatomy</option>                                <option>Other</option>                                </select>                            </div>                        </div>                        <div class="control">                            <div class="select">                            <select id="contentType" #contentType>                                <option>Content Type</option>                                <option>-</option>                                <option>-</option>                                <option>-</option>                                <option>High school</option>                                </select>                            </div>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label">                    <label class="label">Includes:</label>                    </div>                    <div class="field-body">                    <div class="field is-narrow">                        <div class="control">                        <label class="checkbox">                            <input type="checkbox" #workSheets>                            Worksheets                        </label>                        <label class="checkbox">                            <input type="checkbox" #labs>                            Labs                        </label>                        <label class="checkbox">                            <input type="checkbox" #exams>                            Assessment                        </label>                        </div>                    </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label is-normal">                    <label class="label">Content Description</label>                    </div>                    <div class="field-body">                    <div class="field">                        <div class="control">                        <textarea class="textarea" placeholder="Explain the content of this upload" #description></textarea>                        </div>                    </div>                    </div>                </div>                                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">Compressed Folder Upload</label>                    </div>                    <div class="field-body">                        <div class="file">                            <label class="file-label">                            <input class="file-input" type="file" name="resume" id="previewImage" accept=".zip, .rar, .7z">                            <span class="file-cta">                                <span class="file-label">                                Choose a file…                                </span>                            </span>                            </label>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">File Preview Image</label>                    </div>                    <div class="field-body">                        <div class="file">                            <label class="file-label">                            <input class="file-input" type="file" name="resume" id="previewImage" accept=".png, .jpg, .jpeg">                            <span class="file-cta">                                <span class="file-label">                                Choose a picture…                                </span>                            </span>                            </label>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label">                    <label class="label"></label>                    </div>                    <div class="field-body">                    <div class="field is-narrow">                        <div class="control">                        <label class="checkbox">                            <input type="checkbox">                            I Agree to the Terms of Servce and Privacy Policy.                        </label>                        </div>                    </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label">                    <!-- Left empty for spacing -->                    </div>                    <div class="field-body">                    <div class="field">                        <div class="control">                        <button class="button has-background-link has-text-white" (click)="uploader(fileTitle.value, contentType.value, gradeLevel.value, subject.value, exams.value, labs.value, worksheets.value, description.value)">                            Submit                        </button>                        </div>                    </div>                    </div>                </div>            </form>        </div>    </div></body></html></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
+        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html lang="en" style = "overflow-y: hidden;"><head>    <title>Upload Content</title>    <meta charset="utf-8" />    <!--<link rel="stylesheet" type="text/css" href="CSS PATH HERE" />--></head><body>    <div class= "center">        <h1 class="title">Upload Content</h1>    </div>    <div class="notification is-danger has-text-centered" *ngIf="toggleErrorNotification && !UploadForm.valid"> {{errorString}}        <button class="delete" (click)="toggleErrorMessageNotification()"></button>    </div>    <div class="notification is-info has-text-centered" *ngIf="toggleUploadStatus"> File was uploaded successfully!                <button class="delete" (click)="toggleUploadStatusNotification()"></button>    </div>    <div class="container is-desktop ">        <div class="notification has-background-white">            <form [formGroup]="UploadForm">                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">Title</label>                    </div>                    <div class="field-body">                        <div class="field">                            <p class="control">                                <input class="input" type="text" formControlName="filename">                            </p>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">Subject</label>                    </div>                    <div class="field-body">                        <div class="field">                            <p class="control">                                <input class="input" type="text" formControlName="subject">                            </p>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">Grade</label>                    </div>                    <div class="field-body">                        <div class="control">                            <div class="select">                                <select id="grade" formControlName="grade">                                    <option>Any</option>                                    <option>6th</option>                                    <option>7th</option>                                    <option>8th</option>                                    <option>High school</option>                                </select>                            </div>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label">                        <label class="label">Includes:</label>                    </div>                    <div class="field-body">                        <div class="field is-narrow">                            <div class="control">                                <label class="checkbox">                                    <input type="checkbox" formControlName="includes_worksheets"> Worksheets                                </label>                                <label class="checkbox" class=s pacing>                                    <input type="checkbox" formControlName="includes_labs"> Labs                                </label>                                <label class="checkbox" class=s pacing>                                    <input type="checkbox" formControlName="includes_assesment"> Assessment                                </label>                                <label class="checkbox" class=s pacing>                                    <input type="checkbox" formControlName="includes_video"> Video                                </label>                            </div>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">Content Description</label>                    </div>                    <div class="field-body">                        <div class="field">                            <div class="control">                                <textarea class="textarea" placeholder="Explain the content of this upload" formControlName="description"></textarea>                            </div>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">Tags</label>                    </div>                    <div class="field-body">                        <div class="field">                            <div class="control">                                <textarea class="textarea" placeholder="Please add tags that help describe what is in the upload, seperated by commas. E.G. Cellular Energy, Science, Gravity, Neuton " formControlName="tags"></textarea>                            </div>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">Content Licensing</label>                    </div>                    <div class="field-body">                        <div class="field">                            <div class="control">                                <textarea class="textarea" placeholder="Content license information, enter none for no license." formControlName="license"></textarea>                            </div>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label is-normal">                        <label class="label">File Upload</label>                    </div>                    <div class="field-body">                        <div class="file has-name">                            <label class="file-label">                                <input (change)="handleFileInput($event.target.files)" class="file-input" type="file" name="resume">                                <span class="file-cta">                                <span class="file-icon">                                  <fa-icon [icon] = "faUpload"></fa-icon>                                </span>                                <span class="file-label">                                    Choose a file or a compressed folder (.zip or .rar)                                </span>                                </span>                                <span class="file-name">                                {{fileToUpload != null ? fileToUpload.name : \'No File Chosen\'}}                              </span>                            </label>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label">                        <label class="label"></label>                    </div>                    <div class="field-body">                        <div class="field is-narrow">                            <div class="control">                                <label class="checkbox">                                    <input type="checkbox" formControlName="tos"> I Agree to the Terms of Servce and Privacy Policy.                                </label>                            </div>                        </div>                    </div>                </div>                <div class="field is-horizontal">                    <div class="field-label">                        <!-- Left empty for spacing -->                    </div>                    <div class="field-body">                        <div class="field">                            <div class="control">                                <button class="button has-background-link has-text-white" [disabled] = "fileToUpload === null" (click)="onSubmitFileClick()">                                    Submit                                </button>                            </div>                        </div>                    </div>                </div>            </form>        </div>    </div></body></html></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CopyrightComponent', 'selector': 'app-contact'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewUserComponent', 'selector': 'app-new-user'},{'name': 'PrivacyComponent', 'selector': 'app-contact'},{'name': 'ResultsComponent', 'selector': 'app-results'},{'name': 'SearchAllComponent', 'selector': 'app-search-all'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'UploadpageComponent', 'selector': 'app-uploadpage'},{'name': 'UserpageComponent', 'selector': 'app-userpage'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UploadpageComponent'};
 </script>

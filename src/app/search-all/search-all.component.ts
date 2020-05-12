@@ -30,7 +30,8 @@ export class SearchAllComponent implements OnInit {
   canVote:Boolean = true;
   pdfSrc:String ;
   displayModal = false;
-
+  currentCommentFileID:number;
+  userSignedIn:boolean = false;
   promise: Promise<any>;
   //constructor() { }
 
@@ -74,10 +75,49 @@ async getSearchItems()
      this.session.set("data", data);
    });;
   }
+  getTitle(title:string)
+{
+  let title_string_list = title.split("/");
+  let titles = title_string_list[title_string_list.length-1];
+  let newTitle = "";
+  for (let i = 0; i < titles.length; i++)
+  {
+    let c = titles.charAt(i);
+
+    if (c !== "_")
+    {
+      newTitle += c;
+    }
+    else
+    {
+      newTitle += " ";
+    }
+  }
+  return newTitle;
+}
+
+getTags(tags:string)
+{
+  let tagList = tags.split("\n");
+let newTagString ="";
+  for (let i = 0; i < tagList.length; i++)
+  {
+    if (i < tagList.length - 2)
+    {
+      newTagString += tagList[i] + ", ";
+    }
+    else
+    {
+      newTagString += tagList[i];
+    }
+  }
+ return newTagString;
+}
+
 
 async getFeedbackByID(id:number)
 {
-
+  this.currentCommentFileID = id;
   console.log("This is the file id: " + id);
   await this.apiService.getFeedback(id).then((data)=>{
     console.log(data);
@@ -100,6 +140,10 @@ async ngOnInit() {
    //await this.getUserVotes();
     this.collapse();
     this.hideFull();
+    if (this.session.get["username"] !== "")
+    {
+      this.userSignedIn = true;
+    }
     await this.getSearchItems();
     this.fileData = this.session.get("data");
     this.SearchAllForm = new FormGroup({
@@ -135,7 +179,15 @@ async ngOnInit() {
 
   submitFeedbackByFileID()
   {
-    let fileid = this.feedbackData[0].fileid;
+    let fileid:number;
+    if (this.feedbackData[0] === null)
+    {
+      fileid = this.currentCommentFileID;
+    }
+    else
+    {
+      fileid = this.currentCommentFileID;
+    }
     let feedbackContent = this.SearchAllForm.value.feedback;
     let username:string = this.session.get("username");
     this.apiService.submitFeedback(username, fileid, feedbackContent, this.getCurrentDate()).subscribe((data)=>{

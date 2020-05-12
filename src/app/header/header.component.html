@@ -2,6 +2,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+
+    <style>
+        div.center {
+        padding: 15px;
+        text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,9 +54,12 @@
                     </div>
                 </div>
                 <div class="navbar-item">
+
+              <div *ngIf="username">
                     <a routerLink="/uploadpage/Bad" routerLinkActive="active" class="button has-background-link has-text-white">
                         Upload
                     </a>
+              </div>
                     <div class="buttons">
                         <div *ngIf="username">
                             
@@ -68,8 +78,13 @@
                     </div>
 
                     <div *ngIf="username">
-                        Welcome, {{username}}!
-                        <button (click)="handleClick($event)" type="button" class="button has-background-link has-text-white">Log out</button>
+                        <div class="control">
+                            <button class="button has-background-link has-text-white">
+                            Welcome, {{username}}!
+                            </button>
+                            <button (click)="handleClick($event)" type="button" class="button has-background-link has-text-white">Log out</button>
+                        
+                        </div>
                     </div>
                 </div>
             </div>
